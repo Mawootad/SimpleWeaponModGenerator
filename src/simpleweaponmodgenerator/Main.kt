@@ -19,7 +19,6 @@ val Weapon.abilities: List<WeaponAbility>
     ).filter { it != weapon { } }
 
 
-
 object Main {
     private const val TEMPLATE_PATH = "--template_path"
     private const val WEAPON_OUT = "--weapon_out"
@@ -28,6 +27,7 @@ object Main {
     private const val FORMAT = "--out_format"
     private const val TEXTPROTO = "textproto"
     private const val CSV = "csv"
+    private const val NONE_TEXT = "None"
 
     @JvmStatic
     fun main(args: Array<String>) {
@@ -97,11 +97,11 @@ object Main {
     enum class CsvField(val header: String, val output: (Weapon) -> String) {
         BLUEPRINT("Blueprint", { it.blueprintName }),
         NAME("Name", { it.name }),
-        GROUPING("Grouping", { Classifier.getWeaponType(it).toString() }),
         DESCRIPTION("Description", { it.description }),
-        CATEGORY("Category", { if (it.hasCategory()) it.category.toString() else "" }),
-        FAMILY("Family", { if (it.hasFamily()) it.family.toString() else "" }),
-        CLASSIFICATION("Classification", { if (it.hasClassification()) it.classification.toString() else "" }),
+        GROUPING("Grouping", { Classifier.getWeaponType(it).toString() }),
+        CATEGORY("Category", { if (it.hasCategory()) it.category.toString() else NONE_TEXT }),
+        FAMILY("Family", { if (it.hasFamily()) it.family.toString() else NONE_TEXT }),
+        CLASSIFICATION("Classification", { if (it.hasClassification()) it.classification.toString() else NONE_TEXT }),
         HEAVY("Heavy", { it.heavy.toString() }),
         TWO_HANDED("Two Handed", { it.twoHanded.toString() }),
         MIN_DAMAGE("Min Damage", { it.minDamage.toString() }),
@@ -123,7 +123,7 @@ object Main {
 
         companion object {
             private fun abilityCsvString(ability: WeaponAbility) =
-                if (ability.type != AbilityType.ABILITY_NONE) "${ability.abilityBp}\t${ability.type}\t${ability.ap}" else "\t\t"
+                if (ability.type != AbilityType.ABILITY_NONE) "${ability.abilityBp}\t${ability.type}\t${ability.ap}" else "\t$NONE_TEXT\t"
         }
     }
 }

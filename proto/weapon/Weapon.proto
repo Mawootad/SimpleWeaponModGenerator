@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package proto.weapon;
+
+option java_multiple_files = true;
+
+message WeaponList {
+  repeated Weapon weapon = 1;
+}
+
+message Weapon {
+  enum WeaponClassification {
+    CLASSIFICATION_NONE = 0;
+    Sword = 1;
+    Axe = 2;
+    MaulOrHammer = 3;
+    RangedArea = 4;
+    Shotgun = 5;
+    FullAuto = 6;
+    SniperRifle = 7;
+    PsykerStaff = 8;
+    NavigatorStaff = 9;
+    Chainsaw = 10;
+    Knife = 11;
+    Maul = 12;
+    Hammer = 13;
+    Shield = 14;
+  }
+
+  enum WeaponFamily {
+    FAMILY_NONE = 0;
+    Laser = 1;
+    Solid = 2;
+    Bolt = 3;
+    Melta = 4;
+    Plasma = 5;
+    Flame = 6;
+    Exotic = 7;
+    Chain = 8;
+    Power = 9;
+    Primitive = 10;
+    Force = 11;
+    Blade = 12;
+    ChainSaw = 13;
+  }
+
+  enum WeaponCategory {
+    CATEGORY_NONE = 0;
+    Melee = 1;
+    Thrown = 2;
+    Pistol = 3;
+    Basic = 4;
+    Heavy = 5;
+  }
+
+  message WeaponAbility {
+    enum AbilityType {
+      ABILITY_NONE = 0;
+      Custom = 1;
+      SingleShot = 2;
+      Burst = 3;
+      AOE = 4;
+      Reload = 5;
+    }
+
+    enum OverrideType {
+      OVERRIDE_NONE = 0;
+      Override = 1;
+      Add = 2;
+    }
+
+    optional AbilityType type = 10;
+    string ability_bp_name = 19;
+    optional string ability_bp = 20;
+    string fx_bp_name = 29;
+    optional string fx_bp = 30;
+    optional OverrideType on_hit_override_type = 40;
+    optional string on_hit_actions = 50;
+    string on_hit_action_name = 51;
+    optional int32 ap = 60;
+  }
+
+  message StatRestriction {
+    string stat = 1;
+    int32 requirement = 2;
+  }
+
+  message FactRequirement {
+    optional bool all = 1;
+    optional bool negate = 2;
+    repeated string bp = 3;
+    repeated string bp_name = 4;
+  }
+
+  string guid = 1;
+  string blueprint_name = 100;
+  string name = 200;
+  string description = 300;
+  optional WeaponCategory category = 400;
+  optional WeaponFamily family = 500;
+  optional WeaponClassification classification = 600;
+  optional bool heavy = 700;
+  optional bool two_handed = 800;
+  optional int32 min_damage = 900;
+  optional int32 max_damage = 1000;
+  optional int32 penetration = 1100;
+  optional int32 dodge_reduction = 1200;
+  optional int32 additional_hit_chance = 1300;
+  optional int32 recoil = 1400;
+  optional int32 max_range = 1500;
+  optional int32 ammo = 1600;
+  optional int32 rate_of_fire = 1700;
+  optional WeaponAbility ability1 = 1800;
+  optional WeaponAbility ability2 = 1810;
+  optional WeaponAbility ability3 = 1820;
+  optional WeaponAbility ability4 = 1830;
+  optional WeaponAbility ability5 = 1840;
+  optional StatRestriction stat_restriction = 1900;
+  repeated FactRequirement fact_requirement = 1950;
+  repeated string extra_fact = 2000;
+  repeated string extra_fact_name = 2001;
+  repeated string sources = 2100;
+}

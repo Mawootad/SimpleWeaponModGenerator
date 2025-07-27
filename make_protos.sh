@@ -1,0 +1,1 @@
+protoc/protoc --kotlin_out=src --java_out=src --experimental_allow_proto3_optional proto/**/*.proto

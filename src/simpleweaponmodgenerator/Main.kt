@@ -2,6 +2,7 @@ package simpleweaponmodgenerator
 
 import proto.weapon.Weapon
 import proto.weapon.Weapon.WeaponAbility
+import proto.weapon.Weapon.WeaponAbility.AbilityType
 import proto.weapon.weapon
 import proto.weapon.weaponList
 import simpleweaponmodgenerator.parser.Classifier
@@ -18,16 +19,15 @@ val Weapon.abilities: List<WeaponAbility>
     ).filter { it != weapon { } }
 
 
+
 object Main {
     private const val TEMPLATE_PATH = "--template_path"
     private const val WEAPON_OUT = "--weapon_out"
     private const val OBTAINABLE = "--obtainable"
     private const val CATEGORIZE_WEAPONS = "--categorize_weapons"
-    private val TEXTPROTO_HEADER =
-        """
-        |# proto-file: proto/weapon/Weapon.proto
-        |# proto-message: weapon.WeaponList
-        |""".trimMargin()
+    private const val FORMAT = "--out_format"
+    private const val TEXTPROTO = "textproto"
+    private const val CSV = "csv"
 
     @JvmStatic
     fun main(args: Array<String>) {
@@ -46,6 +46,7 @@ object Main {
                 |  $WEAPON_OUT=FILEPATH: Folder to write parsed weapon textproto data to
                 |  $OBTAINABLE: Filters weapon output to obtainable weapons
                 |  $CATEGORIZE_WEAPONS: Generates textprotos grouped by inferred typing
+                |  $FORMAT=[$TEXTPROTO]|$CSV: Chooses the output format when writing weapon docs
                 |""".trimMargin()
 
             )
@@ -55,25 +56,74 @@ object Main {
 
         val parser = WeaponParser(templatePath)
         if (WEAPON_OUT in argValues) {
+            val extension = argValues[FORMAT]?.lowercase() ?: TEXTPROTO
+            val generator: (Collection<Weapon>) -> String = when (extension) {
+                TEXTPROTO -> this::textprotoString
+                CSV -> this::csvString
+                else -> error("Unsupported output format $extension")
+            }
+
             val weaponList = if (OBTAINABLE in argValues) {
                 parser.weaponsWithStrings.values.filter { it.sourcesList.isNotEmpty() }
             } else {
                 parser.weaponsWithStrings.values
             }
 
-            if (CATEGORIZE_WEAPONS in argValues) {
+            if (CATEGORIZE_WEAPONS in argValues && extension != CSV) {
                 for ((type, weapons) in weaponList.groupBy { Classifier.getWeaponType(it) }) {
-                    File(argValues[WEAPON_OUT]!! + "/${type}Weapons.textproto").writer().use {
-                        it.appendLine(TEXTPROTO_HEADER)
-                        it.appendLine(weaponList { weapon += weapons }.toString())
-                    }
+                    File(argValues[WEAPON_OUT]!! + "/${type}Weapons.$extension").writer()
+                        .write(generator(weapons))
                 }
             } else {
-                File(argValues[WEAPON_OUT]!! + "/Weapons.textproto").writer().use {
-                    it.appendLine(TEXTPROTO_HEADER)
-                    it.appendLine(weaponList { weapon += weaponList }.toString())
-                }
+                File(argValues[WEAPON_OUT]!! + "/Weapons.$extension").writer().write(generator(weaponList))
             }
+        }
+    }
+
+    private fun textprotoString(weaponList: Collection<Weapon>) =
+        """
+        |# proto-file: proto/weapon/Weapon.proto
+        |# proto-message: weapon.WeaponList
+        |
+        |${weaponList { weapon += weaponList }}
+        |""".trimMargin()
+
+    private fun csvString(weaponList: Collection<Weapon>) =
+        """
+        |${CsvField.entries.joinToString("\t") { it.header }}
+        |${weaponList.joinToString("\n") { weapon -> CsvField.entries.joinToString("\t") { it.output(weapon) } }}
+        |""".trimMargin()
+
+    enum class CsvField(val header: String, val output: (Weapon) -> String) {
+        BLUEPRINT("Blueprint", { it.blueprintName }),
+        NAME("Name", { it.name }),
+        GROUPING("Grouping", { Classifier.getWeaponType(it).toString() }),
+        DESCRIPTION("Description", { it.description }),
+        CATEGORY("Category", { if (it.hasCategory()) it.category.toString() else "" }),
+        FAMILY("Family", { if (it.hasFamily()) it.family.toString() else "" }),
+        CLASSIFICATION("Classification", { if (it.hasClassification()) it.classification.toString() else "" }),
+        HEAVY("Heavy", { it.heavy.toString() }),
+        TWO_HANDED("Two Handed", { it.twoHanded.toString() }),
+        MIN_DAMAGE("Min Damage", { it.minDamage.toString() }),
+        MAX_DAMAGE("Max Damage", { it.maxDamage.toString() }),
+        ARMOR_PEN("Armor Pen", { it.penetration.toString() }),
+        DODGE_REDUCTION("Dodge Reduction", { it.dodgeReduction.toString() }),
+        EXTRA_HIT_CHANCE("Extra Hit Chance", { it.additionalHitChance.toString() }),
+        RATE_OF_FIRE("Rate of Fire", { it.rateOfFire.toString() }),
+        RECOIL("Recoil", { it.recoil.toString() }),
+        RANGE("Max Range", { it.maxRange.toString() }),
+        AMMO("Ammo", { it.ammo.toString() }),
+        ATTACK1("Attack 1\tType\tCost", { abilityCsvString(it.ability1) }),
+        ATTACK2("Attack 2\tType\tCost", { abilityCsvString(it.ability2) }),
+        ATTACK3("Attack 3\tType\tCost", { abilityCsvString(it.ability3) }),
+        ATTACK4("Attack 4\tType\tCost", { abilityCsvString(it.ability4) }),
+        ATTACK5("Attack 5\tType\tCost", { abilityCsvString(it.ability5) }),
+        SOURCES("Sources", { it.sourcesList.joinToString() }),
+        EXTRA_FACTS("Extra Facts", { it.extraFactNameList.joinToString("\t") });
+
+        companion object {
+            private fun abilityCsvString(ability: WeaponAbility) =
+                if (ability.type != AbilityType.ABILITY_NONE) "${ability.abilityBp}\t${ability.type}\t${ability.ap}" else "\t\t"
         }
     }
 }

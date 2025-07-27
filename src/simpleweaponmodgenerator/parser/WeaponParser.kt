@@ -74,13 +74,11 @@ class WeaponParser(private val template: String) {
 
     private val units by lazy {
         val units = synchronizedList<Pair<String, String>>(mutableListOf())
-        parseJbp("$template/Blueprints/Units/NPC") {
-            println("Parsing unit $it")
-            units += parseUnitLoot(it)
-        }
-        parseJbp("$template/Blueprints/Units/Monsters") {
-            println("Parsing unit $it")
-            units += parseUnitLoot(it)
+        for (subpath in listOf("NPC", "Monsters", "Companions")) {
+            parseJbp("$template/Blueprints/Units/$subpath") {
+                println("Parsing unit $it")
+                units += parseUnitLoot(it)
+            }
         }
         units
     }

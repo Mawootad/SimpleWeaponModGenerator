@@ -52,6 +52,8 @@ object Classifier {
         PsykerStaff,
         Shuriken,
         Splinter,
+        ChainSword,
+        PowerSword,
     }
 
     fun getWeaponType(weapon: Weapon): WeaponTypes {
@@ -59,8 +61,14 @@ object Classifier {
         if (weapon.family == WeaponFamily.Plasma) return Plasma
         if (weapon.family == WeaponFamily.Melta) return Melta
         if (weapon.classification == WeaponClassification.Shotgun) return Shotgun
-        if (weapon.family == WeaponFamily.Force) return ForceSword
-        if (weapon.classification == WeaponClassification.Sword) return Sword
+        if (weapon.classification == WeaponClassification.Sword) {
+            return when (weapon.family) {
+                WeaponFamily.Force -> ForceSword
+                WeaponFamily.Chain -> ChainSword
+                WeaponFamily.Power -> PowerSword
+                else -> Sword
+            }
+        }
         if (weapon.classification == WeaponClassification.Chainsaw) return RockSaw
         if (weapon.classification == WeaponClassification.MaulOrHammer) return Hammer
         // Yes this is weird, but for whatever reason Arc weapons are tagged SniperRifle and snipers aren't

@@ -33,3 +33,4 @@ bin/
 
 **/src/proto/**/*.kt
 **/src/proto/**/*.java
+testfiles/

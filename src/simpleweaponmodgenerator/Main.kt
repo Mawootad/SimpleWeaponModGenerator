@@ -19,7 +19,8 @@ object Main {
                 |
                 |Options:
                 |  --template_path=[../../../]: Root path to the mod template
-                |  --weapon_out: File to write parsed weapon textproto data to
+                |  --weapon_out=FILEPATH: Folder to write parsed weapon textproto data to
+                |  --obtainable: Filters weapon output to obtainable weapons
                 |""".trimMargin()
 
             )
@@ -29,14 +30,19 @@ object Main {
 
         val parser = WeaponParser(templatePath)
         if ("--weapon_out" in argValues) {
-            File(argValues["--weapon_out"]!!).writer().use {
+            File(argValues["--weapon_out"]!! + "/Weapons.textproto").writer().use {
                 it.appendLine(
                     """
                     |# proto-file: proto/weapon/Weapon.proto
                     |# proto-message: weapon.WeaponList
                     |""".trimMargin()
                 )
-                it.appendLine(weaponList { weapon += parser.weaponsWithStrings.values }.toString())
+                val weaponList = if ("--obtainable" in argValues) {
+                    parser.weaponsWithStrings.values.filter { it.sourcesList.isNotEmpty() }
+                } else {
+                    parser.weaponsWithStrings.values
+                }
+                it.appendLine(weaponList { weapon += weaponList }.toString())
             }
         }
     }

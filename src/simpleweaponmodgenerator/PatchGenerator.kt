@@ -176,14 +176,18 @@ object PatchGenerator {
                     "m_FXSettings",
                     patch.fxBp.takeIf { it.isNotEmpty() }
                 )
-                if (patch.hasOnHitOverrideType() && patch.onHitOverrideType != baseline.onHitOverrideType) put(
-                    "OnHitOverrideType",
-                    patch.onHitOverrideType.name.enumNoneToNone()
-                )
-                if (patch.hasOnHitActions() && patch.onHitActions != baseline.onHitActions) put(
-                    "m_OnHitActions",
-                    patch.onHitActions.takeIf { it.isNotEmpty() }
-                )
+//                if (patch.hasOnHitOverrideType() && patch.onHitOverrideType != baseline.onHitOverrideType) put(
+//                    "OnHitOverrideType",
+//                    patch.onHitOverrideType.name.enumNoneToNone()
+//                )
+                if (patch.hasOnHitActions() && patch.onHitActions != baseline.onHitActions) {
+                    put(
+                        "m_OnHitActions",
+                        patch.onHitActions.takeIf { it.isNotEmpty() }
+                    )
+                    if (patch.onHitActions.isEmpty()) put("OnHitOverrideType", "None")
+                    else if (baseline.onHitActions.isEmpty()) put("OnHitOverrideType", "Add")
+                }
             }
         }
         return abilityPatch.takeIf { it.isNotEmpty() }

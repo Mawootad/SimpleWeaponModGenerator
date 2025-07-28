@@ -70,13 +70,13 @@ message Weapon {
     }
 
     optional AbilityType type = 10; // Type
-    string ability_bp_name = 19;
+    optional string ability_bp_name = 19;
     optional string ability_bp = 20; // m_Ability
-    string fx_bp_name = 29; // m_FXSettings
+    optional string fx_bp_name = 29; // m_FXSettings
     optional string fx_bp = 30;
-    optional OverrideType on_hit_override_type = 40; // OnHitOverrideType
+    // optional OverrideType on_hit_override_type = 40; // OnHitOverrideType
     optional string on_hit_actions = 50; // m_OnHitActions
-    string on_hit_action_name = 51;
+    optional string on_hit_action_name = 51;
     optional int32 ap = 60; // AP
   }
 

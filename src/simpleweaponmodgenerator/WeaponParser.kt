@@ -13,6 +13,7 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import proto.weapon.Weapon
+import proto.weapon.Weapon.WeaponAbility
 import proto.weapon.WeaponKt
 import proto.weapon.copy
 import proto.weapon.weapon
@@ -40,7 +41,7 @@ class WeaponParser(private val template: String) {
         weapons
     }
 
-    val guidToNameMap by lazy {
+    private val guidToNameMap by lazy {
         val map = Collections.synchronizedMap<String, String>(mutableMapOf())
         val subpaths = listOf(
             "Weapons",
@@ -50,6 +51,7 @@ class WeaponParser(private val template: String) {
             "Equipment/CommonFeatures",
             "SoulMarks",
             "Buffs",
+            "FX/AbilityFxSettings"
         )
         for (subpath in subpaths) {
             parseFiles("$template/Blueprints/$subpath") {
@@ -60,6 +62,8 @@ class WeaponParser(private val template: String) {
         }
         map
     }
+
+    private val nameToGuidMap by lazy { guidToNameMap.entries.associate { it.value to it.key } }
 
     private val locations by lazy {
         val locations = Collections.synchronizedList<Pair<String, String>>(mutableListOf())
@@ -100,6 +104,37 @@ class WeaponParser(private val template: String) {
         strings
     }
 
+    fun getBpsFromNames(weapon: Weapon) = weapon.copy {
+        fun getBpOrUseBpLikeString(name: String) = when {
+            name.isEmpty() -> ""
+            name in nameToGuidMap -> nameToGuidMap[name]!!
+            name.matches("""[a-f0-9]{32}""".toRegex()) -> name
+            else -> {
+                println("Couldn't find guid for BP $name, ignoring")
+                null
+            }
+        }
+
+        if (extraFactName.size != extraFact.size) {
+            extraFact.clear()
+            extraFact += extraFactName.mapNotNull { getBpOrUseBpLikeString(it) }
+        }
+
+        fun lookupAbility(ability: WeaponAbility) = ability.copy {
+            if (hasFxBpName() && !hasFxBp()) getBpOrUseBpLikeString(fxBpName)?.let { fxBp = it }
+            if (hasAbilityBpName() && !hasAbilityBp()) getBpOrUseBpLikeString(abilityBpName)?.let { abilityBp = it }
+            if (hasOnHitActionName() && !hasOnHitActions()) getBpOrUseBpLikeString(onHitActionName)?.let {
+                onHitActions = it
+            }
+        }
+
+        if (hasAbility1()) ability1 = lookupAbility(ability1)
+        if (hasAbility2()) ability2 = lookupAbility(ability2)
+        if (hasAbility3()) ability3 = lookupAbility(ability3)
+        if (hasAbility4()) ability4 = lookupAbility(ability4)
+        if (hasAbility5()) ability5 = lookupAbility(ability5)
+    }
+
     val weaponsWithStrings by lazy {
         val sources = (locations + units + vendors).groupBy({ it.second.fromBp }, { it.first })
         weapons.map { weapon ->
@@ -109,37 +144,37 @@ class WeaponParser(private val template: String) {
 
                 if (ability1 != WeaponKt.weaponAbility { }) {
                     ability1 = ability1.copy {
-                        abilityBpName = guidToNameMap[abilityBp] ?: ""
-                        onHitActionName = guidToNameMap[onHitActionName] ?: ""
-                        fxBpName = guidToNameMap[fxBp] ?: ""
+                        abilityBpName = guidToNameMap[abilityBp] ?: abilityBp
+                        onHitActionName = guidToNameMap[onHitActions] ?: onHitActions
+                        fxBpName = guidToNameMap[fxBp] ?: fxBp
                     }
                 }
                 if (ability2 != WeaponKt.weaponAbility { }) {
                     ability2 = ability2.copy {
-                        abilityBpName = guidToNameMap[abilityBp] ?: ""
-                        onHitActionName = guidToNameMap[onHitActionName] ?: ""
-                        fxBpName = guidToNameMap[fxBp] ?: ""
+                        abilityBpName = guidToNameMap[abilityBp] ?: abilityBp
+                        onHitActionName = guidToNameMap[onHitActions] ?: onHitActions
+                        fxBpName = guidToNameMap[fxBp] ?: fxBp
                     }
                 }
                 if (ability3 != WeaponKt.weaponAbility { }) {
                     ability3 = ability3.copy {
-                        abilityBpName = guidToNameMap[abilityBp] ?: ""
-                        onHitActionName = guidToNameMap[onHitActionName] ?: ""
-                        fxBpName = guidToNameMap[fxBp] ?: ""
+                        abilityBpName = guidToNameMap[abilityBp] ?: abilityBp
+                        onHitActionName = guidToNameMap[onHitActions] ?: onHitActions
+                        fxBpName = guidToNameMap[fxBp] ?: fxBp
                     }
                 }
                 if (ability4 != WeaponKt.weaponAbility { }) {
                     ability4 = ability4.copy {
-                        abilityBpName = guidToNameMap[abilityBp] ?: ""
-                        onHitActionName = guidToNameMap[onHitActionName] ?: ""
-                        fxBpName = guidToNameMap[fxBp] ?: ""
+                        abilityBpName = guidToNameMap[abilityBp] ?: abilityBp
+                        onHitActionName = guidToNameMap[onHitActions] ?: onHitActions
+                        fxBpName = guidToNameMap[fxBp] ?: fxBp
                     }
                 }
                 if (ability5 != WeaponKt.weaponAbility { }) {
                     ability5 = ability5.copy {
-                        abilityBpName = guidToNameMap[abilityBp] ?: ""
-                        onHitActionName = guidToNameMap[onHitActionName] ?: ""
-                        fxBpName = guidToNameMap[fxBp] ?: ""
+                        abilityBpName = guidToNameMap[abilityBp] ?: abilityBp
+                        onHitActionName = guidToNameMap[onHitActions] ?: onHitActions
+                        fxBpName = guidToNameMap[fxBp] ?: fxBp
                     }
                 }
                 this.sources += sources[guid].orEmpty()
@@ -218,9 +253,9 @@ class WeaponParser(private val template: String) {
                             abilityBp = ability["m_Ability"]!!.stringValue.fromBp
                             ability["m_OnHitActions"]?.stringValueOrNull?.fromBp?.let { onHitActions = it }
                             ability["m_FXSettings"]?.stringValueOrNull?.fromBp?.let { fxBp = it }
-                            ability["OnHitOverrideType"]?.parseEnum(Weapon.WeaponAbility.OverrideType::valueOf)?.let {
-                                onHitOverrideType = it
-                            }
+//                            ability["OnHitOverrideType"]?.parseEnum(Weapon.WeaponAbility.OverrideType::valueOf)?.let {
+//                                onHitOverrideType = it
+//                            }
                             ap = ability["AP"]!!.jsonPrimitive.int
                         }
                     }

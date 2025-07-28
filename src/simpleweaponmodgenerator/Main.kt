@@ -5,8 +5,6 @@ import proto.weapon.Weapon.WeaponAbility
 import proto.weapon.Weapon.WeaponAbility.AbilityType
 import proto.weapon.weapon
 import proto.weapon.weaponList
-import simpleweaponmodgenerator.parser.Classifier
-import simpleweaponmodgenerator.parser.WeaponParser
 import java.io.File
 
 val Weapon.abilities: List<WeaponAbility>
@@ -27,7 +25,7 @@ object Main {
     private const val FORMAT = "--out_format"
     private const val TEXTPROTO = "textproto"
     private const val CSV = "csv"
-    private const val NONE_TEXT = "None"
+    const val NONE_TEXT = "None"
 
     @JvmStatic
     fun main(args: Array<String>) {
@@ -48,7 +46,6 @@ object Main {
                 |  $CATEGORIZE_WEAPONS: Generates textprotos grouped by inferred typing
                 |  $FORMAT=[$TEXTPROTO]|$CSV: Chooses the output format when writing weapon docs
                 |""".trimMargin()
-
             )
         }
 
@@ -64,18 +61,19 @@ object Main {
             }
 
             val weaponList = if (OBTAINABLE in argValues) {
-                parser.weaponsWithStrings.values.filter { it.sourcesList.isNotEmpty() }
+                parser.weaponsWithStrings.filter { it.sourcesList.isNotEmpty() }
             } else {
-                parser.weaponsWithStrings.values
+                parser.weaponsWithStrings
             }
 
             if (CATEGORIZE_WEAPONS in argValues && extension != CSV) {
                 for ((type, weapons) in weaponList.groupBy { Classifier.getWeaponType(it) }) {
-                    File(argValues[WEAPON_OUT]!! + "/${type}Weapons.$extension").writer()
-                        .write(generator(weapons))
+                    File(argValues[WEAPON_OUT]!! + "/${type}Weapons.$extension").writer().use {
+                        it.append(generator(weapons))
+                    }
                 }
             } else {
-                File(argValues[WEAPON_OUT]!! + "/Weapons.$extension").writer().write(generator(weaponList))
+                File(argValues[WEAPON_OUT]!! + "/Weapons.$extension").writer().use { it.append(generator(weaponList)) }
             }
         }
     }
@@ -123,7 +121,7 @@ object Main {
 
         companion object {
             private fun abilityCsvString(ability: WeaponAbility) =
-                if (ability.type != AbilityType.ABILITY_NONE) "${ability.abilityBp}\t${ability.type}\t${ability.ap}" else "\t$NONE_TEXT\t"
+                if (ability.type != AbilityType.ABILITY_NONE) "${ability.abilityBpName}\t${ability.type}\t${ability.ap}" else "\t$NONE_TEXT\t"
         }
     }
 }

@@ -1,23 +1,23 @@
-package simpleweaponmodgenerator.parser
+package simpleweaponmodgenerator
 
-import kotlinx.coroutines.*
-import java.io.File
-import java.util.Collections.synchronizedMap
-import kotlinx.serialization.json.*
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.JsonNull
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.boolean
+import kotlinx.serialization.json.int
+import kotlinx.serialization.json.jsonArray
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import proto.weapon.Weapon
-import proto.weapon.Weapon.WeaponAbility.AbilityType
-import proto.weapon.Weapon.WeaponAbility.OverrideType
-import proto.weapon.Weapon.WeaponCategory
-import proto.weapon.Weapon.WeaponClassification
-import proto.weapon.Weapon.WeaponFamily
-import proto.weapon.WeaponKt.factRequirement
-import proto.weapon.WeaponKt.statRestriction
-import proto.weapon.WeaponKt.weaponAbility
+import proto.weapon.WeaponKt
 import proto.weapon.copy
 import proto.weapon.weapon
-import java.util.Collections.synchronizedList
-import kotlin.String
-import kotlin.collections.plusAssign
+import java.io.File
+import java.util.Collections
 
 private val JsonElement.stringValue: String get() = jsonPrimitive.toString().trim('"')
 private val JsonElement.stringValueOrNull: String?
@@ -31,17 +31,17 @@ private fun <T> JsonElement.parseEnum(valueOf: (String) -> T): T? {
 
 class WeaponParser(private val template: String) {
     val weapons by lazy {
-        val weapons = synchronizedList<Weapon>(mutableListOf())
-        parseJbp("$template/Blueprints/Weapons") {
+        val weapons = Collections.synchronizedList<Weapon>(mutableListOf())
+        parseFiles("$template/Blueprints/Weapons") {
             println("Parsing weapon $it")
             val weapon = parseWeapon(it)
             if (weapon != null) weapons += weapon
         }
-        weapons.associateBy { it.blueprintName }
+        weapons
     }
 
     val guidToNameMap by lazy {
-        val map = synchronizedMap<String, String>(mutableMapOf())
+        val map = Collections.synchronizedMap<String, String>(mutableMapOf())
         val subpaths = listOf(
             "Weapons",
             "Classes",
@@ -52,7 +52,7 @@ class WeaponParser(private val template: String) {
             "Buffs",
         )
         for (subpath in subpaths) {
-            parseJbp("$template/Blueprints/$subpath") {
+            parseFiles("$template/Blueprints/$subpath") {
                 println("Getting guid for $it")
                 val namePair = parseBpName(it)
                 if (namePair != null) map += namePair
@@ -61,11 +61,9 @@ class WeaponParser(private val template: String) {
         map
     }
 
-    val nameToGuidMap by lazy { guidToNameMap.entries.associate { it.value to it.key } }
-
     private val locations by lazy {
-        val locations = synchronizedList<Pair<String, String>>(mutableListOf())
-        parseJbp("$template/Blueprints/Loot") {
+        val locations = Collections.synchronizedList<Pair<String, String>>(mutableListOf())
+        parseFiles("$template/Blueprints/Loot") {
             println("Parsing location $it")
             locations += parseLocation(it)
         }
@@ -73,9 +71,9 @@ class WeaponParser(private val template: String) {
     }
 
     private val units by lazy {
-        val units = synchronizedList<Pair<String, String>>(mutableListOf())
+        val units = Collections.synchronizedList<Pair<String, String>>(mutableListOf())
         for (subpath in listOf("NPC", "Monsters", "Companions")) {
-            parseJbp("$template/Blueprints/Units/$subpath") {
+            parseFiles("$template/Blueprints/Units/$subpath") {
                 println("Parsing unit $it")
                 units += parseUnitLoot(it)
             }
@@ -84,47 +82,60 @@ class WeaponParser(private val template: String) {
     }
 
     private val vendors by lazy {
-        val vendors = synchronizedList<Pair<String, String>>(mutableListOf())
-        parseJbp("$template/Blueprints/Loot/VendorTables") {
+        val vendors = Collections.synchronizedList<Pair<String, String>>(mutableListOf())
+        parseFiles("$template/Blueprints/Loot/VendorTables") {
             println("Parsing vendor $it")
             vendors += parseVendor(it)
         }
         vendors
     }
 
+    private val localizedStrings by lazy {
+        val strings = Collections.synchronizedMap<String, String>(mutableMapOf())
+        parseFiles("$template/Strings/Mechanics/Blueprints/Weapons", extension = "json") {
+            println("Getting string for $it")
+            val pair = parseStringFile(it)
+            if (pair != null) strings += pair
+        }
+        strings
+    }
+
     val weaponsWithStrings by lazy {
         val sources = (locations + units + vendors).groupBy({ it.second.fromBp }, { it.first })
-        weapons.mapValues { (name, weapon) ->
+        weapons.map { weapon ->
             weapon.copy {
-                if (ability1 != weaponAbility { }) {
+                this.name = localizedStrings[nameKey.ifEmpty { nameSharedKey }] ?: ""
+                description = localizedStrings[descriptionKey.ifEmpty { descriptionSharedKey }] ?: ""
+
+                if (ability1 != WeaponKt.weaponAbility { }) {
                     ability1 = ability1.copy {
                         abilityBpName = guidToNameMap[abilityBp] ?: ""
                         onHitActionName = guidToNameMap[onHitActionName] ?: ""
                         fxBpName = guidToNameMap[fxBp] ?: ""
                     }
                 }
-                if (ability2 != weaponAbility { }) {
+                if (ability2 != WeaponKt.weaponAbility { }) {
                     ability2 = ability2.copy {
                         abilityBpName = guidToNameMap[abilityBp] ?: ""
                         onHitActionName = guidToNameMap[onHitActionName] ?: ""
                         fxBpName = guidToNameMap[fxBp] ?: ""
                     }
                 }
-                if (ability3 != weaponAbility { }) {
+                if (ability3 != WeaponKt.weaponAbility { }) {
                     ability3 = ability3.copy {
                         abilityBpName = guidToNameMap[abilityBp] ?: ""
                         onHitActionName = guidToNameMap[onHitActionName] ?: ""
                         fxBpName = guidToNameMap[fxBp] ?: ""
                     }
                 }
-                if (ability4 != weaponAbility { }) {
+                if (ability4 != WeaponKt.weaponAbility { }) {
                     ability4 = ability4.copy {
                         abilityBpName = guidToNameMap[abilityBp] ?: ""
                         onHitActionName = guidToNameMap[onHitActionName] ?: ""
                         fxBpName = guidToNameMap[fxBp] ?: ""
                     }
                 }
-                if (ability5 != weaponAbility { }) {
+                if (ability5 != WeaponKt.weaponAbility { }) {
                     ability5 = ability5.copy {
                         abilityBpName = guidToNameMap[abilityBp] ?: ""
                         onHitActionName = guidToNameMap[onHitActionName] ?: ""
@@ -144,7 +155,7 @@ class WeaponParser(private val template: String) {
         }
     }
 
-    private fun parseJbp(root: String, fileParser: (File) -> Unit) {
+    private fun parseFiles(root: String, extension: String = "jbp", fileParser: (File) -> Unit) {
         runBlocking {
             fun runJbpRecursive(directory: File) {
                 for (file in directory.listFiles()!!) {
@@ -153,7 +164,7 @@ class WeaponParser(private val template: String) {
                         continue
                     }
 
-                    if (file.extension == "jbp") {
+                    if (file.extension == extension) {
                         launch { fileParser(file) }
                     }
                 }
@@ -165,7 +176,7 @@ class WeaponParser(private val template: String) {
 
     private fun parseBpName(file: File): Pair<String, String>? =
         try {
-            val json = Json.parseToJsonElement(file.readText()).jsonObject
+            val json = Json.Default.parseToJsonElement(file.readText()).jsonObject
             json["AssetId"]!!.stringValue to file.nameWithoutExtension
         } catch (e: Exception) {
             println("Couldn't get BP name for ${file.name}: ${e.stackTraceToString()}")
@@ -175,7 +186,7 @@ class WeaponParser(private val template: String) {
     private fun parseWeapon(file: File): Weapon? =
         try {
             weapon {
-                val json = Json.parseToJsonElement(file.readText()).jsonObject
+                val json = Json.Default.parseToJsonElement(file.readText()).jsonObject
                 guid = json["AssetId"]!!.stringValue
                 val data = json["Data"]!!.jsonObject
                 if (!(data["\$type"]?.stringValue!!.endsWith("BlueprintItemWeapon"))) return null
@@ -184,62 +195,15 @@ class WeaponParser(private val template: String) {
                 if (data["IsUnlootable"]?.jsonPrimitive?.boolean == true) return null
                 if (data["IsNonRemovable"]?.jsonPrimitive?.boolean == true) return null
 
-                val displayNameKey = data["m_DisplayName"]?.jsonObject?.get("m_Key")?.stringValue
-                    ?: data["m_DisplayName"]?.jsonObject?.get("Shared")?.jsonObject?.get("stringkey")?.stringValue
-                    ?: ""
-                name = when {
-                    displayNameKey == "" -> ""
-                    File(
-                        file.absolutePath.replace(
-                            "${File.separator}Blueprints${File.separator}",
-                            "/Strings/Mechanics/Blueprints/"
-                        )
-                            .replace(".jbp", "_m_DisplayName.json")
-                    ).exists() -> {
-                        val textData = Json.parseToJsonElement(
-                            File(
-                                file.absolutePath.replace(
-                                    "${File.separator}Blueprints${File.separator}",
-                                    "/Strings/Mechanics/Blueprints/"
-                                )
-                                    .replace(".jbp", "_m_DisplayName.json")
-                            ).readText()
-                        ).jsonObject
-                        textData["languages"]!!.jsonArray.find { it.jsonObject["locale"]!!.stringValue == "enGB" }?.jsonObject?.get(
-                            "text"
-                        )?.stringValue!!
-                    }
+                nameKey = data["m_DisplayName"]?.jsonObject?.get("m_Key")?.stringValue ?: ""
+                nameSharedKey =
+                    (data["m_DisplayName"]?.jsonObject?.get("Shared") as? JsonObject)?.get("stringkey")?.stringValue
+                        ?: ""
 
-                    else -> displayNameKey
-                }
-
-                val descriptionKey = data["m_Description"]?.jsonObject?.get("m_Key")?.stringValue
-                    ?: data["m_Description"]?.jsonObject?.get("Shared")?.jsonObject?.get("stringkey")?.stringValue ?: ""
-                description = when {
-                    descriptionKey == "" -> ""
-                    File(
-                        file.absolutePath.replace(
-                            "${File.separator}Blueprints${File.separator}",
-                            "/Strings/Mechanics/Blueprints/"
-                        )
-                            .replace(".jbp", "_m_Description.json")
-                    ).exists() -> {
-                        val textData = Json.parseToJsonElement(
-                            File(
-                                file.absolutePath.replace(
-                                    "${File.separator}Blueprints${File.separator}",
-                                    "/Strings/Mechanics/Blueprints/"
-                                )
-                                    .replace(".jbp", "_m_Description.json")
-                            ).readText()
-                        ).jsonObject
-                        textData["languages"]!!.jsonArray.find { it.jsonObject["locale"]!!.stringValue == "enGB" }?.jsonObject?.get(
-                            "text"
-                        )?.stringValue!!
-                    }
-
-                    else -> descriptionKey
-                }
+                descriptionKey = data["m_Description"]?.jsonObject?.get("m_Key")?.stringValue ?: ""
+                descriptionSharedKey =
+                    (data["m_Description"]?.jsonObject?.get("Shared") as? JsonObject)?.get("stringkey")?.stringValue
+                        ?: ""
 
                 val abilityContainer = data["AbilityContainer"]?.jsonObject?.let {
                     List(5) { n -> it["Ability${n + 1}"]?.jsonObject?.takeIf { ability -> ability["Type"]!!.stringValue != "None" } }
@@ -249,12 +213,12 @@ class WeaponParser(private val template: String) {
                     .map { ability ->
                         if (ability == null) return@map null
 
-                        weaponAbility {
-                            ability["Type"]!!.parseEnum(AbilityType::valueOf)?.let { type = it }
+                        WeaponKt.weaponAbility {
+                            ability["Type"]!!.parseEnum(Weapon.WeaponAbility.AbilityType::valueOf)?.let { type = it }
                             abilityBp = ability["m_Ability"]!!.stringValue.fromBp
                             ability["m_OnHitActions"]?.stringValueOrNull?.fromBp?.let { onHitActions = it }
                             ability["m_FXSettings"]?.stringValueOrNull?.fromBp?.let { fxBp = it }
-                            ability["OnHitOverrideType"]?.parseEnum(OverrideType::valueOf)?.let {
+                            ability["OnHitOverrideType"]?.parseEnum(Weapon.WeaponAbility.OverrideType::valueOf)?.let {
                                 onHitOverrideType = it
                             }
                             ap = ability["AP"]!!.jsonPrimitive.int
@@ -272,7 +236,7 @@ class WeaponParser(private val template: String) {
                 components?.firstOrNull { it["\$type"]!!.stringValue.endsWith("EquipmentRestrictionStat") }
                     ?.let {
                         this.statRestriction =
-                            statRestriction {
+                            WeaponKt.statRestriction {
                                 stat = it["Stat"]!!.stringValue
                                 requirement = it["MinValue"]!!.jsonPrimitive.int
                             }
@@ -281,7 +245,7 @@ class WeaponParser(private val template: String) {
 
                 factRequirement += components?.filter { it["\$type"]!!.stringValue.endsWith("EquipmentRestrictionHasFacts") }
                     ?.map {
-                        factRequirement {
+                        WeaponKt.factRequirement {
                             all = it["All"]!!.jsonPrimitive.boolean
                             negate = it["m_Inverted"]!!.jsonPrimitive.boolean
                             bp += it["m_Facts"]!!.jsonArray.map { fact -> fact.stringValue.fromBp }
@@ -294,9 +258,9 @@ class WeaponParser(private val template: String) {
                     }.orEmpty()
 
                 blueprintName = file.nameWithoutExtension
-                data["Category"]?.parseEnum(WeaponCategory::valueOf)?.let { category = it }
-                data["Family"]?.parseEnum(WeaponFamily::valueOf)?.let { family = it }
-                data["Classification"]?.parseEnum(WeaponClassification::valueOf)?.let { classification = it }
+                data["Category"]?.parseEnum(Weapon.WeaponCategory::valueOf)?.let { category = it }
+                data["Family"]?.parseEnum(Weapon.WeaponFamily::valueOf)?.let { family = it }
+                data["Classification"]?.parseEnum(Weapon.WeaponClassification::valueOf)?.let { classification = it }
                 heavy = data["m_Heaviness"]?.stringValue == "Heavy"
                 twoHanded = data["m_HoldingType"]?.stringValue == "TwoHanded"
                 data["WarhammerDamage"]?.jsonPrimitive?.int?.let { minDamage = it }
@@ -316,7 +280,7 @@ class WeaponParser(private val template: String) {
 
     private fun parseUnitLoot(file: File): List<Pair<String, String>> {
         return try {
-            val json = Json.parseToJsonElement(file.readText()).jsonObject
+            val json = Json.Default.parseToJsonElement(file.readText()).jsonObject
             val data = json["Data"]!!.jsonObject
             if (!(data["\$type"]?.stringValue!!.endsWith("BlueprintUnit"))) return emptyList()
             val body = data["Body"]?.jsonObject ?: return emptyList()
@@ -339,7 +303,7 @@ class WeaponParser(private val template: String) {
 
     private fun parseLocation(file: File): List<Pair<String, String>> {
         return try {
-            val json = Json.parseToJsonElement(file.readText()).jsonObject
+            val json = Json.Default.parseToJsonElement(file.readText()).jsonObject
             val data = json["Data"]!!.jsonObject
             if (!(data["\$type"]?.stringValue!!.endsWith("BlueprintLoot"))) return emptyList()
             val location = "Chest - ${file.parentFile.nameWithoutExtension}: ${file.nameWithoutExtension}"
@@ -355,7 +319,7 @@ class WeaponParser(private val template: String) {
 
     private fun parseVendor(file: File): List<Pair<String, String>> {
         return try {
-            val json = Json.parseToJsonElement(file.readText()).jsonObject
+            val json = Json.Default.parseToJsonElement(file.readText()).jsonObject
             val data = json["Data"]!!.jsonObject
             if (!(data["\$type"]?.stringValue!!.endsWith("BlueprintSharedVendorTable"))) return emptyList()
             val vendor = "Vendor - ${file.nameWithoutExtension}"
@@ -371,5 +335,14 @@ class WeaponParser(private val template: String) {
             println("Failed getting location $file: ${e.stackTraceToString()}")
             emptyList()
         }
+    }
+
+    private fun parseStringFile(file: File): Pair<String, String>? = try {
+        val json = Json.Default.parseToJsonElement(file.readText()).jsonObject
+        val key = json["key"]!!.stringValue
+        key to json["languages"]!!.jsonArray.first { it.jsonObject["locale"]?.stringValue == "enGB" }.jsonObject["text"]!!.stringValue
+    } catch (e: Exception) {
+        println("Failed getting string from $file: ${e.stackTraceToString()}")
+        null
     }
 }

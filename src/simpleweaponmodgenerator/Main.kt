@@ -3,6 +3,11 @@ package simpleweaponmodgenerator
 import proto.weapon.Weapon
 import proto.weapon.Weapon.WeaponAbility
 import proto.weapon.Weapon.WeaponAbility.AbilityType
+import proto.weapon.Weapon.WeaponCategory
+import proto.weapon.Weapon.WeaponClassification
+import proto.weapon.Weapon.WeaponFamily
+import proto.weapon.WeaponKt
+import proto.weapon.copy
 import proto.weapon.weapon
 import proto.weapon.weaponList
 import java.io.File
@@ -24,6 +29,9 @@ object Main {
     private const val CATEGORIZE_WEAPONS = "--categorize_weapons"
     private const val FORMAT = "--out_format"
     private const val TEXTPROTO = "textproto"
+    private const val INPUT_PATH = "--input_path"
+    private const val MOD_PATH = "--mod_path"
+    private const val SOURCE_TEXTPROTOS = "--source_textprotos"
     private const val CSV = "csv"
     const val NONE_TEXT = "None"
 
@@ -45,6 +53,12 @@ object Main {
                 |  $OBTAINABLE: Filters weapon output to obtainable weapons
                 |  $CATEGORIZE_WEAPONS: Generates textprotos grouped by inferred typing
                 |  $FORMAT=[$TEXTPROTO]|$CSV: Chooses the output format when writing weapon docs
+                |  
+                |  $SOURCE_TEXTPROTOS=FILEPATH: Folder containing textproto data to read from instead of reading directly from a mod template
+                |  
+                |  $MOD_PATH=FILEPATH: Folder to write mod data to
+                |  $INPUT_PATH=FILEPATH: Folder to read modified weapon data from
+                |  
                 |""".trimMargin()
             )
         }
@@ -123,5 +137,114 @@ object Main {
             private fun abilityCsvString(ability: WeaponAbility) =
                 if (ability.type != AbilityType.ABILITY_NONE) "${ability.abilityBpName}\t${ability.type}\t${ability.ap}" else "\t$NONE_TEXT\t"
         }
+    }
+
+    private fun csvToProto(file: File): List<Weapon> {
+        val lines = file.reader().readLines()
+
+        val processors = buildList<WeaponKt.Dsl.(String) -> Unit> {
+            val csvFields = CsvField.entries.associateBy { it.header.split("\t").first() }
+            lines.first().split("\t").forEachIndexed { idx, header ->
+                if (this.size > idx) return@forEachIndexed
+                this += when (csvFields[header]) {
+                    CsvField.BLUEPRINT -> listOf { blueprintName = it }
+                    CsvField.NAME -> listOf { name = it }
+                    CsvField.DESCRIPTION -> listOf { description = it }
+                    CsvField.GROUPING -> listOf {}
+                    CsvField.CATEGORY -> listOf {
+                        category = if (it == NONE_TEXT) WeaponCategory.CATEGORY_NONE else WeaponCategory.valueOf(it)
+                    }
+
+                    CsvField.FAMILY -> listOf {
+                        family = if (it == NONE_TEXT) WeaponFamily.FAMILY_NONE else WeaponFamily.valueOf(it)
+                    }
+
+                    CsvField.CLASSIFICATION -> listOf {
+                        classification =
+                            if (it == NONE_TEXT) {
+                                WeaponClassification.CLASSIFICATION_NONE
+                            } else {
+                                WeaponClassification.valueOf(it)
+                            }
+                    }
+
+                    CsvField.HEAVY -> listOf { heavy = it.uppercase() == "TRUE" }
+                    CsvField.TWO_HANDED -> listOf { twoHanded = it.uppercase() == "TRUE" }
+                    CsvField.MIN_DAMAGE -> listOf { minDamage = it.toInt() }
+                    CsvField.MAX_DAMAGE -> listOf { maxDamage = it.toInt() }
+                    CsvField.ARMOR_PEN -> listOf { penetration = it.toInt() }
+                    CsvField.DODGE_REDUCTION -> listOf { dodgeReduction = it.toInt() }
+                    CsvField.EXTRA_HIT_CHANCE -> listOf { additionalHitChance = it.toInt() }
+                    CsvField.RATE_OF_FIRE -> listOf { rateOfFire = it.toInt() }
+                    CsvField.RECOIL -> listOf { recoil = it.toInt() }
+                    CsvField.RANGE -> listOf { maxRange = it.toInt() }
+                    CsvField.AMMO -> listOf { ammo = it.toInt() }
+                    CsvField.ATTACK1 -> listOf({ ability1 = ability1.copy { abilityBpName = it } }, {
+                        ability1 = ability1.copy {
+                            type = if (it == NONE_TEXT) {
+                                AbilityType.ABILITY_NONE
+                            } else {
+                                AbilityType.valueOf(it)
+                            }
+                        }
+                    }, { ability1 = ability1.copy { ap = it.toInt() } })
+
+                    CsvField.ATTACK2 -> listOf({ ability2 = ability2.copy { abilityBpName = it } }, {
+                        ability2 = ability2.copy {
+                            type = if (it == NONE_TEXT) {
+                                AbilityType.ABILITY_NONE
+                            } else {
+                                AbilityType.valueOf(it)
+                            }
+                        }
+                    }, { ability2 = ability2.copy { ap = it.toInt() } })
+
+                    CsvField.ATTACK3 -> listOf({ ability3 = ability3.copy { abilityBpName = it } }, {
+                        ability3 = ability3.copy {
+                            type = if (it == NONE_TEXT) {
+                                AbilityType.ABILITY_NONE
+                            } else {
+                                AbilityType.valueOf(it)
+                            }
+                        }
+                    }, { ability3 = ability3.copy { ap = it.toInt() } })
+
+                    CsvField.ATTACK4 -> listOf({ ability4 = ability4.copy { abilityBpName = it } }, {
+                        ability4 = ability4.copy {
+                            type = if (it == NONE_TEXT) {
+                                AbilityType.ABILITY_NONE
+                            } else {
+                                AbilityType.valueOf(it)
+                            }
+                        }
+                    }, { ability4 = ability4.copy { ap = it.toInt() } })
+
+                    CsvField.ATTACK5 -> listOf({ ability5 = ability5.copy { abilityBpName = it } }, {
+                        ability5 = ability5.copy {
+                            type = if (it == NONE_TEXT) {
+                                AbilityType.ABILITY_NONE
+                            } else {
+                                AbilityType.valueOf(it)
+                            }
+                        }
+                    }, { ability5 = ability5.copy { ap = it.toInt() } })
+
+                    CsvField.SOURCES -> listOf { sources += it.split(", ") }
+                    CsvField.EXTRA_FACTS -> List(20) { { extraFactName += it } }
+                    null -> {
+                        listOf {}
+                    }
+                }
+            }
+        }
+
+        return lines.drop(1).map { line ->
+            weapon {
+                line.split("\t").zip(processors).forEach { (token, processor) ->
+                    if (token.isNotBlank()) processor(token)
+                }
+            }
+        }
+
     }
 }

@@ -1,0 +1,35 @@
+{
+  "WarhammerDamage": 21,
+  "WarhammerMaxDamage": 35,
+  "WarhammerPenetration": 20,
+  "Components": [
+    {
+      "PatchType": "Prepend",
+      "NewElement": {
+        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+        "name": "$AddFactToEquipmentWielder$11c1d670-f0f5-1f86-6a19-05fa907dd9ef",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "",
+          "name": ""
+        },
+        "m_Overrides": [],
+        "m_Fact": "!bp_7712185d9ea049609fda2784a6ca75ce"
+      }
+    },
+    {
+      "PatchType": "Prepend",
+      "NewElement": {
+        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+        "name": "$AddFactToEquipmentWielder$872529d5-1bd0-9f86-10e8-86b84ade8450",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "",
+          "name": ""
+        },
+        "m_Overrides": [],
+        "m_Fact": "!bp_4b8e2dbe861b4067bcfe96ca4ff7b16d"
+      }
+    }
+  ]
+}

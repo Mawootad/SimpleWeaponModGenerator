@@ -1,0 +1,240 @@
+# proto-file: proto/weapon/Weapon.proto
+# proto-message: weapon.WeaponList
+
+weapon {
+  guid: "03163d0a38c44be694b31f89a4cf5c87"
+  blueprint_name: "PowerPickT1CH2_Item"
+  name_shared_key: "3f21653e-517c-480d-b748-3528c298a105"
+  name: "Power Pick"
+  category: Melee
+  family: Power
+  heavy: false
+  two_handed: false
+  min_damage: 10
+  max_damage: 20
+  penetration: 35
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "MeleeAttack_ability"
+    ability_bp: "be721a48e3614ddbb86bf18503511c2c"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedAxe_AoEAbility"
+    ability_bp: "a4e6fe4661514cddb05ec43db1b7c296"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: SingleShot
+    ability_bp_name: "PowerPick_Ability"
+    ability_bp: "08c7e7f3ee8e4090b1f4f75023bbcf30"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  sources: "Chest - VoidshipCrypt: Loot_DeadServitorLoot"
+}
+weapon {
+  guid: "b24df950856f4ca391bd0543d2a724cb"
+  blueprint_name: "PowerPickT1CH4_Item"
+  name_shared_key: "e59b65a9-33d7-44a3-8f15-fb4056c07055"
+  name: "Improved Power Pick"
+  category: Melee
+  family: Power
+  heavy: false
+  two_handed: false
+  min_damage: 20
+  max_damage: 40
+  penetration: 40
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "MeleeAttack_ability"
+    ability_bp: "be721a48e3614ddbb86bf18503511c2c"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedAxe_AoEAbility"
+    ability_bp: "a4e6fe4661514cddb05ec43db1b7c296"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: SingleShot
+    ability_bp_name: "PowerPick_Ability"
+    ability_bp: "08c7e7f3ee8e4090b1f4f75023bbcf30"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  sources: "Unit - DLC1_VoidshipBridge: InfernusDaughter"
+  sources: "Unit - DLC1_VoidshipBridge: InfernusSister"
+  sources: "Unit - DLC1_VoidshipBridge: RT_Copy"
+  sources: "Vendor - DrusianChapter4_VendorTable_Base 92PF"
+}
+weapon {
+  guid: "1fa8c33d56e448bbaf9d76b029a67fc5"
+  blueprint_name: "PowerPickUnique1_Item"
+  name_key: "d3c5483a-c2dc-4ed4-98a7-7f3b868b92e5"
+  name: "Smiter"
+  description_key: "ad62c00b-9395-4302-924a-ab3f15bb9758"
+  description: "This weapon ignores the targets\' armour and deflection."
+  category: Melee
+  family: Power
+  heavy: false
+  two_handed: false
+  min_damage: 30
+  max_damage: 35
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "MeleeAttack_ability"
+    ability_bp: "be721a48e3614ddbb86bf18503511c2c"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedAxe_AoEAbility"
+    ability_bp: "a4e6fe4661514cddb05ec43db1b7c296"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: SingleShot
+    ability_bp_name: "PowerPick_Ability"
+    ability_bp: "08c7e7f3ee8e4090b1f4f75023bbcf30"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "e369565a17f4492a92240c6f0862a2fd"
+  extra_fact_name: "PowerPickUnique1_Feature"
+  sources: "Vendor - ExploratorChapter4_VendorTable_Base 142PF"
+}
+weapon {
+  guid: "9c190bd2019742db8697ac91da1d985e"
+  blueprint_name: "PowerPick_Item"
+  name_shared_key: "3f21653e-517c-480d-b748-3528c298a105"
+  name: "Power Pick"
+  category: Melee
+  family: Power
+  heavy: false
+  two_handed: false
+  min_damage: 10
+  max_damage: 16
+  penetration: 45
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "MeleeAttack_ability"
+    ability_bp: "be721a48e3614ddbb86bf18503511c2c"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedAxe_AoEAbility"
+    ability_bp: "a4e6fe4661514cddb05ec43db1b7c296"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: SingleShot
+    ability_bp_name: "PowerPick_Ability"
+    ability_bp: "08c7e7f3ee8e4090b1f4f75023bbcf30"
+    fx_bp_name: "Axe_AbilityFXSettings"
+    fx_bp: "612936da5a8948ccab3ac067e5d45144"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  sources: "Chest - LowerTunnels: PoorLootBig (8)"
+  sources: "Unit - ExportedPregens: AbelardCompanion_Level15_ExportedPregen"
+}
+

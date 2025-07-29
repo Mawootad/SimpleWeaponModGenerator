@@ -63,7 +63,7 @@ class WeaponParser(private val template: String) {
         map
     }
 
-    private val nameToGuidMap by lazy { guidToNameMap.entries.associate { it.value to it.key } }
+    val nameToGuidMap by lazy { guidToNameMap.entries.associate { it.value to it.key } }
 
     private val locations by lazy {
         val locations = Collections.synchronizedList<Pair<String, String>>(mutableListOf())
@@ -102,37 +102,6 @@ class WeaponParser(private val template: String) {
             if (pair != null) strings += pair
         }
         strings
-    }
-
-    fun getBpsFromNames(weapon: Weapon) = weapon.copy {
-        fun getBpOrUseBpLikeString(name: String) = when {
-            name.isEmpty() -> ""
-            name in nameToGuidMap -> nameToGuidMap[name]!!
-            name.matches("""[a-f0-9]{32}""".toRegex()) -> name
-            else -> {
-                println("Couldn't find guid for BP $name, ignoring")
-                null
-            }
-        }
-
-        if (extraFactName.size != extraFact.size) {
-            extraFact.clear()
-            extraFact += extraFactName.mapNotNull { getBpOrUseBpLikeString(it) }
-        }
-
-        fun lookupAbility(ability: WeaponAbility) = ability.copy {
-            if (hasFxBpName() && !hasFxBp()) getBpOrUseBpLikeString(fxBpName)?.let { fxBp = it }
-            if (hasAbilityBpName() && !hasAbilityBp()) getBpOrUseBpLikeString(abilityBpName)?.let { abilityBp = it }
-            if (hasOnHitActionName() && !hasOnHitActions()) getBpOrUseBpLikeString(onHitActionName)?.let {
-                onHitActions = it
-            }
-        }
-
-        if (hasAbility1()) ability1 = lookupAbility(ability1)
-        if (hasAbility2()) ability2 = lookupAbility(ability2)
-        if (hasAbility3()) ability3 = lookupAbility(ability3)
-        if (hasAbility4()) ability4 = lookupAbility(ability4)
-        if (hasAbility5()) ability5 = lookupAbility(ability5)
     }
 
     val weaponsWithStrings by lazy {

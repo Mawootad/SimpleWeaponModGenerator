@@ -1,0 +1,33 @@
+{
+  "Classification": "Knife",
+  "Components": [
+    {
+      "PatchType": "Prepend",
+      "NewElement": {
+        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+        "name": "$AddFactToEquipmentWielder$3d6359e7-d722-bf7b-0ca7-23438a144ed9",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "",
+          "name": ""
+        },
+        "m_Overrides": [],
+        "m_Fact": "!bp_7712185d9ea049609fda2784a6ca75ce"
+      }
+    },
+    {
+      "PatchType": "Prepend",
+      "NewElement": {
+        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
+        "name": "$AddFactToEquipmentWielder$f843d36c-2c58-3562-14eb-940e4a846576",
+        "m_Flags": 0,
+        "PrototypeLink": {
+          "guid": "",
+          "name": ""
+        },
+        "m_Overrides": [],
+        "m_Fact": "!bp_4b8e2dbe861b4067bcfe96ca4ff7b16d"
+      }
+    }
+  ]
+}

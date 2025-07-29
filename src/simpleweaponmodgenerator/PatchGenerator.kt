@@ -7,12 +7,47 @@ import proto.weapon.weapon
 import simpleweaponmodgenerator.Main.NONE_TEXT
 import kotlin.text.isNotEmpty
 import kotlinx.serialization.json.*
+import proto.weapon.copy
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.security.MessageDigest
+import kotlin.collections.contains
 
 object PatchGenerator {
+    fun getBpsFromNames(weapon: Weapon, nameToGuidMap: () -> Map<String, String>) = weapon.copy {
+        fun getBpOrUseBpLikeString(name: String) = when {
+            name.isEmpty() -> ""
+            name in nameToGuidMap() -> nameToGuidMap()[name]!!
+            name.matches("""[a-f0-9]{32}""".toRegex()) -> name
+            else -> {
+                println("Couldn't find guid for BP $name, ignoring")
+                null
+            }
+        }
+
+        guid = getBpOrUseBpLikeString(blueprintName) ?: return@copy
+
+        if (extraFactName.size != extraFact.size) {
+            extraFact.clear()
+            extraFact += extraFactName.mapNotNull { getBpOrUseBpLikeString(it) }
+        }
+
+        fun lookupAbility(ability: WeaponAbility) = ability.copy {
+            if (hasFxBpName() && !hasFxBp()) getBpOrUseBpLikeString(fxBpName)?.let { fxBp = it }
+            if (hasAbilityBpName() && !hasAbilityBp()) getBpOrUseBpLikeString(abilityBpName)?.let { abilityBp = it }
+            if (hasOnHitActionName() && !hasOnHitActions()) getBpOrUseBpLikeString(onHitActionName)?.let {
+                onHitActions = it
+            }
+        }
+
+        if (hasAbility1()) ability1 = lookupAbility(ability1)
+        if (hasAbility2()) ability2 = lookupAbility(ability2)
+        if (hasAbility3()) ability3 = lookupAbility(ability3)
+        if (hasAbility4()) ability4 = lookupAbility(ability4)
+        if (hasAbility5()) ability5 = lookupAbility(ability5)
+    }
+
     private fun String.enumNoneToNone() = if (endsWith("_NONE")) NONE_TEXT else this
 
     private val JSON_FORMAT = Json {

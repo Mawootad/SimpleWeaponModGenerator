@@ -1,0 +1,533 @@
+# proto-file: proto/weapon/Weapon.proto
+# proto-message: weapon.WeaponList
+
+weapon {
+  guid: "e4de2933901849219097c208b2e6d8f0"
+  blueprint_name: "Blaster_Item"
+  name_shared_key: "6211664e-e2cc-4c5d-b906-bc6d2d84d556"
+  name: "Blaster"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Basic
+  family: Laser
+  heavy: false
+  two_handed: true
+  min_damage: 20
+  max_damage: 32
+  penetration: 50
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 15
+  ammo: 10
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BlasterAoEAbility"
+    ability_bp: "a39e837b419b4b49a06951650718d074"
+    fx_bp_name: "DrukhariBlasterDarkLance_Shot_AbilityFXSettings"
+    fx_bp: "0c5583b084c5444d941157157113da50"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "Bolter_BoltShot_AbilityFXSettings"
+    fx_bp: "51440c65ca9048d9bc2765dcbaf9f83f"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariSniper_Ranged_Portals"
+  sources: "Unit - Ch03_GrandSpectacle: DrukhariWychHeavyRange_GrandSpectacle_unit"
+  sources: "Unit - DLC2_BoardedShip_Bridge: BoardedShip_OfficerAoERange_Elite"
+}
+weapon {
+  guid: "317053da44e74d98b2618af16580d514"
+  blueprint_name: "BlastPistolT2CH03_Item"
+  name_key: "ea960eaf-a3ed-485d-9358-8e318408b261"
+  name: "[Ryza-Pattern] Blast Pistol"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 24
+  max_damage: 36
+  penetration: 80
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 12
+  ammo: 10
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BlastPistolAoEAbility"
+    ability_bp: "b2aae11f1461415dbc4bf59b50ed5dec"
+    fx_bp_name: "LanceShot_AbilityFXSettings_D16"
+    fx_bp: "396399c0d49d4fd585a58e1e05512a2e"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Unit - CH05_MarazhaiBloodright: Nazrakey"
+}
+weapon {
+  guid: "94dac8fb47b24c449024fff7c12c1f31"
+  blueprint_name: "BlastPistol_Item"
+  name_key: "4d9429d9-e3ff-4199-a107-0619a73e4efd"
+  name: "Blast Pistol"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 15
+  max_damage: 25
+  penetration: 60
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 12
+  ammo: 10
+  rate_of_fire: 1
+  ability1 {
+    type: AOE
+    ability_bp_name: "BlastPistolAoEAbility"
+    ability_bp: "b2aae11f1461415dbc4bf59b50ed5dec"
+    fx_bp_name: "LanceShot_AbilityFXSettings_D12"
+    fx_bp: "fc3b2cf512b24e7eaa32bd746d829940"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Unit - Ch02_DeadlyGardens: DrukhariSybariteDeadlyGardens"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariKabaliteHeavy"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariThrallmaster"
+  sources: "Unit - Ch02_DargonusGazebo: DrukhariWych_Dargonus_Hekatrix"
+  sources: "Unit - Ch04_TheDoor: DrukhariFarseer"
+  sources: "Unit - CH05_MarazhaiBloodright: Drukhari_Nazrakey_MeleeRanged_Boss_MarazhaiQ2"
+  sources: "Unit - Ch04_Canteena: FootfallPirateVendor_Rizza_Ch_4"
+  sources: "Unit - Ch05_Epitaph: Ch05Inquisitor_Heinrix_unit"
+}
+weapon {
+  guid: "f47d4365f4a94452bceb66830d901ff4"
+  blueprint_name: "DarkLance_Item"
+  name_shared_key: "44302bba-ec67-4330-8569-a91dee8db672"
+  name: "Dark Lance"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Heavy
+  family: Laser
+  heavy: true
+  two_handed: true
+  min_damage: 20
+  max_damage: 28
+  penetration: 60
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 20
+  ammo: 1
+  rate_of_fire: 1
+  ability1 {
+    type: AOE
+    ability_bp_name: "DarkLanceAoEAbility"
+    ability_bp: "8a31e565093b4487bbb2679a964296d4"
+    fx_bp_name: "LanceShot_AbilityFXSettings_D20"
+    fx_bp: "7a68e4b98a4745d9bb36bb0c16854d57"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 50
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariYremeriss_Thrallmaster_unit"
+  sources: "Vendor - LiegeChapter2_VendorTable_Base 64PF"
+}
+weapon {
+  guid: "bb671e6d472f498da91546ce454f8db3"
+  blueprint_name: "EliteBlastPistol_Item"
+  name_key: "8c1496d8-f77a-43c4-9050-d00f21be1bd3"
+  name: "Elite Blast Pistol"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 26
+  max_damage: 40
+  penetration: 70
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 12
+  ammo: 10
+  rate_of_fire: 1
+  ability1 {
+    type: AOE
+    ability_bp_name: "BlastPistolAoEAbility"
+    ability_bp: "b2aae11f1461415dbc4bf59b50ed5dec"
+    fx_bp_name: "LanceShot_AbilityFXSettings_D12"
+    fx_bp: "fc3b2cf512b24e7eaa32bd746d829940"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Chest - Quetza-al_Khet: Loot_Trash_Totem_WeaponInRiver"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariSybarite"
+  sources: "Unit - Ch04_FootfallSewersCh04: Falco"
+  sources: "Unit - MarazhaiCompanion: MarazhaiCompanionNPC"
+}
+weapon {
+  guid: "3e39551ee147459fa94693571237559e"
+  blueprint_name: "DesolationBlastPistolItem"
+  name_key: "91ffc29e-8bcd-4a61-b468-364e4ecd7135"
+  name: "Desolation Blast Pistol"
+  description_key: "a7d69fa7-208f-4e96-8855-d0459a8aac11"
+  description: "Every {g|Encyclopedia:HitSequenceGlossary}hit{/g} from this pistol inflicts +1 stack of {g|Encyclopedia:MeltingEffect}melting{/g}."
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 23
+  max_damage: 35
+  penetration: 75
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 12
+  ammo: 10
+  rate_of_fire: 1
+  ability1 {
+    type: AOE
+    ability_bp_name: "BlastPistolAoEAbility"
+    ability_bp: "b2aae11f1461415dbc4bf59b50ed5dec"
+    fx_bp_name: "LanceShot_AbilityFXSettings_D12"
+    fx_bp: "fc3b2cf512b24e7eaa32bd746d829940"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "ad07e6f9aacc4f96827ce70190269ed5"
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "DesolationBlastPistolFeature"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Chest - CR0: ReavingTempestSpire_GoodLoot03"
+  sources: "Unit - ExportedPregens: Henrix35Yremeris_ExportedPregen"
+  sources: "Unit - ExportedPregens: JaeCompanion_lvl38_treasureworld_ExportedPregen"
+  sources: "Unit - ExportedPregens: jae_lv38_chordafight_ExportedPregen"
+  sources: "Unit - MarazhaiCompanion: MarazhaiCompanionNPC"
+}
+weapon {
+  guid: "1a1f578053084262b10658969b3f9803"
+  blueprint_name: "DesolationDarkLanceItem"
+  name_shared_key: "f04a11d7-8102-4dd5-9d66-cbe412d5cc22"
+  name: "Pitch-Black Desolator"
+  description_shared_key: "1fa8656d-ecde-427a-b2ce-6f6278a87075"
+  description: "This weapon inflicts a special immolation effect that inflicts {g|Encyclopedia:BurningEffect}burning{/g} (8) but cannot be removed until the end of combat. The target also must pass a {g|Encyclopedia:WarhammerToughness}Toughness{/g} {g|Encyclopedia:ResistanceTest}resistance test{/g} with a +5 {g|Encyclopedia:Bonus}bonus{/g} or become {g|Encyclopedia:Stun}stunned{/g} for 1 {g|Encyclopedia:Round}round{/g}."
+  category: Basic
+  family: Laser
+  heavy: false
+  two_handed: true
+  min_damage: 25
+  max_damage: 40
+  penetration: 50
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 15
+  ammo: 10
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BlasterAoEAbility"
+    ability_bp: "a39e837b419b4b49a06951650718d074"
+    fx_bp_name: "Darklight_Shot_AbilityFXSettings"
+    fx_bp: "8ea259c4229e4283b7d4e19c48c6f6d4"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "37e8e845e7ac4f7888f82879a378fb65"
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "DesolationDarkLanceFeature"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Vendor - HaemunculiChapter3_VendorTable_Advanced 0PF"
+}
+weapon {
+  guid: "5fc7cabd5a404a0bb2395d739dd5cf66"
+  blueprint_name: "BlasterCH4Unique_Item"
+  name_shared_key: "29aa2ba6-9221-4e3e-bd9f-b0a7010af9ef"
+  name: "Crucible of Torment"
+  description_shared_key: "4b8962db-b706-4ffe-9edd-84c4bb2cc2dc"
+  description: "This weapon has an additional extremely short-range {g|Encyclopedia:Ability}ability{/g} (2 cells) and increased {g|Encyclopedia:DamageGlossary}damage{/g} (50%)."
+  category: Basic
+  family: Laser
+  heavy: false
+  two_handed: true
+  min_damage: 37
+  max_damage: 47
+  penetration: 80
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 15
+  ammo: 10
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BlasterAoEAbility"
+    ability_bp: "a39e837b419b4b49a06951650718d074"
+    fx_bp_name: "LanceShot_AbilityFXSettings_D15"
+    fx_bp: "1ff556c825b7482cb904a85d6cbd491c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BlasterCH4Unique_Ability"
+    ability_bp: "e9629679762543e18040f6ea2d93ba76"
+    fx_bp_name: "LanceShot_AbilityFXSettings_D2"
+    fx_bp: "250246e5887b4828b76f4183df7ffeec"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact: "576b004c63be470fb53ea7347c277773"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  extra_fact_name: "BlasterCH4Unique_Feature"
+  sources: "Unit - ExportedPregens: MarazhaiCompanion_Level39_SolarParty_ExportedPregen"
+  sources: "Vendor - LiegeChapter4_VendorTable_Base 116PF"
+}
+weapon {
+  guid: "0a26bcf222714df8bd54fc9c9792a258"
+  blueprint_name: "BlasterUniqueCH05_Item"
+  name_shared_key: "c6ea2cb6-70d9-4e23-9320-c66e7f3af4b0"
+  name: "Grave Foreboding"
+  description_shared_key: "1e256f34-2095-49a2-950c-b3164752ee90"
+  description: "This blaster deals an additional {uip|Damage|4c6a10640e4d4889a961a73c0ee3dc02} {g|Encyclopedia:DirectDamage}direct damage{/g}."
+  category: Basic
+  family: Laser
+  heavy: false
+  two_handed: true
+  min_damage: 37
+  max_damage: 56
+  penetration: 25
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 15
+  ammo: 10
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BlasterAoEAbility"
+    ability_bp: "a39e837b419b4b49a06951650718d074"
+    fx_bp_name: "DrukhariBlasterDarkLance_Shot_AbilityFXSettings"
+    fx_bp: "0c5583b084c5444d941157157113da50"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "Bolter_BoltShot_AbilityFXSettings"
+    fx_bp: "51440c65ca9048d9bc2765dcbaf9f83f"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp_name: "AeldariWeaponProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact: "4c6a10640e4d4889a961a73c0ee3dc02"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  extra_fact_name: "BlasterUniqueCH05_Feature"
+  sources: "Chest - Marazhai_Bloodright: Drukhari_Betreyal"
+  sources: "Unit - YrlietCompanion: YrlietCompanion_Ch05_Finale"
+  sources: "Unit - YrlietCompanion: YrlietCompanion_Ch05_TrueStart"
+}
+weapon {
+  guid: "81e13cf23b024fbabf145c97a2894b3e"
+  blueprint_name: "GlanceOfTheVoidDarkLance_Item"
+  name_shared_key: "9bfa1508-9cec-4b67-8d94-cd8712bdb4a1"
+  name: "Gaze of the Void"
+  description_shared_key: "005cb65d-1daa-4972-85ab-d9ca780a6a19"
+  description: "This weapon\'s attacks project additional rays, each dealing 30 {g|Encyclopedia:EnergyDamage}energy damage{/g} to 3 random enemies in a 10-cell radius around the primary target."
+  category: Heavy
+  family: Laser
+  heavy: true
+  two_handed: true
+  min_damage: 45
+  max_damage: 55
+  penetration: 80
+  dodge_reduction: 30
+  additional_hit_chance: 10
+  recoil: 0
+  max_range: 20
+  ammo: 1
+  rate_of_fire: 1
+  ability1 {
+    type: AOE
+    ability_bp_name: "DarkLanceAoEAbility"
+    ability_bp: "8a31e565093b4487bbb2679a964296d4"
+    fx_bp_name: "LanceShot_AbilityFXSettings_D25"
+    fx_bp: "cf400e55ab024f8eb3f5debed76306ba"
+    on_hit_action_name: ""
+    ap: 3
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 50
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact: "504bcdd0b1614f5dba13d1b6f53e049e"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  extra_fact_name: "GlanceOfTheVoidDarkLance_Feature"
+  sources: "Chest - CR0: TechArcGrave_Lair_NecronGoodLoot"
+}
+

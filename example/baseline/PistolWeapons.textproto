@@ -1,0 +1,2211 @@
+# proto-file: proto/weapon/Weapon.proto
+# proto-message: weapon.WeaponList
+
+weapon {
+  guid: "6e4e860dbd5c4e9980a690ca26b125d2"
+  blueprint_name: "AutopistolT1_Item"
+  name_key: "fbd753d1-54a9-4602-ac51-82b0bd9f3752"
+  name: "Improved Autopistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 4
+  max_damage: 5
+  penetration: 5
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 8
+  ammo: 12
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Chest - JailPlanetoid: Loot_Uniq_Hidden - LootInWall"
+  sources: "Chest - LowerTunnels: IL_Awarnes_Loot (6)"
+}
+weapon {
+  guid: "0ca6b2b96f914d21926d84ecfd839b6f"
+  blueprint_name: "AutopistolT2CH02_Item"
+  name_shared_key: "f2f1dc3c-b52e-4508-b300-e9f5643a25d6"
+  name: "Autopistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 4
+  max_damage: 6
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 7
+  ammo: 12
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Unit - Ch02_FootfallDock: FootfallBanditSwarm"
+  sources: "Unit - DLC1_OfficerDeckPeacefull: ChirurgeonMajoris"
+  sources: "Unit - DLC1_OfficerDeckPeacefull: MasterofDiscipline"
+  sources: "Unit - DLC1_OfficerDeckPeacefull: MasterofDiscipline_Prologue"
+  sources: "Unit - DLC1_VoidshipReactor: MDLadyOfSteel"
+  sources: "Unit - Units: BoardedShip_Pirate_Shield_Common_Unit"
+  sources: "Unit - Units: BoardedShip_Pirate_Shield_Hard_Unit"
+  sources: "Vendor - LowerTunnels_SF_CorpseLoot 13PF"
+}
+weapon {
+  guid: "2802cf103af344f8b9d780ae4fb74a25"
+  blueprint_name: "AutopistolTier2_Item"
+  name_key: "a611e13e-ce0a-460c-b8bd-75632a5c5a50"
+  name: "Orthlak Mark IV"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 5
+  max_damage: 8
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 10
+  ammo: 12
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Chest - CR22: AdeptusMechanicus_RebelBaseContainer"
+  sources: "Unit - Ch00_OfficersDeck: OldMasterofDiscipline"
+  sources: "Unit - Ch00_OfficersDeck: PrologueMercenaryCaptain"
+  sources: "Unit - DLC1_MainStoryUnit: MasterInfernus"
+  sources: "Unit - ExportedPregens: zin_22_AbelardCompanion_ExportedPregen"
+}
+weapon {
+  guid: "c0f657dfd9ad4462906d0d4a376c52a5"
+  blueprint_name: "Autopistol_Item"
+  name_shared_key: "f2f1dc3c-b52e-4508-b300-e9f5643a25d6"
+  name: "Autopistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 3
+  max_damage: 4
+  penetration: 5
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 10
+  ammo: 12
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Chest - FootFallDock: Loot_Good - EnCorpseV2"
+  sources: "Chest - FootFallDock: Loot_Uniq - puzzle"
+  sources: "Chest - VoidshipCryptArena: Iloot_loot_object_Trash (1)"
+  sources: "Unit - Ch00_OfficersDeck: OfficersDeckCrew"
+  sources: "Unit - Ch00_OfficersDeck: OfficersDeckCrew2"
+  sources: "Unit - Ch01_JailPlanetoid: JailPlanetoidPrisoner"
+  sources: "Unit - Ch01_JailPlanetoid: JailPlanetoidPrisonerTortured"
+  sources: "Unit - Ch01_Starport: StarPortJaspar"
+  sources: "Unit - Ch02_AgriWorldJungle: JungleWorldRebelBlinder"
+  sources: "Unit - Ch02_AgriWorldJungle: JungleWorldRebelWeak"
+  sources: "Unit - Ch02_AgriWorldTown: ServantWithWeaponPistol"
+  sources: "Unit - Ch02_DaringHeirGuttedShip: HalfCrazyServiceman"
+  sources: "Unit - Ch02_FootFallAtrium: FootfallEnforcer_FreakshowScene"
+  sources: "Unit - Ch02_FootFallAtrium: FootfallPirateSwarm"
+  sources: "Unit - Ch02_FootFallAtrium: Footfall_AngryCommoner"
+  sources: "Unit - Ch02_FootfallDock: FootfallAnver_MeleeRanged_Swarm"
+  sources: "Unit - Ch02_FootfallDock: FootfallBanditPeacefull1"
+  sources: "Unit - Ch02_FootfallDock: FootfallBandit_Quicksilver"
+  sources: "Unit - Ch02_FootfallDock: FootfallBandit_Quicksilver2"
+  sources: "Unit - Ch02_FootfallDock: FootfallPeacefullBandit"
+  sources: "Unit - Ch02_FootfallDock: Footfall_Enforcer_cutscene"
+  sources: "Unit - Ch02_FootfallDock: Footfall_JaeCanteenaSceneBandit1"
+  sources: "Unit - Ch02_RandomEncounters: PossessedSodierFireGrenadeRandomEncounter"
+  sources: "Unit - Ch02_RogueTraderPalace: RogueTraderGuardSergantPeaceful"
+  sources: "Unit - Ch03_CommorraghArena: ArenaGladiator2"
+  sources: "Unit - DLC1_LowerTunnels: LT_Beggar_Guard_Unique"
+  sources: "Unit - DLC1_VoidshipReactor: VoidshipReactor_Officer"
+  sources: "Unit - DLC1_VoidshipReliqary: OfficersDeckCrewChaosPrayer"
+  sources: "Unit - Ch02_RandomEncounters: MutantPsykerRandomEncounter"
+  sources: "Unit - Ch02_RandomEncounters: MutantPsykerSoulbindRandomEncounter"
+  sources: "Unit - Ch02_RandomEncounters: RE_DemonTransform_Grunt"
+  sources: "Unit - Ch02_RandomEncounters: RE_DemonTransform_NurgleBuboe"
+  sources: "Unit - Ch02_VoidshipBridge: VoidMaster"
+  sources: "Unit - FootfallAtrium: SideQuestSwindlerClerk1"
+  sources: "Unit - FootfallAtrium: SideQuestSwindlerClerk2"
+  sources: "Unit - Companions: CompanionCassiaPrototype"
+  sources: "Unit - Companions: CompanionIdiraPrototype"
+  sources: "Unit - CassiaCompanion: CassiaCompanion"
+  sources: "Unit - CassiaCompanion: CassiaCompanion_Ch02_TrueStart"
+  sources: "Unit - CassiaCompanion: CassiaCompanion_ForUnitSpawner"
+  sources: "Unit - ExportedPregens: CassiaCompanion_Level22_NeiliusParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: CassiaCompanion_Level28_TesseraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: CassiaCompanion_Level39_SolarParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: Heinrix19Chapel_ExportedPregen"
+  sources: "Unit - ExportedPregens: IdiraCompanion_Level19_HarmonParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: IdiraCompanion_Level39_SolarParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: VasiliyHeinrix_15LvL_ExportedPregen"
+  sources: "Unit - ExportedPregens: VasiliyKassia_15LvL_ExportedPregen"
+  sources: "Unit - IdiraCompanion: IdiraCompanion"
+  sources: "Unit - IdiraCompanion: PC_Human_ChordaCompanion_F_HM"
+  sources: "Unit - JaeCompanion: SmugglerCompanion_Bar"
+}
+weapon {
+  guid: "7524baed1a9349f79742b4403b76cabd"
+  blueprint_name: "HellPistolT2CH04_Item"
+  name_shared_key: "4870a512-c447-4842-9b63-03e99529dad6"
+  name: "Hot Shot Laspistol"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 15
+  max_damage: 25
+  penetration: 35
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 5
+  max_range: 12
+  ammo: 20
+  rate_of_fire: 4
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "Hellgun_Shot_AbilityFXSettings"
+    fx_bp: "c3960cf4b54a4caab4a5ee628ad740e4"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "Hellgun_Shot_AbilityFXSettings"
+    fx_bp: "c3960cf4b54a4caab4a5ee628ad740e4"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "Hellgun_Shot_AbilityFXSettings"
+    fx_bp: "c3960cf4b54a4caab4a5ee628ad740e4"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Unit - DLC2_Ch04_TreasureWorld: TreasureWorld_VIP_MadClerk"
+  sources: "Unit - FinalCompanions: Winterscale_Companion"
+}
+weapon {
+  guid: "082334e491e34c65b464c90e317d4e7f"
+  blueprint_name: "HellPistol_Item"
+  name_shared_key: "4870a512-c447-4842-9b63-03e99529dad6"
+  name: "Hot Shot Laspistol"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 11
+  penetration: 35
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 5
+  max_range: 12
+  ammo: 20
+  rate_of_fire: 3
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "Hellgun_Shot_AbilityFXSettings"
+    fx_bp: "c3960cf4b54a4caab4a5ee628ad740e4"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "Hellgun_Shot_AbilityFXSettings"
+    fx_bp: "c3960cf4b54a4caab4a5ee628ad740e4"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "Hellgun_Shot_AbilityFXSettings"
+    fx_bp: "c3960cf4b54a4caab4a5ee628ad740e4"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Unit - Ch01_Starport: Starport_Psyker"
+  sources: "Unit - Ch04_LairCliff: ChaosCultist_Psyker"
+  sources: "Unit - DLC2_Ch04_TreasureWorld: TreasureWorld_FeralGuard_Bomber"
+  sources: "Unit - DLC2_Ch04_TreasureWorld: TreasureWorld_FeralGuard_BomberAntitank"
+  sources: "Unit - Ch02_RogueTraderPalace: NaviRadicalLeader"
+  sources: "Unit - Ch04_CrownWorld: CW_NaviRadicalLeader"
+  sources: "Unit - Ch04_CrownWorld: CW_NaviTraditionalistLeader"
+  sources: "Unit - Ch04_Quetza-al_Khet: Quetza-al_Archmilitant"
+  sources: "Unit - Ch04_Quetza-al_Khet: Quetza-al_ArchmilitantOutpost"
+  sources: "Unit - Ch04_Quetza-al_Khet: Quetza-al_ArchmilitantVillage"
+  sources: "Unit - Ch04_SalisPrine_ItsTime: ItsTime_Afterlight_Speaker"
+  sources: "Unit - FakeAndWeak_WinterscaleParty: Quetza_Fake_Archmilitant"
+  sources: "Unit - ExportedPregens: AbelardCompanion_Level29_ExportedPregen"
+}
+weapon {
+  guid: "5ed35ddd47dd4806b2c3b39b4754730c"
+  blueprint_name: "LasPistolT1CH02_Item"
+  name_shared_key: "b016cd74-ce1f-4d4f-af65-942cd972dd3b"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 10
+  penetration: 15
+  dodge_reduction: 40
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 20
+  rate_of_fire: 3
+  ability1 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+}
+weapon {
+  guid: "cf0ad5221f2c4c7bb48af16794c11117"
+  blueprint_name: "LasPistolT1CH04_Item"
+  name_shared_key: "fe72c48b-39ac-4058-b752-65ae6d2e6561"
+  name: "Laspistol"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 14
+  max_damage: 20
+  penetration: 20
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 20
+  rate_of_fire: 4
+  ability1 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+  sources: "Chest - CR0: Forest_HideenLoot1"
+}
+weapon {
+  guid: "c19182971ae54259ba718566486ef204"
+  blueprint_name: "LasPistol_Item"
+  name_shared_key: "fe72c48b-39ac-4058-b752-65ae6d2e6561"
+  name: "Laspistol"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 6
+  max_damage: 8
+  penetration: 5
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 20
+  rate_of_fire: 2
+  ability1 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  sources: "Chest - CR0: ImperiumMilitary_PrologueAP_Patent_Chest01"
+  sources: "Chest - CR0: ImperiumMilitary_PrologueAP_Patent_Chest03"
+  sources: "Chest - CR33: ImperiumMilitary_PrisonPitTrashWeapon"
+  sources: "Chest - EE_DestroyedBlackShip: Loot_Poor - BlackShipArmoury"
+  sources: "Chest - LastStand_Lair1: Loot_Poor_AmmoBox_Loot (1) - 100"
+  sources: "Chest - LastStand_Lair1: Loot_Poor_AmmoBox_Loot (2) - 100"
+  sources: "Chest - TheLure_Lair4: Loot_Poor_SolderCorpse_MainChest - 50"
+  sources: "Chest - CR26: Forest_generic_locker_02 (1)_loot_object"
+  sources: "Unit - Ch00_OfficersDeck: OfficerDeckEnforcerOfficer"
+  sources: "Unit - Ch00_OfficersDeck: OfficerDeckNavyCrewMember1"
+  sources: "Unit - Ch00_OfficersDeck: OfficerDeckNavyCrewMember2"
+  sources: "Unit - Ch00_OfficersDeck: OfficerDeckNavyPriestOfficer"
+  sources: "Unit - Ch00_OfficersDeck: OfficersDeckCultistPirate_Shooter"
+  sources: "Unit - Ch00_OfficersDeck: OfficersDeck_NavyCrewMember_wrongForm"
+  sources: "Unit - Ch01_NavisNobiliteStation: NavisNobilite_Commander"
+  sources: "Unit - Ch01_NavisNobiliteStation: NavisNobilite_Medic_CassiaRoom"
+  sources: "Unit - Ch01_NavisNobiliteStation: NavisNobilite_Medic_Stage1"
+  sources: "Unit - Ch01_NavisNobiliteStation: NavisNobilite_MeleeRanged_MutantCommander"
+  sources: "Unit - Ch01_NavisNobiliteStation: NavisNobilite_MutantCommander"
+  sources: "Unit - Ch01_Starport: StarportRebelLaspistol"
+  sources: "Unit - Ch01_Starport: StarportRebelLeaderSpecialist"
+  sources: "Unit - Ch01_Starport: StarportRebelNoMoveLaspistol"
+  sources: "Unit - Ch01_Starport: StarportRebelSpecialist"
+  sources: "Unit - Ch02_AgriWorldTown: GovernorSecurityMeister"
+  sources: "Unit - Ch02_AgriWorldTown: ServantWithWeaponLas"
+  sources: "Unit - Ch02_FootfallDock: HieronimusGuard"
+  sources: "Unit - Ch02_VoidshipBridge: BridgeCrewMemberBloodGuard"
+  sources: "Unit - Ch02_VoidshipBridge: BridgeCrewMemberGuard"
+  sources: "Unit - Ch02_VoidshipBridge: BridgeCrewMemberGuard_Chaos"
+  sources: "Unit - Ch02_VoidshipBridge: BridgeCrewMemberGuard_Medic"
+  sources: "Unit - Ch02_VoidshipBridge: BridgeCrewMemberNavy"
+  sources: "Unit - Ch02_VoidshipBridge: BridgeCrewMemberNavy2"
+  sources: "Unit - Ch02_VoidshipBridge: BridgeCrewMemberNavyFemale"
+  sources: "Unit - Ch02_VoidshipBridge: RE_BridgeUnique_Crew"
+  sources: "Unit - Ch03_CommorraghArena: HumanGladiator_Ranged_Arena_02"
+  sources: "Unit - Ch04_FootfallAtrium: FootfallCrewMemberGuard"
+  sources: "Unit - Ch_00_VoidshipOfficerDeck_AfterPorlogue: DeathCultist_GuardWBanner"
+  sources: "Unit - Ch_00_VoidshipOfficerDeck_AfterPorlogue: DeathCultist_Guard_Female"
+  sources: "Unit - Ch_00_VoidshipOfficerDeck_AfterPorlogue: DeathCultist_Prisoner"
+  sources: "Unit - Ch_00_VoidshipOfficerDeck_AfterPorlogue: DeathCultist_Prisoner_Female"
+  sources: "Unit - Ch_00_VoidshipOfficerDeck_AfterPorlogue: DeathCultist_Prisoner_Male"
+  sources: "Unit - DLC1_LowerTunnels: LT_AngryEnforcer_Unique"
+  sources: "Unit - DLC1_LowerTunnels: LT_Chaos_Preacher_Unique"
+  sources: "Unit - DLC1_LowerTunnels: LT_Clerk"
+  sources: "Unit - DLC1_LowerTunnels: LT_EnforcerChief_Unique"
+  sources: "Unit - DLC1_LowerTunnels: LT_EnforcerGuard"
+  sources: "Unit - DLC1_LowerTunnels: LT_EnforcerMed"
+  sources: "Unit - DLC1_LowerTunnels: LT_EnforcerOficer"
+  sources: "Unit - DLC1_LowerTunnels: LT_ImpatientEnforcer"
+  sources: "Unit - DLC1_LowerTunnels: LT_Intendant"
+  sources: "Unit - DLC1_LowerTunnels: LT_Operator"
+  sources: "Unit - DLC1_LowerTunnels: LT_Preacher"
+  sources: "Unit - DLC1_LowerTunnels: LT_SickEnforcer"
+  sources: "Unit - DLC1_LowerTunnels: LT_Toliman"
+  sources: "Unit - DLC1_LowerTunnels: LT_Tolimans"
+  sources: "Unit - DLC2_FeudalWorld: FW_CrewMemberGuard"
+  sources: "Unit - DLC2_FeudalWorld: FW_Preacher"
+  sources: "Unit - DLC2_OfficerDeck: OfficerDeck_WoundedCrewMember"
+  sources: "Unit - Ch02_RandomEncounters: MutantPyromancerRandomEncounter"
+  sources: "Unit - Ch01_JailPlanetoid: JailPlanetoid_Pilot"
+  sources: "Unit - Ch01_StarPort: StarPortPilot"
+  sources: "Unit - Ch01_StarPort: StarPortSergeant"
+  sources: "Unit - Ch01_StarPort: StarPortsignalman"
+  sources: "Unit - Ch01_TaintedStreets: TaintedStreetsRebel"
+  sources: "Unit - Ch01_TaintedStreets: YoungGuard"
+  sources: "Unit - Ch01_TaintedStreets: YoungGuard_impostor"
+  sources: "Unit - Ch02_LowerDecks: RabbleLeaderOld"
+  sources: "Unit - Ch02_LowerDecks: RabbleLeaderWeak"
+  sources: "Unit - Ch03_Abduction_Yrliet: OfficerInTerror"
+  sources: "Unit - Ch03_CommorraghArena: CommorraghCommissar"
+  sources: "Unit - Ch03_CommorraghArena: CommorraghCommissarWithPistol"
+  sources: "Unit - Ch04_Canteena: Vladaym_Final"
+  sources: "Unit - DLC1_DeathCultTemple: Initiation_Enforcers"
+  sources: "Unit - DLC1_OfficerDeckPeacefull: EnforcerDetective1"
+  sources: "Unit - DLC1_OfficerDeckPeacefull: EnforcerDetective2"
+  sources: "Unit - DLC1_OfficerDeckPeacefull: EnforcerDetective3"
+  sources: "Unit - DLC1_OfficerDeckPeacefull: KindEnforcer"
+  sources: "Unit - DLC1_OfficerDeckPeacefull: YetAnotherEnforcer"
+  sources: "Unit - DLC1_VoidshipBridge: OfficersDeckGuard_KibellahQ2KTC"
+  sources: "Unit - OurShipCrew: OurCrewGuard"
+  sources: "Unit - DLC1_LowerTunnels_StreetFight: LT_SF_NPC_CutSc_ClerkwithWeapon"
+  sources: "Unit - FootfallAtrium: FootfallAlmostDeadChordaAgent"
+  sources: "Unit - Opticon22: Footfall_HighEnginseerTrader_Opticon-22"
+  sources: "Unit - CassiaCompanion: CassiaCompanion"
+  sources: "Unit - CassiaCompanion: CassiaCompanion_Ch02_TrueStart"
+  sources: "Unit - ExportedPregens: IdiraCompanion_Level7_EtelParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: PlayerRT_Level7_EtelParty_ExportedPregen"
+}
+weapon {
+  guid: "bb5718e4f32941769ce934dd21543513"
+  blueprint_name: "NeedlePistol_Item"
+  name_key: "669321fd-653f-42c1-ab0e-9ccb1b4591f1"
+  name: "Needle Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 13
+  max_damage: 20
+  penetration: 30
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 5
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "ToxicNeedle_PistolAbility"
+    ability_bp: "3ca644cdb2404f71ae84b336850f2e66"
+    fx_bp_name: "NeedlePistol_Shot_AbilityFXSettings"
+    fx_bp: "eb9add1695f14d73bffd427b74d4dff0"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Unit - Ch02_AgriWorldTown: MutatedNobleRanged"
+  sources: "Unit - DLC1_LowerTunnels: LT_DeathCultist_Accident"
+  sources: "Unit - Ch02_AgriWorldTown: AgriWorldGovernor_Carapace"
+  sources: "Unit - Ch02_RogueTraderPalace: AhileasSkalandr"
+  sources: "Unit - Ch02_RogueTraderPalace: AhileasSkalandrRespirator"
+  sources: "Unit - Ch02_RogueTraderPalace: Clemence"
+  sources: "Unit - Ch02_RogueTraderPalace: Gouvernor"
+  sources: "Unit - Ch02_RogueTraderPalace: HighFactotum"
+  sources: "Unit - Ch02_RogueTraderPalace: TradeAmbassador"
+  sources: "Unit - Ch03_VectThroneRoom: AhileasSkalandr1"
+  sources: "Unit - DLC1_RogueTradePalace: Q2_ElderBrother"
+  sources: "Unit - DLC1_RogueTradePalace: Q2_ElderBrotherBridge"
+  sources: "Unit - DLC1_RogueTradePalace: Q2_ElderSister"
+  sources: "Unit - DLC1_RogueTradePalace: Q2_Father "
+  sources: "Unit - DLC1_RogueTradePalace: Q2_Mother"
+  sources: "Unit - DLC1_RogueTradePalace: Q2_YoungerBrother"
+  sources: "Unit - DLC1_RogueTradePalace: Q2_YoungerSister"
+  sources: "Unit - ExportedPregens: AbelardCompanion_level27_VasyaParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: AbelardCompanion_Lvl40_Bakula_ExportedPregen"
+  sources: "Unit - ExportedPregens: HeinrixCompanion_Level47_ExportedPregen"
+}
+weapon {
+  guid: "7878a07b10ce4715a14ab366a203ad94"
+  blueprint_name: "NeuroDisruptor_Item"
+  name_key: "0238a2e2-6f1a-43c0-8998-5257bbf3ce4c"
+  name: "Neuro Disruptor"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 30
+  max_damage: 46
+  penetration: 100
+  dodge_reduction: 10
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 22
+  ammo: 4
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "NeuroDisruptorSingleShot_PistolAbility"
+    ability_bp: "d5945b2cdf3a47d9ac651784ff6935aa"
+    fx_bp_name: "NeuroDisruptorSingleShot00_AbilityFXSettings"
+    fx_bp: "85ab8577b0cb4997ad4509f86f5c4560"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "NeuroDisruptorSingleShot00_AbilityFXSettings"
+    fx_bp: "85ab8577b0cb4997ad4509f86f5c4560"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp_name: "AeldariWeaponProficiencyFeature"
+  }
+  sources: "Unit - Ch04_CrownWorld: CrownWorldHarlequin_SilentSinger"
+  sources: "Unit - Ch04_CrownWorld: CrownWorldHarlequin_TroupeMaster"
+}
+weapon {
+  guid: "040c9c0ec1c3453d88ab289a41dff1d4"
+  blueprint_name: "PatternT1NeedlePistol_Item"
+  name_key: "5a196566-e7a9-43f5-b544-8dddecc713f9"
+  name: "Needle Pistol"
+  description_key: "ecfc92db-ca46-49f6-99c3-0aef51724a9e"
+  description: "Slows enemies and inflicts +1 stack of the {g|Encyclopedia:FatiguedEffect}fatigued{/g} effect."
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 13
+  max_damage: 20
+  penetration: 30
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 5
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "WeakeningToxicNeedle_PistolAbility"
+    ability_bp: "a638826c3f84406c9b6a121229805e8c"
+    fx_bp_name: "NeedlePistol_Shot_AbilityFXSettings"
+    fx_bp: "eb9add1695f14d73bffd427b74d4dff0"
+    on_hit_actions: "5cb109240b474acead76698eefc1fc5d"
+    on_hit_action_name: "NeedlePistol_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Unit - DLC1_CH04_VoidshipBridge: GenestealerNeedlePistol_Ranged_VoidshipBridge"
+  sources: "Vendor - PirateChapter2_VendorTable_Base 34PF"
+}
+weapon {
+  guid: "151141ef419646ce9caa562670a898c3"
+  blueprint_name: "RipperAutopistol_Item"
+  name_key: "62a02f58-313f-4de7-9a63-39d3714764fb"
+  name: "Ripper Autopistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 3
+  max_damage: 5
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 10
+  ammo: 16
+  rate_of_fire: 8
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Chest - CR0: Forest_ArmoryLoot"
+  sources: "Unit - Ch02_ForgeWorldAndHeart: CorruptedEnginseer"
+  sources: "Unit - Ch02_SpaceScavengers: ScavengerLeader"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Ahileas"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_BridgeGuard"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Court_Dream_Iremerris+Theodora"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Court_Dream_Maraja+Heinrix"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Court_Real_Harlequin"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Court_Real_Iremerris"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Court_Real_Marazhai"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Court_Real_Vect"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Inquisitor"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_InquisitorSoldier"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Vigdis"
+  sources: "Unit - ExportedPregens: ArgentaCompanion_Level15_ExportedPregen"
+}
+weapon {
+  guid: "9827f6f6bcc143928633c74a769b2e9d"
+  blueprint_name: "ScrappyAutopistol_Item"
+  name_key: "0865e87b-fe8c-43ec-9430-638c6ce1b4e0"
+  name: "Scrappy Autopistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 4
+  max_damage: 6
+  penetration: 0
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 10
+  ammo: 12
+  rate_of_fire: 4
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Unit - Ch01_NavisNobiliteStation: NavisNobilite_Ranged_AutopistolGuard"
+  sources: "Unit - Ch01_TaintedStreets: TaintedStreetsRebelRanged"
+  sources: "Unit - Ch02_FootfallDock: FootfallSuspiciousType"
+  sources: "Unit - Ch02_Lair2: UnderhivePistol"
+  sources: "Unit - Ch03_Prison: ImperialMisfit_MeleeRanged_Prison"
+  sources: "Unit - Ch01_UndehiveLair: Underhive_UniqueDemonVictim"
+  sources: "Unit - FootfallSlums: SuicideVladaimAgent"
+}
+weapon {
+  guid: "9fa99f0f43fd406bb2037a3d7819ef4b"
+  blueprint_name: "StubRevolverSingleShot_Item"
+  name_shared_key: "5509def5-aec8-454a-81b9-b625cda78ec9"
+  name: "Stub Revolver"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 11
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 15
+  recoil: 15
+  max_range: 12
+  ammo: 6
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+}
+weapon {
+  guid: "e48cf77df57149d3ad921460d7c15eee"
+  blueprint_name: "StubRevolverT1Tutorial_Item"
+  name_key: "479db496-5607-4ff4-9b17-d26767338090"
+  name: "Well-Maintained Stub Revolver"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 12
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 12
+  ammo: 6
+  rate_of_fire: 2
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Chest - VoidshipOfficersDeck: ImperiumMilitary_PrologueOD_CorridorChestLeader"
+}
+weapon {
+  guid: "2c74b713133948c0b3f06badb21f7ad3"
+  blueprint_name: "StubRevolver_Item"
+  name_shared_key: "5509def5-aec8-454a-81b9-b625cda78ec9"
+  name: "Stub Revolver"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 11
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 12
+  ammo: 6
+  rate_of_fire: 2
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Chest - JailPlanetoid: Loot_Uniq_Corpse - sacrifice "
+  sources: "Chest - LowerTunnels: IL_Loot (1)"
+  sources: "Chest - LowerTunnels: IL_SF_Loot_Corpse (4)"
+  sources: "Unit - Ch01_JailPlanetoid: JailPlanetoidEnforcerGrenade"
+  sources: "Unit - Ch01_JailPlanetoid: JailPlanetoidPrisonerSwarmStub"
+  sources: "Unit - Ch02_PenalWorld: Gladiator"
+  sources: "Unit - Ch02_RandomEncounters: PossessedRabbleRangedRandomEncounter"
+  sources: "Unit - Ch02_RandomEncounters: PossessedRabbleRangedSERandomEncounter"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: ThrallRangeSwarm"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: WildCannibalRangeSwarm"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: WildCannibalRangeTwitching"
+  sources: "Unit - Ch03_Prison: RoaringFemale_Gladiator"
+  sources: "Unit - Ch03_Prison: RoaringMale_Gladiator"
+  sources: "Unit - Ch03_Prison: RoaringMale_Gladiator2"
+  sources: "Unit - Ch05_QuarryWorld: QuarryWorld_GuardF"
+}
+weapon {
+  guid: "4127a489515c4b9b9181d9b61fd33ec7"
+  blueprint_name: "AntiVechicle_StubRevolver_Item"
+  name_key: "a27e9d85-6fff-4c6a-befb-e3cbe677d12e"
+  name: "Anti-Vehicle Revolver"
+  description_key: "95843525-9ecc-4362-aef8-f3b7b678a8f1"
+  description: "On a successful {g|Encyclopedia:HitSequenceGlossary}hit{/g}, the shot explodes, dealing 20 {g|Encyclopedia:ImpactDamage}impact damage{/g} to everyone in the {g|Encyclopedia:AreaOfEffect}area of effect{/g} around the target."
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 20
+  max_damage: 33
+  penetration: 45
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 12
+  ammo: 6
+  rate_of_fire: 3
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "524acaeb2036449cb24772d2a8d337f9"
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "AntiVechicle_StubRevolver_Feature"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Unit - Ch05_Epitaph: RTNeutral"
+  sources: "Unit - Ch05_Epitaph: RTNeutralFemale"
+  sources: "Vendor - PirateChapter4_VendorTable_Base 87PF"
+}
+weapon {
+  guid: "7f57ba5ee2cc4fc7bcdc9a9ededc1fb4"
+  blueprint_name: "AssasinPistol_Item"
+  name_key: "01b3636f-d332-42a1-834e-6c90c0f219b1"
+  name: "Assassin\'s Pistol"
+  description_key: "d1b6c06f-dd9e-422d-8d20-df8713817571"
+  description: "This pistol deals double {g|Encyclopedia:DamageGlossary}damage{/g} to adjacent enemies."
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 10
+  max_damage: 16
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 10
+  ammo: 12
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "05a6f94522fb4f398483997d079b9e5b"
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "AssasinPistol_Feature"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Chest - Test: TestRaritiesLoot"
+  sources: "Unit - Ch04_Canteena: Footfall_Vladaym_Ch04"
+  sources: "Unit - ExportedPregens: PlayerRT_Level38_ArbitratorOfficer_ExportedPregen"
+  sources: "Unit - ExportedPregens: PlayerRT_Level38_OfficerOverseer_ExportedPregen"
+  sources: "Unit - HeinrixCompanion: HeinrixCompanion_Ch05_Finale"
+  sources: "Unit - HeinrixCompanion: HeinrixCompanion_Ch05_TrueStart"
+}
+weapon {
+  guid: "cb34168a173b49efbe261847ad8c8ff6"
+  blueprint_name: "AutopistolSuppressedCH1Unique_Item"
+  name_key: "7e0876eb-ae52-4688-a251-7e3f936d14a7"
+  name: "Heirloom Autopistol"
+  description_key: "1f1791f3-7373-4264-a6a8-8ad1ae38175f"
+  description: "This autopistol can be used as if the wielder has the Dual-Weapon Combat {g|Encyclopedia:Talent}talent{/g}.\\n<indent=3%>+5 {g|Encyclopedia:WarhammerPerception}Perception{/g}</indent>\\n<indent=3%>+5 {g|Encyclopedia:WarhammerBallisticSkill}Ballistic Skill{/g}</indent>"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 4
+  max_damage: 6
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 10
+  ammo: 12
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "9419c92956af4b1c8504da060aed09d8"
+  extra_fact: "257efdb835d540338f2c69f8f4d5c629"
+  extra_fact: "1b26e486d9974b9ca26d055413fb3e01"
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "Perception5_Feature"
+  extra_fact_name: "BallisticSkill5_Feature"
+  extra_fact_name: ""
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Unit - ExportedPregens: AbelardCompanion_Level15_ExportedPregen"
+  sources: "Unit - ExportedPregens: Yanus19RT_ExportedPregen"
+}
+weapon {
+  guid: "2ede5d9b101340eab8e76480706cb941"
+  blueprint_name: "BeggarPistol_item"
+  name_shared_key: "4ae7c8e9-65fb-4cf5-ad69-3dbb6751d618"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 15
+  max_damage: 30
+  penetration: 10
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 20
+  rate_of_fire: 2
+  ability1 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  sources: "Unit - Ch03_Prison: TrampMain"
+  sources: "Unit - ExportedPregens: CassiaCompanion_Level47_ExportedPregen"
+}
+weapon {
+  guid: "faa1d25f61284c1d9e10623ec49dfe6d"
+  blueprint_name: "DaredevilAutopistol_Item"
+  name_key: "958c9b3e-a277-425b-8db7-467bea46ec0c"
+  name: "Daredevil Pistol"
+  description_shared_key: "9a02146a-9e1d-415c-9a3e-0763ac127913"
+  description: "This pistol has a special attack that costs 0 AP, has increased rate of fire, and ends the wielder\'s turn."
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 9
+  max_damage: 13
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 10
+  ammo: 48
+  rate_of_fire: 8
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "BurstFire_DaredevilPistolAbility"
+    ability_bp: "022e8edf1024414e9aff64890646cb9f"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 0
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Unit - Ch04_Canteena: Ch04Chorda_Bodyguard_unit"
+}
+weapon {
+  guid: "c021b67cbf084ccba92c6faafdb44f29"
+  blueprint_name: "DeadShotStubRevolver_Item"
+  name_shared_key: "3385680a-15ca-4e9c-b72e-19164f13ddae"
+  name: "Dead Shot Stub Revolver"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 16
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 15
+  recoil: 15
+  max_range: 12
+  ammo: 6
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 35
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Unit - Ch01_NavisNobilliteStation: Felec"
+  sources: "Unit - ExportedPregens: AbelardCompanion_Level7_EtelParty_ExportedPregen"
+}
+weapon {
+  guid: "ba955627a3444b52b374bc92e5a592f6"
+  blueprint_name: "ExpandedStubRevolver_Item"
+  name_key: "e50da7f4-bb25-46dd-bbc1-f291b719db46"
+  name: "[Orthlack-Pattern] Stub Revolver"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 10
+  max_damage: 14
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 8
+  ammo: 8
+  rate_of_fire: 3
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Unit - JaeCompanion: JaeCompanion_Gamescom"
+  sources: "Vendor - LiegeChapter2_VendorTable_Base 12PF"
+}
+weapon {
+  guid: "c0ffd3b309644ce2b95c4e7f262237d4"
+  blueprint_name: "LiberatorStubRevolver_Item"
+  name_shared_key: "218f12d9-a749-4c76-b228-67fdd1a21512"
+  name: "Promise of Retribution"
+  description_shared_key: "532252f5-8809-4a9c-9b1d-1d290939672c"
+  description: "This weapon deals an additional +{unit_stat|WarhammerBallisticSkill|bonus} {g|Encyclopedia:DirectDamage}direct damage{/g} to the target for each stack of {g|Encyclopedia:FatiguedEffect}fatigued{/g} suffered by that target."
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 12
+  penetration: 30
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 5
+  max_range: 12
+  ammo: 12
+  rate_of_fire: 3
+  ability1 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "4f636b424ac242c28c2f096e8b40ec2b"
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "LiberatorStubRevolver_Feature"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+}
+weapon {
+  guid: "880be9ee37f6436cab915965b28ebf3d"
+  blueprint_name: "LongBarreledAutopistol_Item"
+  name_key: "4143a939-03e1-4df0-97ea-e1f60720242e"
+  name: "[Mezoa-Pattern] Autopistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 6
+  max_damage: 10
+  penetration: 5
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 14
+  ammo: 12
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SolidPistolProjectile_Shot_AbilityFXSettings"
+    fx_bp: "c6a15f93e8e54a9baa8efa606e621e3c"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+  sources: "Unit - IdiraCompanion: IdiraCompanion_Gamescom"
+  sources: "Vendor - PirateChapter2_VendorTable_Base 27PF"
+}
+weapon {
+  guid: "c81921e8434545f692174a6d8509ebfc"
+  blueprint_name: "NeedlePistolCH2Unique_Item"
+  name_key: "0da79c03-879e-425c-ab67-ab82c6bbb61b"
+  name: "Bloodburner"
+  description_key: "4425de3a-4ae9-4bab-b87e-fc973cefb7a0"
+  description: "Every hit from this pistol increases the level of damage-over-time effects suffered by the target by +5. Does not stack."
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 13
+  max_damage: 20
+  penetration: 30
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 5
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "WeakeningToxicNeedle_PistolAbility"
+    ability_bp: "a638826c3f84406c9b6a121229805e8c"
+    fx_bp_name: "NeedlePistol_Shot_AbilityFXSettings"
+    fx_bp: "eb9add1695f14d73bffd427b74d4dff0"
+    on_hit_actions: "5cb109240b474acead76698eefc1fc5d"
+    on_hit_action_name: "NeedlePistol_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact: "3690fe70e13142db8b1b872420d4d4e6"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  extra_fact_name: "NeedlePistolCH2Unique_Feature"
+  sources: "Chest - VoidshipCryptArena: Iloot_loot_object_Good (2)"
+  sources: "Unit - ExportedPregens: CassiaCompanion_Level25_MikandraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: PlayerRT_Level25_MikandraParty_ExportedPregen"
+}
+weapon {
+  guid: "474a99b9df9d4a76a72be2d3593d0e36"
+  blueprint_name: "NeedlePistolCH4Unique_Item"
+  name_key: "b4e38bef-61dc-4372-82d5-715aa37f5fc1"
+  name: "Tyrant"
+  description_shared_key: "a07857d1-1cbb-4a73-b554-75a897b2cc64"
+  description: "This pistol inflicts {g|Encyclopedia:BurningEffect}burning{/g} (10), {g|Encyclopedia:BleedingEffect}bleeding{/g} (10), and {g|Encyclopedia:ToxinEffect}toxin{/g} (10) on its targets."
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 30
+  max_damage: 45
+  penetration: 30
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 5
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "NeedlePistolUniqueCH4_AllDoTs_Ability"
+    ability_bp: "93b984f860f145ed8e6772e3a849d9cc"
+    fx_bp_name: "NeedlePistol_Shot_AbilityFXSettings"
+    fx_bp: "eb9add1695f14d73bffd427b74d4dff0"
+    on_hit_actions: "5cb109240b474acead76698eefc1fc5d"
+    on_hit_action_name: "NeedlePistol_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "b5511030d52c4b0eae0e6c385ce4189d"
+  extra_fact: "37439b2ae5a74baab9fd188c0f8521b2"
+  extra_fact: "9962dd8fa12e4c8f8b6fe4832ae356c7"
+  extra_fact_name: "ViralToxin_Power10_ForWeapon_Feature"
+  extra_fact_name: "Burning_Power10_ForWeapon_Feature"
+  extra_fact_name: "Bleeding_Power10_ForWeapon_Feature"
+  sources: "Vendor - LiegeChapter4_VendorTable_Base 100PF"
+}
+weapon {
+  guid: "2f13dd01cc934b76935213b33e5a7e0e"
+  blueprint_name: "NeedleRifleCH4Unique_Item"
+  name_key: "da370bfa-241b-4fdd-b9d6-7dcd645f09f3"
+  name: "Gorenov\'s Masterpiece"
+  description_key: "2a7fdacd-0e2d-449f-a4ce-1c9dc5670152"
+  description: "Every hit from this weapon forces a target to move 2 cells away from the shooter. If the target is suffering from {g|Encyclopedia:BurningEffect}burning{/g}, {g|Encyclopedia:BleedingEffect}bleeding{/g}, or {g|Encyclopedia:ToxinEffect}toxin{/g}, the level of these effects increases by +10. Does not stack."
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 35
+  max_damage: 50
+  penetration: 30
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 5
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SplinterRifle_SingleShot_Ability"
+    ability_bp: "3fbac3a9c61742d790e0a76ea43faefd"
+    fx_bp_name: "NeedlePistol_Shot_AbilityFXSettings"
+    fx_bp: "eb9add1695f14d73bffd427b74d4dff0"
+    on_hit_actions: "5cb109240b474acead76698eefc1fc5d"
+    on_hit_action_name: "NeedlePistol_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "bde18c133c844b118a0d48ba9d816d38"
+  extra_fact: "8325a97ef152465a9f1df666c92394f3"
+  extra_fact_name: "ViralToxin_Power16_ForWeapon_Feature"
+  extra_fact_name: "NeedleRifleCH4Unique_Feature"
+}
+weapon {
+  guid: "9b79a2eb0cd848809dfad32e7ef23458"
+  blueprint_name: "PreciseLasPistol_Item"
+  name_key: "dd9c7e44-c159-483c-8170-b46a8d797fc5"
+  name: "Precise Laspistol"
+  description_key: "4768a610-4f9c-41c4-904c-f691077444d2"
+  description: "This pistol has an additional {g|Encyclopedia:SingleRangedAttacksGlossary}single shot{/g} and a {g|Encyclopedia:DeadeyeShot}deadeye shot{/g}."
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 6
+  max_damage: 8
+  penetration: 10
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 30
+  rate_of_fire: 4
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: SingleShot
+    ability_bp_name: "PreciseShot_PistolAbility"
+    ability_bp: "2618cdbec44d406fb0beb4ad309b71b8"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  sources: "Unit - Ch01_JailPlanetoid: JailPlanetoidOverseer"
+  sources: "Unit - ExportedPregens: ArgentaCompanion_Level7_EtelParty_ExportedPregen"
+}
+weapon {
+  guid: "31a0780d8f1948c7b29e07422c38b4e5"
+  blueprint_name: "QuickDraw_LasPistol_Item"
+  name_key: "94978e8c-72e0-4c44-9190-ed44d785f2c2"
+  name: "Quick-Firing Laspistol"
+  description_key: "77bebc7a-b8af-45a9-9965-b09d0d7b827c"
+  description: "{g|Encyclopedia:BurstAttacksGlossary}Burst{/g} shot\'s cost is decreased by \342\210\2221 {g|Encyclopedia:ActionPoints}AP{/g}. First attack with this weapon in combat does not set attacks on {g|Encyclopedia:Cooldown}cooldown{/g}."
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 10
+  penetration: 10
+  dodge_reduction: 30
+  additional_hit_chance: 0
+  recoil: 20
+  max_range: 10
+  ammo: 30
+  rate_of_fire: 5
+  ability1 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "03ba0726bead426eaf934956ae65f3fa"
+  extra_fact_name: "QuickDraw_Laspistol_Feature"
+}
+weapon {
+  guid: "bb80af3cdaab4f31b1dc5637e9af10b6"
+  blueprint_name: "SuppressorStubRevolver_Item"
+  name_shared_key: "785426a1-54a7-4b92-8911-c2731cf6e311"
+  name: "Promise of Freedom"
+  description_shared_key: "e6a85396-2d98-4ec1-ac1f-6a173b2bc9ae"
+  description: "Every {g|Encyclopedia:HitSequenceGlossary}hit{/g} from this weapon inflicts +1 stack of {g|Encyclopedia:FatiguedEffect}fatigued{/g} on the target for 1 {g|Encyclopedia:Round}round{/g} if the target fails a {g|Encyclopedia:WarhammerToughness}Toughness{/g} {g|Encyclopedia:ResistanceTest}resistance test{/g}."
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 5
+  max_damage: 8
+  penetration: 50
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 5
+  max_range: 12
+  ammo: 12
+  rate_of_fire: 4
+  ability1 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_actions: "5f9bda39a13649b887cbbab3ebd381ac"
+    on_hit_action_name: "SuppressorStubRevolver_AbilityAdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+}
+weapon {
+  guid: "3970ad35f03545a686ad580b824d7544"
+  blueprint_name: "TheMotivator_LasPistol_Item"
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 12
+  max_damage: 20
+  penetration: 30
+  dodge_reduction: 35
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 10
+  ammo: 20
+  rate_of_fire: 6
+  ability1 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+}
+weapon {
+  guid: "d6d65832c72148e1b3b224f7d8c652ad"
+  blueprint_name: "ZanniPistol_Item"
+  name_shared_key: "54bd303b-7026-4b09-afaa-c603f9ce8bc0"
+  category: Pistol
+  family: Solid
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 14
+  penetration: 5
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 12
+  ammo: 6
+  rate_of_fire: 2
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "SolidProjectile_Shot_AbilityFXSettings"
+    fx_bp: "38a747f2fafc4789ae7610c3b562bdbe"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "3af882215424458592fc0884ef0c82c4"
+  extra_fact_name: "SolidProjectileWeapon_Feature"
+}
+weapon {
+  guid: "dbf6e298905b4619a9408c8fa89dea62"
+  blueprint_name: "Chapter4_Unique_MotivatorLaspistol_Item"
+  name_shared_key: "2eb75e70-015c-4a47-8164-616f6e121b9f"
+  name: "Bloody Mentor"
+  description_shared_key: "de1b82e1-5f12-43c5-b486-bb07b111ed6e"
+  description: "Whenever the wielder {g|Encyclopedia:HitSequenceGlossary}hits{/g} an ally with this weapon, that ally gains +1 {g|Encyclopedia:ActionPoints}AP{/g}, +{uip|MP|e4e4fabc823f464e8b261ca68d33143c} {g|Encyclopedia:MovementPoints}MP{/g}, and +{uip|Crit|e4e4fabc823f464e8b261ca68d33143c}% {g|Encyclopedia:CritChancesAndCritDamageGlossary}critical hit chance{/g} during their next {g|Encyclopedia:Turn}turn{/g}. This bonus does not stack."
+  category: Pistol
+  family: Laser
+  heavy: false
+  two_handed: false
+  min_damage: 12
+  max_damage: 12
+  penetration: 30
+  dodge_reduction: 35
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 10
+  ammo: 24
+  rate_of_fire: 6
+  ability1 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "LasPistol_LasShot_AbilityFXSettings"
+    fx_bp: "b1f95920b0a94cc98deea0bb13a57c1f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "e4e4fabc823f464e8b261ca68d33143c"
+  extra_fact_name: "Chapter4_Unique_MotivatorLaspistol_Feature"
+  sources: "Unit - DLC2_Ch04_TreasureWorld: TreasureWorld_FeralGuard_Commissar"
+}
+

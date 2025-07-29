@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80fe07f61edc4914ac44891e22e1fdf7, type: 3}
+  m_Name: PatchesConfig
+  m_EditorClassIdentifier: 
+  Entries:
+  - Guid: 4d820ce4c3134a44bc83bc72af32638c
+    Filename: AstartesChainsword_Item
+    PatchType: 2
+  - Guid: 599f598dfc814af1af7dbc639fe2523c
+    Filename: RitualKnife_Item
+    PatchType: 2
+  - Guid: 17adebed9048437b8d8ce4e5a549b73d
+    Filename: Chapter4_Unique_GoldenOpportunityKnife_Item
+    PatchType: 2
+  - Guid: fcc48a02a6014321a74c6a412d67fae2
+    Filename: HekatariiBladeT2CH04_Item
+    PatchType: 2
+  - Guid: 4cff3bad2ad0437ba1674676a67f4946
+    Filename: ArenaGlimmersteelBladeItem
+    PatchType: 2
+  - Guid: 88de523b22324c0b84373ac545f344cb
+    Filename: AstartesCombatKnife_Item
+    PatchType: 2
+  - Guid: cbeeeb5c912e435597aec358ab528594
+    Filename: HekatariiBloodthirstBlade_Item
+    PatchType: 2
+  - Guid: 0f32a16a02e547a6b282eb96a2064676
+    Filename: GlimmersteelBladeItem
+    PatchType: 2
+  - Guid: df43ea76428f47e4bafb11c104b2bd3a
+    Filename: PoisonedHekatariiBladeT2_Item
+    PatchType: 2
+  - Guid: f770ef8cf5b94afc88e336d46f156d36
+    Filename: HekatariiBladeT2_Item
+    PatchType: 2
+  - Guid: 35f9ce854b2f44e3aa9237281ef36108
+    Filename: GenestealerDagger_Item
+    PatchType: 2
+  - Guid: d5391ba5f7bf4a96b3bfdca6027d081c
+    Filename: HekatariiBlade_Item
+    PatchType: 2
+  - Guid: 8e659d5eaca040a7974842d91d3e7232
+    Filename: PoisonedHekatariiBlade_Item
+    PatchType: 2
+  - Guid: b3ad458bc2ba4d60b0ee6bde2672325f
+    Filename: ToxicKnife_Item
+    PatchType: 2
+  - Guid: f97dcdeac2ef45e7b5e0b5587b33c098
+    Filename: KnifeT1_Item
+    PatchType: 2
+  - Guid: baee09db5e54485eb8e18569c96e1779
+    Filename: SerratedKnife_Item
+    PatchType: 2
+  - Guid: 3aac51bc8c9e45a4b80a839ecf7a1ac3
+    Filename: PrisonersKnife_Item
+    PatchType: 2
+  - Guid: 298bd4183b9048b296ae1367870be2bd
+    Filename: DeathCultKnifeUnique_Item
+    PatchType: 2
+  - Guid: 383d03680e6642038cfa3fd94c89fbd1
+    Filename: Knife_Item
+    PatchType: 2

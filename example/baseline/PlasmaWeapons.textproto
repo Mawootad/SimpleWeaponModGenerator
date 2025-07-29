@@ -1,0 +1,1305 @@
+# proto-file: proto/weapon/Weapon.proto
+# proto-message: weapon.WeaponList
+
+weapon {
+  guid: "51334a2918e64ceab33b2ad032bc74a4"
+  blueprint_name: "AstartesPlasmaPistolT2_Item"
+  name_shared_key: "dbf3366f-c292-44e8-bfea-e313b21b14b2"
+  name: "Massive Astartes Plasma Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Plasma
+  heavy: false
+  two_handed: false
+  min_damage: 25
+  max_damage: 33
+  penetration: 50
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 16
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasmaPistol_Ability"
+    ability_bp: "19b8aad3613b424896bf623bdb063d6c"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaPistol_OverchargeAoEAbility"
+    ability_bp: "89a5e9b5b3474ca983f281080df591fb"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaPistol_OverchargePowerAbility"
+    ability_bp: "82803da5f76946629b952a337b143294"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: true
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp: "950565a69d144391897cdc0024747755"
+    bp_name: "PlasmaProficiencyFeature"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+  }
+  extra_fact: "1c8dbdedc0904ea7b47ba45a25ebbeab"
+  extra_fact_name: "PlasmaPistol_Feature"
+  sources: "Unit - Ch05_UlfarQ2: GhostSpaceMarine_Bolter_Ranged_UlfarQ2"
+}
+weapon {
+  guid: "d01d6fc678f34bc8a7c6851fbc985221"
+  blueprint_name: "AstartesPlasmaPistol_Item"
+  name_key: "661cf0be-c2f7-488a-8542-77940e0e8f71"
+  name: "Astartes Plasma Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Plasma
+  heavy: false
+  two_handed: false
+  min_damage: 35
+  max_damage: 40
+  penetration: 45
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 16
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasmaPistol_Ability"
+    ability_bp: "19b8aad3613b424896bf623bdb063d6c"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaPistol_OverchargeAoEAbility"
+    ability_bp: "89a5e9b5b3474ca983f281080df591fb"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaPistol_OverchargePowerAbility"
+    ability_bp: "82803da5f76946629b952a337b143294"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: true
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp: "950565a69d144391897cdc0024747755"
+    bp_name: "PlasmaProficiencyFeature"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+  }
+  extra_fact: "1c8dbdedc0904ea7b47ba45a25ebbeab"
+  extra_fact_name: "PlasmaPistol_Feature"
+  sources: "Chest - CR0: Forest_OrcWeaponLoot"
+}
+weapon {
+  guid: "a04a3307b5a64f50ac27a5ba711bb380"
+  blueprint_name: "PlasmaPistolT1CH2_Item"
+  name_key: "fa7778e9-0b59-4cb1-ab2d-0cd8d4454cef"
+  name: "[Retobi-Pattern] Plasma Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Plasma
+  heavy: false
+  two_handed: false
+  min_damage: 15
+  max_damage: 19
+  penetration: 40
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 16
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasmaPistol_Ability"
+    ability_bp: "19b8aad3613b424896bf623bdb063d6c"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargeAoEAbilityReference"
+    ability_bp: "0bc1f945b05e4b5593ec6151c7109a06"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "1c8dbdedc0904ea7b47ba45a25ebbeab"
+  extra_fact_name: "PlasmaPistol_Feature"
+  sources: "Unit - Ch02_ForgeWorldAndHeart: HeretekMagi"
+  sources: "Unit - Ch05_ArcShip: ImmortalSkitariiRanged_ArcShip"
+  sources: "Unit - Ch05_ArcShip: ImmortalSkitariiRanged_ArcShip"
+  sources: "Unit - ExportedPregens: PascalCompanion_Level25_TesseraParty_ExportedPregen"
+  sources: "Vendor - ExploratorChapter2_VendorTable_Base 26PF"
+}
+weapon {
+  guid: "6eb0e0e680884528a14629dc8b94002b"
+  blueprint_name: "PlasmaPistolT2CH04_Item"
+  name_key: "a72e4476-e390-4bf3-b703-bc451a9ee4f1"
+  name: "[Sol-Pattern] Plasma Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Plasma
+  heavy: false
+  two_handed: false
+  min_damage: 25
+  max_damage: 39
+  penetration: 50
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 16
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasmaPistol_Ability"
+    ability_bp: "19b8aad3613b424896bf623bdb063d6c"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaPistol_OverchargeAoEAbility"
+    ability_bp: "89a5e9b5b3474ca983f281080df591fb"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaPistol_OverchargePowerAbility"
+    ability_bp: "82803da5f76946629b952a337b143294"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "1c8dbdedc0904ea7b47ba45a25ebbeab"
+  extra_fact_name: "PlasmaPistol_Feature"
+  sources: "Unit - Ch05_ArcShip: TechpriestLogos_MeleeRanged_PasqualQuest"
+  sources: "Unit - Ch05_Epitaph: InquisitorGuardSargeant"
+  sources: "Unit - Ch04_Canteena: Chorda_JudgementOfFootfall"
+  sources: "Unit - Ch04_ForgeHeart: MadTechPriestStubcarbine_Technomat_Adept"
+  sources: "Unit - Ch04_Quetza-al_Khet: Quetza-al_Winterscale"
+  sources: "Unit - Ch04_Quetza-al_Khet: Quetza-al_WinterscaleVillage"
+  sources: "Unit - Ch05_Epitaph: Ch05Inquisitor_Leader_unit"
+  sources: "Unit - FakeAndWeak_WinterscaleParty: Quetza_Fake_Winterscale"
+  sources: "Unit - FinalCompanions: Chorda_Companion"
+  sources: "Unit - FinalCompanions: Hope_Chorda_Companion"
+}
+weapon {
+  guid: "052a48be6dcf47d18abd96ed8ac77128"
+  blueprint_name: "PlasmaPistol_Item"
+  name_key: "1e13f5a3-57f4-435a-b2c6-77f0d89a47d0"
+  name: "Plasma Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Plasma
+  heavy: false
+  two_handed: false
+  min_damage: 9
+  max_damage: 13
+  penetration: 30
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 16
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasmaPistol_Ability"
+    ability_bp: "19b8aad3613b424896bf623bdb063d6c"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaPistol_OverchargeAoEAbility"
+    ability_bp: "89a5e9b5b3474ca983f281080df591fb"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaPistol_OverchargePowerAbility"
+    ability_bp: "82803da5f76946629b952a337b143294"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "1c8dbdedc0904ea7b47ba45a25ebbeab"
+  extra_fact_name: "PlasmaPistol_Feature"
+  sources: "Chest - CR10: AdeptusMechanicus_Trash9"
+  sources: "Unit - Ch02_DestroyedBlackShip: PossessedPsyker"
+  sources: "Unit - Ch02_ForgeWorldSpaceHulk: SpaceHulk_MadMagos"
+  sources: "Unit - Ch00_OfficersDeck: FakeIdira"
+  sources: "Unit - Ch00_OfficersDeck: FakeTeodora"
+  sources: "Unit - Ch02_ForgeWorldAndHeart: ToughCultistPsykerMiniboss"
+  sources: "Unit - Ch02_RogueTraderPalace: Chorda"
+  sources: "Unit - Ch04_FootfallAtrium: FootfallCh04_Chorda"
+  sources: "Unit - Ch04_FootfallSewersCh04: PirateSpaceCapitan"
+  sources: "Unit - Ch04_FootfallSewersCh04: Torra"
+  sources: "Unit - Ch05_Epitaph: Ch05Inquisitor_MeleeSwarm_unit"
+  sources: "Unit - DLC1_VoidshipReactor: BoySacrifice"
+  sources: "Unit - DLC1_VoidshipReactor: DemagoguePleb"
+  sources: "Unit - DLC1_VoidshipReactor: OldSacrifice"
+  sources: "Unit - DLC1_VoidshipReactor: YoungSacrifice"
+  sources: "Unit - SideQuest: CultistLeaderSororitasQuest"
+  sources: "Unit - FootfallAtrium: FootfallArmorer"
+  sources: "Unit - FootfallAtrium: FootfallDebtor"
+  sources: "Unit - FootfallAtrium: FootfallSmugglerCompanionNPC"
+  sources: "Unit - FootfallAtrium: SideQuestPirateScion"
+  sources: "Unit - FootfallAtrium: SideQuestSlyOfficial2"
+  sources: "Unit - FootfallAtrium: SideQuestSlyOfficial3"
+  sources: "Unit - ExportedPregens: VasiliyPascal_15LvL_ExportedPregen"
+  sources: "Vendor - ExploratorChapter1_VendorTable_Base 12PF"
+}
+weapon {
+  guid: "fad685754a874486acc9278132e169d2"
+  blueprint_name: "PlasmaRifleT1CH2_Item"
+  name_key: "4892a050-2a36-45e9-9541-8b4970ea74c3"
+  name: "[Mezoa-Pattern] Plasma Gun"
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 20
+  max_damage: 30
+  penetration: 55
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasma_Ability"
+    ability_bp: "f71f49187b664e69b0f3c99a9371214b"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargeAoEAbilityReference"
+    ability_bp: "0bc1f945b05e4b5593ec6151c7109a06"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "adf766ad17194a3080f20cd93be25392"
+  extra_fact_name: "PlasmaRifle_Feature"
+  sources: "Unit - Ch02_ForgeWorldAndHeart: PasqalQuest_Dements"
+  sources: "Unit - Ch05_ArcShip: ImmortalSkitariiSupport_ArcShip"
+  sources: "Unit - Ch04: Footfall_AngryCommonerAssassin"
+  sources: "Unit - ExportedPregens: PascalCompanion_Level37_TesseraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: PascalCompanion_Level37_ValladinParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: PasqalCompanion_Level29_ExportedPregen"
+}
+weapon {
+  guid: "1328a4d8fbc64ae3be79f83028a570d1"
+  blueprint_name: "PlasmaRifleT2CH3_Item"
+  name_key: "b6e2790c-6a94-4a6f-8438-7799abdf7738"
+  name: "[Retobi-Pattern] Plasma Gun"
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 23
+  max_damage: 32
+  penetration: 50
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasma_Ability"
+    ability_bp: "f71f49187b664e69b0f3c99a9371214b"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargeAoEAbilityReference"
+    ability_bp: "0bc1f945b05e4b5593ec6151c7109a06"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "adf766ad17194a3080f20cd93be25392"
+  extra_fact_name: "PlasmaRifle_Feature"
+  sources: "Chest - Prison: Drukhari_PrisonPitOwnChest02"
+  sources: "Unit - DLC1_LowerTunnels: LT_Beggar_Guard"
+}
+weapon {
+  guid: "e53837d23baa40119092c9c185ee9a6b"
+  blueprint_name: "PlasmaRifleT2CH4_Item"
+  name_key: "9744a2fd-3268-4fbe-bc80-5e8fa39dd747"
+  name: "[Mars-Pattern] Plasma Gun"
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 30
+  max_damage: 40
+  penetration: 40
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasma_Ability"
+    ability_bp: "f71f49187b664e69b0f3c99a9371214b"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargeAoEAbilityReference"
+    ability_bp: "0bc1f945b05e4b5593ec6151c7109a06"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "adf766ad17194a3080f20cd93be25392"
+  extra_fact_name: "PlasmaRifle_Feature"
+  sources: "Chest - CR0: AdeptusMechanicus_LootGood"
+  sources: "Unit - ExportedPregens: PascalCompanion_LvL40_Bakula_ExportedPregen"
+  sources: "Unit - ExportedPregens: PasqalCompanionOverseer_Level38"
+  sources: "Unit - ExportedPregens: PasqalCompanion_lvl38_treasureworld_ExportedPregen"
+  sources: "Unit - ExportedPregens: pasqual_lv38_chordafight_ExportedPregen"
+}
+weapon {
+  guid: "ca7818adf938458e9928210835766178"
+  blueprint_name: "PlasmaRifleT2_Item"
+  name_shared_key: "e538391c-9b14-440e-8c36-ea90ebf94caf"
+  name: "Heavy Plasma Gun"
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 18
+  max_damage: 23
+  penetration: 45
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasma_Ability"
+    ability_bp: "f71f49187b664e69b0f3c99a9371214b"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargeAoEAbilityReference"
+    ability_bp: "0bc1f945b05e4b5593ec6151c7109a06"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "adf766ad17194a3080f20cd93be25392"
+  extra_fact_name: "PlasmaRifle_Feature"
+  sources: "Unit - ExportedPregens: PascalCompanion_level27_VasyaParty_ExportedPregen"
+  sources: "Vendor - ExploratorChapter2_VendorTable_Base 40PF"
+}
+weapon {
+  guid: "64f9731f733042e9b1599704a884fd31"
+  blueprint_name: "PlasmaRifleT3_Item"
+  name_shared_key: "acab9c51-16bb-44a2-aaf2-99d1c1d8328c"
+  name: "Ragefire Plasma Gun"
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 24
+  max_damage: 36
+  penetration: 50
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasma_Ability"
+    ability_bp: "f71f49187b664e69b0f3c99a9371214b"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargeAoEAbilityReference"
+    ability_bp: "0bc1f945b05e4b5593ec6151c7109a06"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "adf766ad17194a3080f20cd93be25392"
+  extra_fact_name: "PlasmaRifle_Feature"
+  sources: "Chest - CR25: AdeptusMechanicus_Container1"
+}
+weapon {
+  guid: "43dff36fe61140958ca891a8634a8673"
+  blueprint_name: "PlasmaRifle_Item"
+  name_shared_key: "1d558812-90ab-4bf1-b127-87c9df16b3b7"
+  name: "Plasma Gun"
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 11
+  max_damage: 15
+  penetration: 35
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasma_Ability"
+    ability_bp: "f71f49187b664e69b0f3c99a9371214b"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargeAoEAbilityReference"
+    ability_bp: "0bc1f945b05e4b5593ec6151c7109a06"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "adf766ad17194a3080f20cd93be25392"
+  extra_fact_name: "PlasmaRifle_Feature"
+  sources: "Chest - Test: TestRaritiesLoot"
+  sources: "Chest - CR0: Starport_GoodLoot03"
+  sources: "Chest - StarPort: ImperiumMilitary_GoodLoot01"
+  sources: "Unit - Ch03_AchilleasAbduction: AchilleasAbdBridgeCrewMemberTechnician"
+  sources: "Unit - Ch02_DaringHeirGuttedShip: HalfCrazyNavigator"
+  sources: "Unit - ExportedPregens: PascalCompanion_Level19_HarmonParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: PascalCompanion_Level27_CyrusParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: PascalCompanion_Level39_SolarParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: Pasqal19Chapel_ExportedPregen"
+  sources: "Unit - ExportedPregens: PasqalCompanion_Overseer_EaglePet_Level27_TesseraParty"
+  sources: "Unit - PascalCompanion: PascalCompanion"
+  sources: "Unit - PascalCompanion: PascalCompanion_Gamescom"
+  sources: "Unit - PascalCompanion: PascalCompanion_Gamescom"
+  sources: "Unit - PascalCompanion: PascalCompanion_StarportNPC"
+  sources: "Unit - PascalCompanion: PascalCompanion_TrailerCinematic"
+}
+weapon {
+  guid: "08399d1e77784d18b62c2a3cc1b5bbad"
+  blueprint_name: "DisintegratorCannonItem"
+  name_key: "a2ea22d2-ab1f-4d22-afd0-56bed6334dc8"
+  name: "Disintegrator Cannon"
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 20
+  max_damage: 23
+  penetration: 50
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 16
+  ammo: 9
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasma_Ability"
+    ability_bp: "f71f49187b664e69b0f3c99a9371214b"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "DisintegratorCannonOverchargeAoE"
+    ability_bp: "a33c9052d8034423b65080f720049190"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "DisintegratorCannonOverchargePower"
+    ability_bp: "80baf9bea50d416b9a38fbb1c2639883"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "fc620474e7c44d95b173df9f3bd981c4"
+  extra_fact_name: "DisintegratorCannonFeature"
+}
+weapon {
+  guid: "f55659d630b644798a77ea4803453f77"
+  blueprint_name: "Cooler_PlasmaRifle_Item"
+  name_shared_key: "cc8339bd-e760-4eaa-9f87-59d961b40ffc"
+  description_key: "659abbae-2397-4bc8-a003-cd9164c68ceb"
+  description: "This plasma rifle never overheats."
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 15
+  max_damage: 20
+  penetration: 45
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasma_Ability"
+    ability_bp: "f71f49187b664e69b0f3c99a9371214b"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGunReducedCooldown_OverchargeAoEAbilityReference"
+    ability_bp: "53b6aab61c4548e58efdb5e13cd2881b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 3
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "adf766ad17194a3080f20cd93be25392"
+  extra_fact_name: "PlasmaRifle_Feature"
+}
+weapon {
+  guid: "693c08f089944d3593d97d4107d1c66d"
+  blueprint_name: "PlasmaRifleCH05Unique_Item"
+  name_key: "67162f9e-cd7d-4440-b2a3-3c514f55d252"
+  name: "Incandescent Storm"
+  description_key: "6c4f82ef-d272-41e0-99d1-2af544279eeb"
+  description: "Every attack action with this plasma gun has a separate {g|Encyclopedia:Cooldown}cooldown{/g}. All of this plasma gun\'s attack actions can be used in a single {g|Encyclopedia:Turn}turn{/g}."
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 33
+  max_damage: 49
+  penetration: 60
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "PlasmaRifleCH05Unique_SingleShotPlasma_Ability"
+    ability_bp: "fb4609aa036e44bbafdf4c11b261e8c3"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaRifleCH05Unique_AoEAbilityReference"
+    ability_bp: "5ce3a5eb45324114865d1b1c2ed4632b"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaRifleCH05Unique_OverchargePowerAbilityReference"
+    ability_bp: "b3fd37c7537f4ddf8cd1f10545df4f69"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "adf766ad17194a3080f20cd93be25392"
+  extra_fact: "572c6fba29f8402fa5d86e157edf8f29"
+  extra_fact_name: "PlasmaRifle_Feature"
+  extra_fact_name: "PlasmaRifleCH05Unique_Feature"
+  sources: "Chest - CR0: AdeptusMechanicus_necron_container_01 (1)_loot_object"
+}
+weapon {
+  guid: "1e2c1ec3e07c422197fb7f7f35a3f6d2"
+  blueprint_name: "PlasmaRifleCH4Unique2_Item"
+  name_shared_key: "05d0f911-8cdb-4f48-9226-80564a4fc19b"
+  name: "Overcharged Plasma Gun"
+  description_shared_key: "72aab4b7-65e9-46f8-9bba-d77bd6200248"
+  description: "This plasma gun can only perform overcharged attack actions. Its {g|Encyclopedia:DamageGlossary}damage{/g} is increased by +{uip|Damage|32f278450e09490784e95deab3e56550}%. This plasma gun\'s plasma explosion deals two times more damage and is 15% more likely to happen."
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 40
+  max_damage: 45
+  penetration: 45
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargeAoEAbilityReference"
+    ability_bp: "0bc1f945b05e4b5593ec6151c7109a06"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "89318d566c8d40ff8fd60656d0063c30"
+  extra_fact: "32f278450e09490784e95deab3e56550"
+  extra_fact_name: "PlasmaRifleCH4Unique2OverchargePlus15_Feature"
+  extra_fact_name: "PlasmaRifleCH4Unique2_Feature"
+  sources: "Vendor - DrusianChapter4_VendorTable_Base 65PF"
+}
+weapon {
+  guid: "28042dd74e7e4dc4865be3d7b94c884a"
+  blueprint_name: "PlasmaRifleCH4Unique_Item"
+  name_shared_key: "8ad6e68f-0535-4e20-ab59-42d2364b1014"
+  name: "Ancient Plasma Rifle"
+  description_shared_key: "70960f09-e7e8-4a5a-805f-33ef09aeba80"
+  description: "Deals an additional +{uip|Damage|84a4c46311654f5083208b6eedfa09fe} {g|Encyclopedia:DamageGlossary}damage{/g}."
+  category: Basic
+  family: Plasma
+  heavy: false
+  two_handed: true
+  min_damage: 30
+  max_damage: 45
+  penetration: 30
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 30
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasma_Ability"
+    ability_bp: "f71f49187b664e69b0f3c99a9371214b"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaGun_OverchargeAoEAbilityReference"
+    ability_bp: "0bc1f945b05e4b5593ec6151c7109a06"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaGun_OverchargePowerAbilityReference"
+    ability_bp: "1da644efeb174a789fc857602ebdfc1b"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaRifle_SingleShot_AbilityFXSettings"
+    fx_bp: "c4955f13ac1f4f37bc9f59b792e94366"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "adf766ad17194a3080f20cd93be25392"
+  extra_fact: "84a4c46311654f5083208b6eedfa09fe"
+  extra_fact_name: "PlasmaRifle_Feature"
+  extra_fact_name: "PlasmaRifleCH4Unique_Feature"
+  sources: "Vendor - ExploratorChapter4_VendorTable_Base 116PF"
+}
+weapon {
+  guid: "e3934d99c665492d8203cdc66dff6fe2"
+  blueprint_name: "Regenerating_PlasmaPistol_Item"
+  name_shared_key: "1a3c03c0-258b-4d9f-b7a2-33be59007246"
+  description_key: "bbbe734d-8e7f-4fb8-82f1-73e3d95b257e"
+  description: "This plasma pistol\'s overcharged attacks always cause a plasma explosion. This plasma explosion deals an additional +5 {g|Encyclopedia:WarpDamage}warp damage{/g} for every rank of the wielder\'s {g|Encyclopedia:SoulmarkTypesGlossary}Conviction{/g} \342\200\224 {g|Encyclopedia:SoulMarkCorruption}Heretical{/g}."
+  category: Pistol
+  family: Plasma
+  heavy: false
+  two_handed: false
+  min_damage: 30
+  max_damage: 45
+  penetration: 50
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 16
+  ammo: 16
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShotPlasmaPistol_Ability"
+    ability_bp: "19b8aad3613b424896bf623bdb063d6c"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "PlasmaPistol_OverchargeAoEAbility"
+    ability_bp: "89a5e9b5b3474ca983f281080df591fb"
+    fx_bp_name: "PlasmaRifle_OverchargeAoE_AbilityFXSettings"
+    fx_bp: "df39101db08641c1af76f7b67547eb54"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PlasmaPistol_OverchargePowerAbility"
+    ability_bp: "82803da5f76946629b952a337b143294"
+    fx_bp_name: "PlasmaRifle_OverchargePower_AbilityFXSettings"
+    fx_bp: "4644fb9678334b94be880e2fef7d22db"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "PlasmaPistol_SingleShot_AbilityFXSettings"
+    fx_bp: "3bee856ea6534fa4b595bba7255bd86f"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "dddb6710ce25490e98608a2c07fbfc51"
+    bp_name: "PlasmaProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "fb7efcba2dcc427da2324d4066daf2d5"
+    bp_name: "CorruptionSoulMark_1"
+  }
+  extra_fact: "f62f70a74b864cd7b7569d74ea75d008"
+  extra_fact_name: "Regenerating_PlasmaPistol_Feature"
+}
+

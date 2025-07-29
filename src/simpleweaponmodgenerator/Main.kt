@@ -34,22 +34,23 @@ object Main {
     private const val SPLIT_BASELINE = "--split_baseline"
     private const val OBTAINABLE = "--obtainable"
 
-    private const val MAKE_CSV = "make_csv"
-    private const val CSV_OUT = "--csv_path"
+    private const val MAKE_TSV = "make_tsv"
+    private const val TSV_OUT = "--tsv_path"
 
     private const val REMOVE_DUPLICATE_INFO = "remove_duplicate_info"
     private const val PATCH_PATH = "--changes_path"
 
     private const val MAKE_PATCH_DATA = "make_patches"
-    private const val MOD_PATH = "--mod_path"
+    private const val SHORT_MOD_PATH = "mod_path"
+    private const val MOD_PATH = "--$SHORT_MOD_PATH"
 
     private const val MAKE_FULL = "make_full"
     private const val MANIFEST = "--manifest"
 
     private const val TEXTPROTO = "textproto"
-    private const val CSV = "csv"
+    private const val TSV = "tsv"
     const val NONE_TEXT = "None"
-    private val ALL_COMMANDS = setOf(REGENERATE_BASELINE, MAKE_CSV, MAKE_PATCH_DATA, REMOVE_DUPLICATE_INFO, MAKE_FULL)
+    private val ALL_COMMANDS = setOf(REGENERATE_BASELINE, MAKE_TSV, MAKE_PATCH_DATA, REMOVE_DUPLICATE_INFO, MAKE_FULL)
 
     @JvmStatic
     fun main(args: Array<String>) {
@@ -58,7 +59,7 @@ object Main {
         if (args.isEmpty() || "--help" in argValues || "-h" in argValues || "help" in argValues || (argValues.keys intersect ALL_COMMANDS).isEmpty()) {
             println(
                 """
-                |Usage java -jar SimpleWeaponModGenerator.jar [$REGENERATE_BASELINE] [$MAKE_CSV] [$REMOVE_DUPLICATE_INFO] [$MAKE_PATCH_DATA] [$MAKE_FULL] [Options]
+                |Usage java -jar SimpleWeaponModGenerator.jar [$REGENERATE_BASELINE] [$MAKE_TSV] [$REMOVE_DUPLICATE_INFO] [$MAKE_PATCH_DATA] [$MAKE_FULL] [Options]
                 |
                 |Utilities for creating Rogue Trader mods that alter weapon stats without needing to use the terrible Unity editor
                 |Default parameters assume the utility is placed in a mod folder of the template
@@ -66,36 +67,38 @@ object Main {
                 |Commands:
                 |  $REGENERATE_BASELINE: Regenerates baseline textproto files containing all information needed to build
                 |  $TEMPLATE_PATH=[../../../]: Root path to WhRtModificationTemplate
-                |  $BASELINE_PATH=[baseline/]: Path to write baseline data to or to read baseline data from if not regenerating
+                |  $MOD_PATH=[./]: Path to mod folder to write data to
+                |  $BASELINE_PATH=[($SHORT_MOD_PATH)/baseline/]: Path to write baseline data to or to read baseline data from if not regenerating
                 |  $SPLIT_BASELINE: If set splits the baseline by weapon classification
                 |  $OBTAINABLE: If set filters baseline to weapons that are included in a known loot pool
                 |  
-                |  $MAKE_CSV: Creates CSV files based on the baseline textprotos
-                |  $CSV_OUT=[./weapons.csv]: Output file to write CSV data to
+                |  $MAKE_TSV: Creates TSV files based on the baseline textprotos
+                |  $TSV_OUT=[($SHORT_MOD_PATH)/weapons.tsv]: Output file to write TSV data to
                 |  
                 |  $REMOVE_DUPLICATE_INFO: Removes fields already specified in the baseline from change files
-                |  $PATCH_PATH=[modifications/]: Path containing modified weapon data
+                |  $PATCH_PATH=[($SHORT_MOD_PATH)/modifications/]: Path containing modified weapon data
                 |  
-                |  $MAKE_PATCH_DATA: Creates patch files and a patch changes configuration based on textproto or csv
+                |  $MAKE_PATCH_DATA: Creates patch files and a patch changes configuration based on textproto or tsv
                 |                    files with modified data
-                |  $MOD_PATH=[./]: Path to mod folder to write data to
                 |  
                 |  $MAKE_FULL: Creates a full modification zip from a set of patch files, a change manifest, and a mod manifest
-                |  $MANIFEST=[./manifest.json]: Path to a .asset or .json manifest file
+                |  $MANIFEST=[($SHORT_MOD_PATH)/manifest.asset]: Path to a .asset or .json manifest file
                 |  
                 |  --help: Displays this message
                 |""".trimMargin()
             )
         }
 
-        val baselinePath = argValues[BASELINE_PATH] ?: "./baseline/"
+
+        val modPath = argValues[MOD_PATH] ?: "./"
+        val baselinePath = argValues[BASELINE_PATH] ?: "$modPath/baseline/"
         val templateRoot = argValues[TEMPLATE_PATH] ?: "../../../"
         val parser = WeaponParser(templateRoot)
 
         val baselineData = when {
             REGENERATE_BASELINE in argValues -> parser.weaponsWithStrings
             !File(baselinePath).isDirectory -> null
-            MAKE_CSV in argValues || REMOVE_DUPLICATE_INFO in argValues || MAKE_PATCH_DATA in argValues -> {
+            MAKE_TSV in argValues || REMOVE_DUPLICATE_INFO in argValues || MAKE_PATCH_DATA in argValues -> {
                 buildList {
                     for (file in File(baselinePath).listFiles()!!) {
                         if (file.extension != "textproto") continue
@@ -109,37 +112,44 @@ object Main {
 
         if (REGENERATE_BASELINE in argValues) {
             Files.createDirectories(Path(baselinePath))
+            val toWrite =
+                if (OBTAINABLE in argValues) baselineData!!.filter { it.sourcesList.isNotEmpty() } else baselineData!!
             if (SPLIT_BASELINE in argValues) {
-                for ((type, weapons) in baselineData!!.groupBy { Classifier.getWeaponType(it) }) {
+                for ((type, weapons) in toWrite.groupBy { Classifier.getWeaponType(it) }) {
                     File("$baselinePath/${type}Weapons.textproto").writer().use {
                         it.append(textprotoString(weapons))
                     }
                 }
             } else {
-                File("$baselinePath/Weapons.textproto").writer().use { it.append(textprotoString(baselineData!!)) }
+                File("$baselinePath/Weapons.textproto").writer().use { it.append(textprotoString(toWrite)) }
+            }
+
+            File("$baselinePath/Guids.txt").writer().use { writer ->
+                writer.write(
+                    parser.nameToGuidMap.entries.joinToString("\n") { "${it.key}|${it.value}" })
             }
         }
 
-        if (MAKE_CSV in argValues) {
-            val csvPath = argValues[CSV_OUT] ?: "./weapons.csv"
+        if (MAKE_TSV in argValues) {
+            val tsvPath = argValues[TSV_OUT] ?: "$modPath/weapons.tsv"
             if (baselineData == null) {
-                println("Couldn't generate CSV data, couldn't find baseline")
+                println("Couldn't generate TSV data, couldn't find baseline")
                 return
             }
 
-            Files.createDirectories(Path(File(csvPath).parent))
-            File(csvPath).writeText(csvString(baselineData))
+            Files.createDirectories(Path(File(tsvPath).parent))
+            File(tsvPath).writeText(tsvString(baselineData))
         }
 
-        val modificationsPath = argValues[MOD_PATH] ?: "./modifications"
+        val patchesPath = argValues[PATCH_PATH] ?: "$modPath/modifications"
 
         val baselineLookupMap by lazy {
             baselineData!!.associateBy { it.blueprintName }
         }
 
         if (REMOVE_DUPLICATE_INFO in argValues) {
-            if (!File(modificationsPath).isDirectory) {
-                println("Couldn't remove duplicate patch information, ${File(modificationsPath).absolutePath} is not a folder")
+            if (!File(patchesPath).isDirectory) {
+                println("Couldn't remove duplicate patch information, ${File(patchesPath).absolutePath} is not a folder")
                 return
             }
 
@@ -148,9 +158,10 @@ object Main {
                 return
             }
 
-            for (file in File(modificationsPath).listFiles()!!) {
+            for (file in File(patchesPath).listFiles()!!) {
+                println("Updating $file")
                 val data = when (file.extension) {
-                    CSV -> csvToProto(file)
+                    TSV -> tsvToProto(file)
                     TEXTPROTO -> TextFormat.parse(file.readText(), WeaponList::class.java).weaponList
                     else -> continue
                 }
@@ -164,16 +175,14 @@ object Main {
                     removeDuplicateInfo(it, baseline)
                 }
 
-                if (file.extension == CSV) file.writer().use { it.write(csvString(updatedWeapons)) }
+                if (file.extension == TSV) file.writer().use { it.write(tsvString(updatedWeapons, "")) }
                 else if (file.extension == TEXTPROTO) file.writer().use { it.write(textprotoString(updatedWeapons)) }
             }
         }
 
-        val modPath = argValues[MOD_PATH] ?: "./"
-
         if (MAKE_PATCH_DATA in argValues) {
-            if (!File(modificationsPath).isDirectory) {
-                println("Couldn't generate patch files, ${File(modificationsPath).absolutePath} is not a folder")
+            if (!File(patchesPath).isDirectory) {
+                println("Couldn't generate patch files, ${File(patchesPath).absolutePath} is not a folder")
                 return
             }
 
@@ -182,13 +191,24 @@ object Main {
                 return
             }
 
-            val weapons = File(modificationsPath).listFiles()!!.mapNotNull {
+            val nameToGuidMap by lazy {
+                if (REGENERATE_BASELINE in argValues) {
+                    parser.nameToGuidMap
+                } else {
+                    File("$baselinePath/guids.txt").readLines().filter { it.isNotEmpty() }.associate {
+                        val (first, second) = it.split("|")
+                        first to second
+                    }
+                }
+            }
+
+            val weapons = File(patchesPath).listFiles()!!.mapNotNull {
                 when (it.extension) {
-                    CSV -> csvToProto(it)
+                    TSV -> tsvToProto(it)
                     TEXTPROTO -> TextFormat.parse(it.readText(), WeaponList::class.java).weaponList
                     else -> null
                 }
-            }.flatten().map { parser.getBpsFromNames(it) }
+            }.flatten().map { PatchGenerator.getBpsFromNames(it) { nameToGuidMap } }
 
             PatchGenerator.writePatches(weapons, baselineData, modPath)
         }
@@ -281,42 +301,46 @@ object Main {
         |${weaponList { weapon += weaponList }}
         |""".trimMargin()
 
-    private fun csvString(weaponList: Collection<Weapon>) =
+    private fun tsvString(weaponList: Collection<Weapon>, noneText: String = NONE_TEXT) =
         """
-        |${CsvField.entries.joinToString("\t") { it.header }}
-        |${weaponList.joinToString("\n") { weapon -> CsvField.entries.joinToString("\t") { it.output(weapon) } }}
+        |${TsvField.entries.joinToString("\t") { it.header }}
+        |${weaponList.joinToString("\n") { weapon -> TsvField.entries.joinToString("\t") { weapon.(it.output)(noneText) } }}
         |""".trimMargin()
 
-    enum class CsvField(val header: String, val output: (Weapon) -> String) {
-        BLUEPRINT("Blueprint", { it.blueprintName }),
-        NAME("Name", { it.name }),
-        DESCRIPTION("Description", { it.description }),
-        GROUPING("Grouping", { Classifier.getWeaponType(it).toString() }),
-        CATEGORY("Category", { if (it.hasCategory()) it.category.toString() else NONE_TEXT }),
-        FAMILY("Family", { if (it.hasFamily()) it.family.toString() else NONE_TEXT }),
-        CLASSIFICATION("Classification", { if (it.hasClassification()) it.classification.toString() else NONE_TEXT }),
-        HEAVY("Heavy", { it.heavy.toString() }),
-        TWO_HANDED("Two Handed", { it.twoHanded.toString() }),
-        MIN_DAMAGE("Min Damage", { it.minDamage.toString() }),
-        MAX_DAMAGE("Max Damage", { it.maxDamage.toString() }),
-        ARMOR_PEN("Armor Pen", { it.penetration.toString() }),
-        DODGE_REDUCTION("Dodge Reduction", { it.dodgeReduction.toString() }),
-        EXTRA_HIT_CHANCE("Extra Hit Chance", { it.additionalHitChance.toString() }),
-        RATE_OF_FIRE("Rate of Fire", { it.rateOfFire.toString() }),
-        RECOIL("Recoil", { it.recoil.toString() }),
-        RANGE("Max Range", { it.maxRange.toString() }),
-        AMMO("Ammo", { it.ammo.toString() }),
-        ATTACK1("Attack 1\tType\tCost\tGFX\tOn Hit", { abilityCsvString(it.ability1) }),
-        ATTACK2("Attack 2\tType\tCost\tGFX\tOn Hit", { abilityCsvString(it.ability2) }),
-        ATTACK3("Attack 3\tType\tCost\tGFX\tOn Hit", { abilityCsvString(it.ability3) }),
-        ATTACK4("Attack 4\tType\tCost\tGFX\tOn Hit", { abilityCsvString(it.ability4) }),
-        ATTACK5("Attack 5\tType\tCost\tGFX\tOn Hit", { abilityCsvString(it.ability5) }),
-        SOURCES("Sources", { it.sourcesList.joinToString() }),
-        EXTRA_FACTS("Extra Facts", { it.extraFactNameList.joinToString("\t") });
+    enum class TsvField(val header: String, val output: Weapon.(String) -> String) {
+        BLUEPRINT("Blueprint", { blueprintName }),
+        NAME("Name", { name }),
+        DESCRIPTION("Description", { description }),
+        GROUPING("Grouping", { Classifier.getWeaponType(this).toString() }),
+        CATEGORY("Category", { if (hasCategory()) category.toString() else it }),
+        FAMILY("Family", { if (hasFamily()) family.toString() else it }),
+        CLASSIFICATION("Classification", { if (hasClassification()) classification.toString() else noneAsFalse(it) }),
+        HEAVY("Heavy", { if (hasHeavy()) heavy.toString() else noneAsFalse(it) }),
+        TWO_HANDED("Two Handed", { if (hasTwoHanded()) twoHanded.toString() else noneAsZero(it) }),
+        MIN_DAMAGE("Min Damage", { if (hasMinDamage()) minDamage.toString() else noneAsZero(it) }),
+        MAX_DAMAGE("Max Damage", { if (hasMaxDamage()) maxDamage.toString() else noneAsZero(it) }),
+        ARMOR_PEN("Armor Pen", { if (hasPenetration()) penetration.toString() else noneAsZero(it) }),
+        DODGE_REDUCTION("Dodge Reduction", { if (hasDodgeReduction()) dodgeReduction.toString() else noneAsZero(it) }),
+        EXTRA_HIT_CHANCE(
+            "Extra Hit Chance",
+            { if (hasAdditionalHitChance()) additionalHitChance.toString() else noneAsZero(it) }),
+        RATE_OF_FIRE("Rate of Fire", { if (hasAdditionalHitChance()) rateOfFire.toString() else noneAsZero(it) }),
+        RECOIL("Recoil", { if (hasRecoil()) recoil.toString() else noneAsZero(it) }),
+        RANGE("Max Range", { if (hasMaxRange()) maxRange.toString() else noneAsZero(it) }),
+        AMMO("Ammo", { if (hasAmmo()) ammo.toString() else noneAsZero(it) }),
+        ATTACK1("Attack 1\tType\tCost\tGFX\tOn Hit", { abilityTsvString(ability1, it) }),
+        ATTACK2("Attack 2\tType\tCost\tGFX\tOn Hit", { abilityTsvString(ability2, it) }),
+        ATTACK3("Attack 3\tType\tCost\tGFX\tOn Hit", { abilityTsvString(ability3, it) }),
+        ATTACK4("Attack 4\tType\tCost\tGFX\tOn Hit", { abilityTsvString(ability4, it) }),
+        ATTACK5("Attack 5\tType\tCost\tGFX\tOn Hit", { abilityTsvString(ability5, it) }),
+        SOURCES("Sources", { sourcesList.joinToString() }),
+        EXTRA_FACTS("Extra Facts", { extraFactNameList.joinToString("\t") });
 
         companion object {
-            private fun abilityCsvString(ability: WeaponAbility) =
-                if (ability.type != AbilityType.ABILITY_NONE) "${ability.abilityBpName}\t${ability.type}\t${ability.ap}\t${ability.fxBpName}\t${ability.onHitActionName}" else "\t$NONE_TEXT\t"
+            private fun noneAsZero(noneText: String) = if (noneText == NONE_TEXT) "0" else noneText
+            private fun noneAsFalse(noneText: String) = if (noneText == NONE_TEXT) false.toString() else noneText
+            private fun abilityTsvString(ability: WeaponAbility, noneText: String) =
+                if (ability.type != AbilityType.ABILITY_NONE) "${ability.abilityBpName}\t${ability.type}\t${ability.ap}\t${ability.fxBpName}\t${ability.onHitActionName}" else "\t$noneText\t\t\t"
         }
     }
 
@@ -340,27 +364,27 @@ object Main {
             { assign(ability(this).copy { onHitActionName = it }) },
         )
 
-    private fun csvToProto(file: File): List<Weapon> {
+    private fun tsvToProto(file: File): List<Weapon> {
         val lines = file.reader().readLines()
 
         val processors = buildList<WeaponKt.Dsl.(String) -> Unit> {
-            val csvFields = CsvField.entries.associateBy { it.header.split("\t").first() }
+            val tsvFields = TsvField.entries.associateBy { it.header.split("\t").first() }
             lines.first().split("\t").forEachIndexed { idx, header ->
                 if (this.size > idx) return@forEachIndexed
-                this += when (csvFields[header]) {
-                    CsvField.BLUEPRINT -> listOf { blueprintName = it }
-                    CsvField.NAME -> listOf { name = it }
-                    CsvField.DESCRIPTION -> listOf { description = it }
-                    CsvField.GROUPING -> listOf {}
-                    CsvField.CATEGORY -> listOf {
+                this += when (tsvFields[header]) {
+                    TsvField.BLUEPRINT -> listOf { blueprintName = it }
+                    TsvField.NAME -> listOf { name = it }
+                    TsvField.DESCRIPTION -> listOf { description = it }
+                    TsvField.GROUPING -> listOf {}
+                    TsvField.CATEGORY -> listOf {
                         category = if (it.isEmpty()) WeaponCategory.CATEGORY_NONE else WeaponCategory.valueOf(it)
                     }
 
-                    CsvField.FAMILY -> listOf {
+                    TsvField.FAMILY -> listOf {
                         family = if (it.isEmpty()) WeaponFamily.FAMILY_NONE else WeaponFamily.valueOf(it)
                     }
 
-                    CsvField.CLASSIFICATION -> listOf {
+                    TsvField.CLASSIFICATION -> listOf {
                         classification =
                             if (it.isEmpty()) {
                                 WeaponClassification.CLASSIFICATION_NONE
@@ -369,24 +393,24 @@ object Main {
                             }
                     }
 
-                    CsvField.HEAVY -> listOf { heavy = it.uppercase() == "TRUE" }
-                    CsvField.TWO_HANDED -> listOf { twoHanded = it.uppercase() == "TRUE" }
-                    CsvField.MIN_DAMAGE -> listOf { minDamage = it.toIntOrNull() ?: 0 }
-                    CsvField.MAX_DAMAGE -> listOf { maxDamage = it.toIntOrNull() ?: 0 }
-                    CsvField.ARMOR_PEN -> listOf { penetration = it.toIntOrNull() ?: 0 }
-                    CsvField.DODGE_REDUCTION -> listOf { dodgeReduction = it.toIntOrNull() ?: 0 }
-                    CsvField.EXTRA_HIT_CHANCE -> listOf { additionalHitChance = it.toIntOrNull() ?: 0 }
-                    CsvField.RATE_OF_FIRE -> listOf { rateOfFire = it.toIntOrNull() ?: 0 }
-                    CsvField.RECOIL -> listOf { recoil = it.toIntOrNull() ?: 0 }
-                    CsvField.RANGE -> listOf { maxRange = it.toIntOrNull() ?: 0 }
-                    CsvField.AMMO -> listOf { ammo = it.toIntOrNull() ?: 0 }
-                    CsvField.ATTACK1 -> weaponAbilityProcessorList({ it.ability1 }) { ability1 }
-                    CsvField.ATTACK2 -> weaponAbilityProcessorList({ it.ability2 }) { ability2 }
-                    CsvField.ATTACK3 -> weaponAbilityProcessorList({ it.ability3 }) { ability3 }
-                    CsvField.ATTACK4 -> weaponAbilityProcessorList({ it.ability4 }) { ability4 }
-                    CsvField.ATTACK5 -> weaponAbilityProcessorList({ it.ability5 }) { ability5 }
-                    CsvField.SOURCES -> listOf { sources += it.split(", ") }
-                    CsvField.EXTRA_FACTS -> List(20) { { if (it.isNotEmpty()) extraFactName += it } }
+                    TsvField.HEAVY -> listOf { heavy = it.uppercase() == "TRUE" }
+                    TsvField.TWO_HANDED -> listOf { twoHanded = it.uppercase() == "TRUE" }
+                    TsvField.MIN_DAMAGE -> listOf { minDamage = it.toIntOrNull() ?: 0 }
+                    TsvField.MAX_DAMAGE -> listOf { maxDamage = it.toIntOrNull() ?: 0 }
+                    TsvField.ARMOR_PEN -> listOf { penetration = it.toIntOrNull() ?: 0 }
+                    TsvField.DODGE_REDUCTION -> listOf { dodgeReduction = it.toIntOrNull() ?: 0 }
+                    TsvField.EXTRA_HIT_CHANCE -> listOf { additionalHitChance = it.toIntOrNull() ?: 0 }
+                    TsvField.RATE_OF_FIRE -> listOf { rateOfFire = it.toIntOrNull() ?: 0 }
+                    TsvField.RECOIL -> listOf { recoil = it.toIntOrNull() ?: 0 }
+                    TsvField.RANGE -> listOf { maxRange = it.toIntOrNull() ?: 0 }
+                    TsvField.AMMO -> listOf { ammo = it.toIntOrNull() ?: 0 }
+                    TsvField.ATTACK1 -> weaponAbilityProcessorList({ it.ability1 }) { ability1 }
+                    TsvField.ATTACK2 -> weaponAbilityProcessorList({ it.ability2 }) { ability2 }
+                    TsvField.ATTACK3 -> weaponAbilityProcessorList({ it.ability3 }) { ability3 }
+                    TsvField.ATTACK4 -> weaponAbilityProcessorList({ it.ability4 }) { ability4 }
+                    TsvField.ATTACK5 -> weaponAbilityProcessorList({ it.ability5 }) { ability5 }
+                    TsvField.SOURCES -> listOf { sources += it.split(", ") }
+                    TsvField.EXTRA_FACTS -> List(20) { { if (it.isNotEmpty()) extraFactName += it } }
                     null -> {
                         listOf {}
                     }

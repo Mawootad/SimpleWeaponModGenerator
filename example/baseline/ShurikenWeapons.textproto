@@ -1,0 +1,365 @@
+# proto-file: proto/weapon/Weapon.proto
+# proto-message: weapon.WeaponList
+
+weapon {
+  guid: "94929fd63b1f492e90497dd1786eea03"
+  blueprint_name: "PatternT2ShurikenPistol_Item"
+  name_shared_key: "8cf289d3-32fb-481e-ab32-b7ddbf46d114"
+  name: "Improved Shuriken Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 6
+  max_damage: 11
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 5
+  max_range: 10
+  ammo: 18
+  rate_of_fire: 7
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp_name: "AeldariWeaponProficiencyFeature"
+  }
+  sources: "Unit - Ch02_AgriWorldJungle: JungleWorldRebelLeader_Bogul"
+  sources: "Unit - Ch02_BottomlessPit: BottomlessPit"
+  sources: "Unit - DaringHeir: DaringHeir"
+  sources: "Unit - ExportedPregens: Gusev_Jae_26lvl_ExportedPregen"
+}
+weapon {
+  guid: "f5888e12fd3840419a3758fe9ca2247b"
+  blueprint_name: "RuneCarvedShurikenCannon_Item"
+  name_key: "0b037817-d386-47a2-82a4-0c595de3255b"
+  name: "Rune-Carved Shuriken Cannon"
+  category: Heavy
+  family: Exotic
+  heavy: true
+  two_handed: true
+  min_damage: 6
+  max_damage: 7
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 50
+  max_range: 36
+  ammo: 144
+  rate_of_fire: 12
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_Ability"
+    ability_bp: "a489b6d823ef4b86b431aa1d42e385c7"
+    fx_bp_name: "ShurikenCatapult_Shot_AbilityFXSettings"
+    fx_bp: "0f7a77cad3f646838be3ca4ccfdc9939"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_Ability"
+    ability_bp: "1cdd00b349324e7f958a8cb1dfcde2fe"
+    fx_bp_name: "ShurikenCatapult_Shot_AbilityFXSettings"
+    fx_bp: "0f7a77cad3f646838be3ca4ccfdc9939"
+    on_hit_action_name: ""
+    ap: 3
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 5
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 55
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp_name: "AeldariWeaponProficiencyFeature"
+  }
+  sources: "Chest - CR-20: ImperiumPoor_TrashLoot (1)#1"
+}
+weapon {
+  guid: "27fcb1e69d6649e7b0197fb0de021d11"
+  blueprint_name: "ShurikenCannon_Item"
+  name_key: "34725a28-f82b-4246-8e51-277882282f70"
+  name: "Shuriken Cannon"
+  category: Heavy
+  family: Exotic
+  heavy: true
+  two_handed: true
+  min_damage: 4
+  max_damage: 7
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 40
+  max_range: 36
+  ammo: 144
+  rate_of_fire: 11
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_Ability"
+    ability_bp: "a489b6d823ef4b86b431aa1d42e385c7"
+    fx_bp_name: "ShurikenCatapult_Shot_AbilityFXSettings"
+    fx_bp: "0f7a77cad3f646838be3ca4ccfdc9939"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_Ability"
+    ability_bp: "1cdd00b349324e7f958a8cb1dfcde2fe"
+    fx_bp_name: "ShurikenCatapult_Shot_AbilityFXSettings"
+    fx_bp: "0f7a77cad3f646838be3ca4ccfdc9939"
+    on_hit_action_name: ""
+    ap: 3
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_action_name: ""
+    ap: 5
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 60
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp_name: "AeldariWeaponProficiencyFeature"
+  }
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariDeviceGuardian_Ranged_ReavingTempestSpire"
+}
+weapon {
+  guid: "4d1a06582e3147d09228433ac3882a63"
+  blueprint_name: "ShurikenCatapult_Item"
+  name_key: "2de077a3-bce8-4519-b13b-d2b408f4590d"
+  name: "Shuriken Catapult"
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 6
+  max_damage: 9
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 5
+  max_range: 18
+  ammo: 100
+  rate_of_fire: 8
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_Ability"
+    ability_bp: "a489b6d823ef4b86b431aa1d42e385c7"
+    fx_bp_name: "ShurikenCatapult_Shot_AbilityFXSettings"
+    fx_bp: "0f7a77cad3f646838be3ca4ccfdc9939"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_Ability"
+    ability_bp: "1cdd00b349324e7f958a8cb1dfcde2fe"
+    fx_bp_name: "ShurikenCatapult_Shot_AbilityFXSettings"
+    fx_bp: "0f7a77cad3f646838be3ca4ccfdc9939"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenCatapult_Shot_AbilityFXSettings"
+    fx_bp: "0f7a77cad3f646838be3ca4ccfdc9939"
+    on_hit_action_name: ""
+    ap: 3
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp_name: "AeldariWeaponProficiencyFeature"
+  }
+  sources: "Chest - CR33: ImperiumMilitary_PrisonPitTrashWeapon"
+  sources: "Unit - Ch02_AgriWorldJungle: JungleWorldEldarUnit"
+  sources: "Unit - Ch04_CrownWorld: CrownWorldHarlequinRanged"
+  sources: "Unit - Ch04_CrownWorld: CrownWorldHarlequinRanged_FakeYrliet"
+  sources: "Unit - Ch04_Quetza-al_khet: Quetza_!EldarGuardianStrom_!Archive"
+  sources: "Unit - Ch04_Quetza-al_khet: Quetza_!EldarRanger_!Archive"
+  sources: "Unit - Ch04_Quetza-al_khet: Quetza_EldarGuardianDefender_Leader"
+  sources: "Unit - Ch03_GrandSpectacle: DrukhariWychRangeM_GrandSpectacle_unit"
+  sources: "Unit - Ch04_CrownWorld: CrownWorldHarlequinLeader"
+  sources: "Unit - Ch04_Canteena: Ch04Vladaym_PirateXenoRangeGuard_unit"
+  sources: "Unit - Ch04_FootfallSewersCh04: PirateSpaceCapitan"
+  sources: "Unit - Ch04_FootfallSewersCh04: Torra"
+  sources: "Unit - ExportedPregens: Gusev_Yrliet_26lvl_ExportedPregen"
+}
+weapon {
+  guid: "1025b5850b95477296280af42b1c31f8"
+  blueprint_name: "ShurikenPistolT2CH04_Item"
+  name_shared_key: "0e67b583-80cf-442a-8f7b-7292f7dc9d85"
+  name: "Upgraded Shuriken Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 11
+  max_damage: 15
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 5
+  max_range: 12
+  ammo: 18
+  rate_of_fire: 7
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "AeldariWeaponProficiencyFeature"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  sources: "Unit - Ch04_HaemonculusLab: DrukhariWrack_MeleeRanged_Lab01"
+  sources: "Unit - Ch04_HaemonculusLab: DrukhariWrack_MeleeRanged_Lab01_TiP"
+  sources: "Unit - Ch04_HaemonculusLab: DrukhariWrack_MeleeRanged_Lab02"
+  sources: "Unit - Ch04_HaemonculusLab: DrukhariWrack_MeleeRanged_Lab02_TiP"
+  sources: "Unit - Ch04_CrownWorld: CrownWorldHarlequin_FlickeringDancer"
+  sources: "Unit - Ch04_CrownWorld: CrownWorldHarlequin_StormPlayer"
+  sources: "Unit - Ch04_Quetza-al_khet: Quetza_Harlequin"
+}
+weapon {
+  guid: "74a91d0251d447c798efab2f72c604dc"
+  blueprint_name: "ShurikenPistol_Item"
+  name_key: "fc87cc8b-365d-4e20-96a4-11e5f7c95529"
+  name: "Shuriken Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 6
+  max_damage: 10
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 5
+  max_range: 12
+  ammo: 18
+  rate_of_fire: 7
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_PistolAbility"
+    ability_bp: "6a7f0c4523c34de7829c088556b62f11"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BurstFire_PistolAbility"
+    ability_bp: "347d38e3abad490dad41ee7b77092b24"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "AeldariWeaponProficiencyFeature"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  sources: "Chest - CR28: Drukhari_ATChestOutdoor"
+  sources: "Unit - Ch02_AgriWorldJungle: JungleWorldEldarUnit_TrailerCinematicMelee"
+  sources: "Unit - Ch02_FootfallDock: Footfall_ValadaimAgent_Xenos_Weapon"
+  sources: "Unit - Ch04_Quetza-al_Khet: Quetza-al_Yrliet"
+  sources: "Unit - ExportedPregens: Gusev_Jae_26lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Sayonara_Jae_23lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Yanus19Jae_ExportedPregen"
+  sources: "Unit - JaeCompanion: JaeCompanion"
+  sources: "Unit - JaeCompanion: SmugglerCompanion_JaeQ1"
+}
+

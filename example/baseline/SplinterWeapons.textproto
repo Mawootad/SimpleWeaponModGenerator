@@ -1,0 +1,1127 @@
+# proto-file: proto/weapon/Weapon.proto
+# proto-message: weapon.WeaponList
+
+weapon {
+  guid: "62463880664d457f88bd79c9194766cd"
+  blueprint_name: "ElongatedSplinterRifle_Item"
+  name_key: "e2bedbdd-fe11-4602-9174-2853715d8789"
+  name: "Long Splinter Rifle"
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 18
+  max_damage: 22
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 10
+  recoil: 10
+  max_range: 24
+  ammo: 36
+  rate_of_fire: 2
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SplinterRifle_SingleShot_Ability"
+    ability_bp: "3fbac3a9c61742d790e0a76ea43faefd"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Chest - DrukhariAttackOnShip: DrukhariAttack_WeaponLoot"
+  sources: "Unit - Ch02_RandomEncounters: DrukhariKabaliteSniperRandomEncounter"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariKabaliteHeavy_Arena"
+}
+weapon {
+  guid: "c3231967dadb46699ccb4a1b29a6eee4"
+  blueprint_name: "ShardcarbineT2CH04_Item"
+  name_key: "780ebf61-8393-4e06-a054-503b150470bb"
+  name: "Modified Shardcarbine"
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 15
+  max_damage: 20
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 7
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 4
+  ability1 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "Splinter_HeavyRecoil_Shot_AbilityFXSettings"
+    fx_bp: "5b545eefebe64957a3b0d97d7483d0b6"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "b5511030d52c4b0eae0e6c385ce4189d"
+  extra_fact_name: "ViralToxin_Power10_ForWeapon_Feature"
+}
+weapon {
+  guid: "7f6979baff5d40ba95cdbde9f2b2521f"
+  blueprint_name: "Shardcarbine_Item"
+  name_key: "81660147-a56e-49b4-9a97-0cf241af0cd3"
+  name: "Shardcarbine"
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 7
+  max_damage: 8
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 7
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 4
+  ability1 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "Splinter_HeavyRecoil_Shot_AbilityFXSettings"
+    fx_bp: "5b545eefebe64957a3b0d97d7483d0b6"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  sources: "Chest - CR25: DrukhariAttackOnShip_WeaponLoot (3)"
+}
+weapon {
+  guid: "4819b80b9a8748d0b091e7cd312d5613"
+  blueprint_name: "SniperSplinterRifle_Item"
+  name_key: "d0bbe04f-7b6c-4d5d-a82b-8d8e924ce069"
+  name: "Quickeye Splinter Rifle"
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 28
+  max_damage: 42
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 10
+  recoil: 10
+  max_range: 24
+  ammo: 36
+  rate_of_fire: 2
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SplinterRifle_SingleShot_Ability"
+    ability_bp: "3fbac3a9c61742d790e0a76ea43faefd"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "PreciseShot_Ability"
+    ability_bp: "8fe7633db25d46a8bebc2868b8acff12"
+    fx_bp_name: "BigSniperRifle_AbilityFXSettings"
+    fx_bp: "04f07f00d30e42e4927536f2cc198778"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 3
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "7712185d9ea049609fda2784a6ca75ce"
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "SniperRifle_CritDamage_Feature"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Vendor - LiegeChapter4_VendorTable_Base 126PF"
+}
+weapon {
+  guid: "e092af5ba0ea429c94af047bea282e2c"
+  blueprint_name: "SplinterCannonPiercing_Item"
+  name_key: "9e4a328f-c8dc-48b8-8c82-6cee781b6e19"
+  name: "Piercing Splinter Cannon"
+  category: Heavy
+  family: Exotic
+  heavy: true
+  two_handed: true
+  min_damage: 5
+  max_damage: 6
+  penetration: 35
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 40
+  max_range: 24
+  ammo: 96
+  rate_of_fire: 7
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SplinterRifle_SingleShot_Ability"
+    ability_bp: "3fbac3a9c61742d790e0a76ea43faefd"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 3
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_action_name: ""
+    ap: 5
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 60
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+}
+weapon {
+  guid: "d68efb77ee614c9fab96c1a79e9cea49"
+  blueprint_name: "SplinterCannon_Item"
+  name_key: "66911a50-1b67-4173-a214-3b352d7b35bc"
+  name: "Splinter Cannon"
+  category: Heavy
+  family: Exotic
+  heavy: true
+  two_handed: true
+  min_damage: 5
+  max_damage: 6
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 40
+  max_range: 24
+  ammo: 96
+  rate_of_fire: 9
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SplinterRifle_SingleShot_Ability"
+    ability_bp: "3fbac3a9c61742d790e0a76ea43faefd"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 3
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_action_name: ""
+    ap: 5
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 60
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+  sources: "Chest - CR33: Drukhari_AngerChest"
+}
+weapon {
+  guid: "c75a93b8c98c42c99d5c8d63f73f0515"
+  blueprint_name: "SplinterPistolKabalite_Item"
+  name_key: "31ad7e62-8fd2-4c1b-86a3-4720882d0e77"
+  name: "Kabalite Splinter Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 10
+  max_damage: 15
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 10
+  ammo: 15
+  rate_of_fire: 4
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "ToxicNeedle_PistolAbility"
+    ability_bp: "3ca644cdb2404f71ae84b336850f2e66"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterPistolBurstFire_Ability"
+    ability_bp: "852c5dd197b349cfbbf5ecaf3cee6b60"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariProselyte_Ranged_Portals_Elite"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariSuccubus_MeleeRanged_ArenaFiend"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariWych_MeleeRanged_ArenaFiend"
+  sources: "Unit - Ch03_Prison: DrukhariWych_MeleeRanged_Anger"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariWrack_MeleeRanged_PainDisciple"
+  sources: "Unit - Ch02_VoidShipBridge: MainDrukhari"
+  sources: "Unit - Ch03_GrandSpectacle: DrukhariLeaderM"
+  sources: "Unit - ExportedPregens: JaeCompanion_lvl38_treasureworld_ExportedPregen"
+  sources: "Unit - ExportedPregens: jae_lv38_chordafight_ExportedPregen"
+  sources: "Unit - MarazhaiCompanion: MarazhaiCompanion"
+  sources: "Unit - MarazhaiCompanion: MarazhaiCompanionNPC_Ch02"
+  sources: "Unit - MarazhaiCompanion: MarazhaiCompanionNPC_Ch02"
+}
+weapon {
+  guid: "79b0ed539d5846cea4a19113bad6bdb7"
+  blueprint_name: "SplinterPistolT2CH04_Item"
+  name_shared_key: "72aa1cfd-9048-4bba-bed2-0fe2d73ddf01"
+  name: "Venomous Splinter Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 9
+  max_damage: 12
+  penetration: 25
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 14
+  ammo: 12
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "ToxicNeedle_PistolAbility"
+    ability_bp: "3ca644cdb2404f71ae84b336850f2e66"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterPistolBurstFire_Ability"
+    ability_bp: "852c5dd197b349cfbbf5ecaf3cee6b60"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "b5511030d52c4b0eae0e6c385ce4189d"
+  extra_fact_name: "ViralToxin_Power10_ForWeapon_Feature"
+  sources: "Unit - Drukhari: DrukhariWych_BeastmasterBase"
+}
+weapon {
+  guid: "94c2ccbdace84264840452921c33462b"
+  blueprint_name: "SplinterPistol_Item"
+  name_key: "9c06c878-fb83-4890-a13a-315088eb6f22"
+  name: "Splinter Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 6
+  max_damage: 9
+  penetration: 25
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 14
+  ammo: 12
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "ToxicNeedle_PistolAbility"
+    ability_bp: "3ca644cdb2404f71ae84b336850f2e66"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterPistolBurstFire_Ability"
+    ability_bp: "852c5dd197b349cfbbf5ecaf3cee6b60"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Unit - Ch02_DrukhariAttackOnShip: DrukhariKabaliteSapper"
+  sources: "Unit - Ch02_RogueTraderPalaceSiegeIndoor: DrukhariWych_BeastmasterBaseSiege"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariKabaliteSpecialist"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariWychGunslinger"
+  sources: "Unit - Ch02_Lair3: Lair3RebelRangedSwarm"
+  sources: "Unit - Ch02_DargonusGazebo: DrukhariWych_Dargonus_Range"
+  sources: "Unit - Ch02_DargonusGazebo: DrukhariWych_Dargonus_Range_Cutscene"
+  sources: "Unit - Ch03_CommorraghArena: AhilleasAbductionMarazhai"
+  sources: "Unit - ExportedPregens: Sayonara_Jae_23lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Yanus19Jae_ExportedPregen"
+  sources: "Unit - JaeCompanion: JaeCompanion"
+  sources: "Unit - JaeCompanion: JaeCompanion_Gamescom"
+  sources: "Unit - JaeCompanion: SmugglerCompanion_Bar"
+  sources: "Unit - JaeCompanion: SmugglerCompanion_JaeQ1"
+}
+weapon {
+  guid: "08807a956f414ea582d9400ecf133c98"
+  blueprint_name: "SplinterRifleKabalite_Item"
+  name_key: "549fa97c-96f4-463a-b9df-8f057c06b47c"
+  name: "Kabalite Splinter Rifle"
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 12
+  max_damage: 16
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 4
+  ability1 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenCatapult_Shot_AbilityFXSettings"
+    fx_bp: "0f7a77cad3f646838be3ca4ccfdc9939"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+  sources: "Unit - Ch03_Prison: DrukhariRanger_Ranged_Prison"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariWychRange1_ReavingTempestSpire_unit"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariWychRange2_ReavingTempestSpire_unit"
+  sources: "Unit - Ch04_FootfallSewersCh04: FootfallSewers_Bandit_Ranged"
+  sources: "Unit - Ch03_GrandSpectacle: DrukhariLeaderF"
+  sources: "Unit - Ch03_GrandSpectacle: DrukhariPilot"
+  sources: "Unit - Ch03_GrandSpectacle: DrukhariPilot1"
+}
+weapon {
+  guid: "ab2e81e311294170a47df9326a45f8cd"
+  blueprint_name: "SplinterRifleT2CH04_Item"
+  name_key: "ef96a343-f005-4276-96f4-3fb71881e351"
+  name: "Modified Splinter Rifle"
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 10
+  max_damage: 13
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 7
+  max_range: 20
+  ammo: 36
+  rate_of_fire: 6
+  ability1 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "b5511030d52c4b0eae0e6c385ce4189d"
+  extra_fact_name: "ViralToxin_Power10_ForWeapon_Feature"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariKabaliteGrenade"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariKabaliteSniper"
+  sources: "Unit - Ch04_Canteena: Ch04Vladaym_DrukhariKabalite_unit"
+}
+weapon {
+  guid: "da644b8425814d2db430ee60a2ae23c6"
+  blueprint_name: "SplinterRifle_Item"
+  name_key: "471f76f7-10b3-45d3-884e-13fb19f30b3a"
+  name: "Splinter Rifle"
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 8
+  max_damage: 10
+  penetration: 25
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 7
+  max_range: 20
+  ammo: 36
+  rate_of_fire: 6
+  ability1 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Unit - Drukhari: DrukhariKabalitePrototype"
+  sources: "Unit - Drukhari: DrukhariWychPrototype"
+  sources: "Unit - Ch02_DrukhariAttackOnShip: DrukhariKabaliteSniperAttackOnShip"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariKabalite"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariBeastMaster_Arena"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariKabalite_Arena1"
+  sources: "Unit - Ch03_CommorraghStreets: DrukhariKabalite_KabalF"
+  sources: "Unit - Ch03_CommorraghStreets: DrukhariKabalite_KabalM"
+  sources: "Unit - CH05_MarazhaiBloodright: DrukhariKabaliteBlackHeart"
+  sources: "Unit - CH05_MarazhaiBloodright: DrukhariKabaliteTempest"
+  sources: "Unit - CH05_MarazhaiBloodright: DrukhariKabaliteTempest_Neutral"
+  sources: "Unit - CH05_MarazhaiBloodright: DrukhariKabalite_Ranged_SwarmCh05"
+  sources: "Unit - Ch04_FootfallSewersCh04: FootfallSewersPatrol"
+  sources: "Unit - Ch02_DeadlyGardens: Marazhai"
+  sources: "Unit - Ch03_CommorraghArena: CommorraghArenaMainWych"
+  sources: "Unit - Ch03_CommorraghArena: CommorraghArenaWyches"
+  sources: "Unit - Ch03_VectTh: DrukhariKabaliteWatchman"
+  sources: "Unit - CH05_MarazhaiBloodright: DyingKabalite"
+}
+weapon {
+  guid: "fa51e5a184e24016ae54d728ace3a5ab"
+  blueprint_name: "ViolentSplinterCannon_Item"
+  name_key: "6795d8ab-ff86-4d53-b2af-94b1fc615786"
+  name: "Violent Splinter Cannon"
+  category: Heavy
+  family: Exotic
+  heavy: true
+  two_handed: true
+  min_damage: 8
+  max_damage: 12
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 50
+  max_range: 16
+  ammo: 96
+  rate_of_fire: 8
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SplinterRifle_SingleShot_Ability"
+    ability_bp: "3fbac3a9c61742d790e0a76ea43faefd"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterBurstFire_Ability"
+    ability_bp: "0eb2abc6e3684d6eaf6e33e10ad471f7"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 3
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 5
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 60
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "b5511030d52c4b0eae0e6c385ce4189d"
+  extra_fact_name: "ViralToxin_Power10_ForWeapon_Feature"
+}
+weapon {
+  guid: "754f79a1fbc34d3d8f60817ad07ae7db"
+  blueprint_name: "ChtonosCannonItem"
+  name_shared_key: "29913297-8565-4d81-a450-b8ec9fa6d50c"
+  description_key: "654a99fe-3a11-4668-9d81-70f0f7438adc"
+  description: "Attacks with Life Sunderer grant +50% to {g|Encyclopedia:OverpenetrationFullGlossary}overpenetration{/g}."
+  category: Heavy
+  family: Exotic
+  heavy: true
+  two_handed: true
+  min_damage: 5
+  max_damage: 6
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 40
+  max_range: 24
+  ammo: 96
+  rate_of_fire: 9
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SplinterRifle_SingleShot_Ability"
+    ability_bp: "3fbac3a9c61742d790e0a76ea43faefd"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 3
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_action_name: ""
+    ap: 5
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 60
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "6b1f8028b61c410b8c829f8c755199c1"
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact_name: "ChtonosCannonFeature"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+  sources: "Unit - Ch03_CommoraghPrison: ChtonosPainEngine"
+}
+weapon {
+  guid: "a178412567e347379ab99bf3c994038d"
+  blueprint_name: "DeadshotSplinterRifleItem"
+  name_shared_key: "badfd0e4-e8f8-4f90-95fc-4f0c5ec38fed"
+  name: "Deadshot Splinter Rifle"
+  description_shared_key: "04e31e4d-6960-4090-9662-702e2d37966d"
+  description: "This rifle has {g|Encyclopedia:DeadeyeShot}deadeye shot{/g}. Deadeye shot deals additional {g|Encyclopedia:DamageGlossary}damage{/g} equal to {uip|Damage|c4b67aae857f464290040b025f2e6252}."
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 25
+  max_damage: 35
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 7
+  max_range: 20
+  ammo: 16
+  rate_of_fire: 6
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SplinterRifle_SingleShot_Ability"
+    ability_bp: "3fbac3a9c61742d790e0a76ea43faefd"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability3 {
+    type: SingleShot
+    ability_bp_name: "PreciseShotSplinterRifle_Ability"
+    ability_bp: "083b3e6ce885487089638ca969070c03"
+    fx_bp_name: "Splinter_HeavyRecoil_Shot_AbilityFXSettings"
+    fx_bp: "5b545eefebe64957a3b0d97d7483d0b6"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability4 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "c4b67aae857f464290040b025f2e6252"
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact_name: "DeadshotSplinterRifleFeature"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariSniper_Ranged_Portals_Loot"
+  sources: "Unit - ExportedPregens: Sayonara_39lvl_RT_ExportedPregen"
+}
+weapon {
+  guid: "20795f340f744844bb3f803a90890a3e"
+  blueprint_name: "BleederSplinterPistol_Item"
+  name_key: "c92e49be-1c2f-42af-9233-2921c79a9a40"
+  name: "Bleeder Splinter Pistol"
+  description_key: "0fbd36cd-1eca-49eb-9bd0-24168f645665"
+  description: "This pistol is equipped with an unusual serum that thins the blood, inflicting {g|Encyclopedia:BleedingEffect}bleeding{/g} (6)."
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 12
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 14
+  ammo: 12
+  rate_of_fire: 3
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Bleeder_PistolAbility"
+    ability_bp: "6a7e90f8c3b648c8b304b508ce31371f"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "a06b2ed42b8147368bb0b8cabd89e952"
+    on_hit_action_name: "Bleeding_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "BleederSplinterPistolBurstFire_Ability"
+    ability_bp: "7b2abddeb5be4d63a59a919f33e081c4"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "a06b2ed42b8147368bb0b8cabd89e952"
+    on_hit_action_name: "Bleeding_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "232ae3bb3ca04d27bdc5ea57156d629e"
+  extra_fact_name: "Bleeding_Power6_ForWeapon_Feature"
+  sources: "Unit - Ch04_TheDoor: HaemunculusClone_MeleeRanged_TheDoor"
+}
+weapon {
+  guid: "2520cf8df7b743168dd6e75ddd1c235f"
+  blueprint_name: "ModifiedSplinterPistol_Item"
+  name_key: "ba1d7528-5191-4790-a65a-87dd1ee65a44"
+  name: "Modified Splinter Pistol"
+  description_shared_key: "7d4104fa-75c1-411e-8eae-0c72b100f855"
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 12
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 14
+  ammo: 25
+  rate_of_fire: 4
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "ToxicNeedle_PistolAbility"
+    ability_bp: "3ca644cdb2404f71ae84b336850f2e66"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterPistolBurstFire_Ability"
+    ability_bp: "852c5dd197b349cfbbf5ecaf3cee6b60"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Vendor - PirateChapter2_VendorTable_Base 42PF"
+}
+weapon {
+  guid: "56b5ce2b08a04353914e1d3f9f7b6cf2"
+  blueprint_name: "ScourgeWeapon_Item"
+  name_shared_key: "552175d6-1b6b-4183-927d-fc5083f364fc"
+  description_key: "f4054f04-1138-4415-8106-6134f303b4d8"
+  description: "On {g|Encyclopedia:HitSequenceGlossary}hit{/g}: if the target is suffering from {g|Encyclopedia:ToxinEffect}toxin{/g} and fails the corresponding {g|Encyclopedia:WarhammerToughness}Toughness{/g} {g|Encyclopedia:ResistanceTest}resistance test{/g} with \342\210\22225 {g|Encyclopedia:Penalty}penalty{/g}, it suffers an additional <u>(from 15 to 20)</u> {g|Encyclopedia:MentalDamage}mental damage{/g}."
+  category: Basic
+  family: Exotic
+  heavy: false
+  two_handed: true
+  min_damage: 7
+  max_damage: 11
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 7
+  max_range: 20
+  ammo: 18
+  rate_of_fire: 7
+  ability1 {
+    type: Burst
+    ability_bp_name: "SplinterRifleBurstFire_Ability"
+    ability_bp: "bcc87a72b18c4d309aab904a777b8ffd"
+    fx_bp_name: "Splinter_HeavyRecoil_Shot_AbilityFXSettings"
+    fx_bp: "5b545eefebe64957a3b0d97d7483d0b6"
+    on_hit_actions: "ae7dd0e88db74f44badaafd9949af268"
+    on_hit_action_name: "ScourgeWeapon_AbilityAdditionalEffect"
+    ap: 2
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "SplinterCannon_Shot_AbilityFXSettings"
+    fx_bp: "4d103c7e8f34489ea59f4d4b8acb5515"
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+}
+weapon {
+  guid: "8df22e7b8812470597896bc91e7efaf6"
+  blueprint_name: "SplinterPistolAgony_Item"
+  name_key: "aa84a67c-bede-4524-aa8b-e78355e4e6d3"
+  name: "Agonising Splinter Pistol"
+  description_key: "fe7dd7fd-6c53-4969-b7a3-93570505d7a8"
+  description: "Deals double {g|Encyclopedia:ToxicDamage}toxic damage{/g}. Each successful attack with this weapon increases the {g|Encyclopedia:DamageGlossary}damage{/g} of the {g|Encyclopedia:ToxinEffect}toxin{/g} effect suffered by a target by +1."
+  category: Pistol
+  family: Exotic
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 10
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 14
+  ammo: 12
+  rate_of_fire: 5
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "ToxicNeedle_PistolAbility"
+    ability_bp: "3ca644cdb2404f71ae84b336850f2e66"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "6010b5f330fa47ec842c979cc0ef1bc0"
+    on_hit_action_name: "SplinterPistolAgony_AbilityAdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: Burst
+    ability_bp_name: "SplinterPistolBurstFire_Ability"
+    ability_bp: "852c5dd197b349cfbbf5ecaf3cee6b60"
+    fx_bp_name: "Splinter_Shot_AbilityFXSettings"
+    fx_bp: "8d01a96abb6a4db396e88a9c83fc35a1"
+    on_hit_actions: "6010b5f330fa47ec842c979cc0ef1bc0"
+    on_hit_action_name: "SplinterPistolAgony_AbilityAdditionalEffect"
+    ap: 2
+  }
+  ability3 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: "ShurikenPistol_Shot_AbilityFXSettings"
+    fx_bp: "1b15b98873e8448e8c8216dd62acb8e9"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "4211f4d055734ccfb824b902080888ad"
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact_name: "SplinterPistolAgony_Feature"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+  sources: "Unit - Ch02_PenalWorld: Iremeris"
+  sources: "Unit - Ch03_ReavingTempestSpire: Yremeriss_unit"
+  sources: "Unit - ExportedPregens: JaeCompanion_lvl38_treasureworld_ExportedPregen"
+  sources: "Unit - ExportedPregens: jae_lv38_chordafight_ExportedPregen"
+  sources: "Unit - ExportedPregens: PlayerMercenary_Level42_OlegParty_ExportedPregen"
+}
+

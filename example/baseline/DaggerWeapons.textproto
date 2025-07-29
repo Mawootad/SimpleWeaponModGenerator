@@ -1,0 +1,1080 @@
+# proto-file: proto/weapon/Weapon.proto
+# proto-message: weapon.WeaponList
+
+weapon {
+  guid: "88de523b22324c0b84373ac545f344cb"
+  blueprint_name: "AstartesCombatKnife_Item"
+  name_key: "4e0c27c7-073d-4125-acf9-784f8ae20f51"
+  name: "Astartes Combat Knife"
+  description_key: "885bd72e-0fc0-4e0d-8de3-9fcd7bf807ac"
+  description: "If an attack with this knife kills the target, the wielder restores +1 {g|Encyclopedia:ActionPoints}AP{/g} and can make an additional attack with this knife."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 16
+  max_damage: 27
+  penetration: 20
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "MeleeAttack_ability"
+    ability_bp: "be721a48e3614ddbb86bf18503511c2c"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "950565a69d144391897cdc0024747755"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+  }
+  extra_fact: "ce4ccb77de51442d82193c18cb4345b5"
+  extra_fact_name: "AstartesCombatKnife_Feature"
+  sources: "Chest - Test: TestRaritiesLoot"
+  sources: "Unit - Ch02_ForgeWorldAndHeart: HalbrandtSpacewolfMarine_WarCouncilKTC"
+  sources: "Unit - Ch03_CommorraghArena: CommorraghArenaUlfar1stFight"
+  sources: "Unit - ExportedPregens: UlfarCompanion_Level37_TesseraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: UlfarCompanion_Level37_ValladinParty_ExportedPregen"
+  sources: "Unit - UlfarCompanion: UlfarCompanion"
+  sources: "Unit - UlfarCompanion: UlfarCompanion_GrandSpecticleNPC"
+}
+weapon {
+  guid: "6b2cf93040204f3fa48582fc6efe1e4c"
+  blueprint_name: "GenestealerDaggerT1CH04_Item"
+  name_shared_key: "d6a1b764-4cc7-42ac-8e98-14c711544a9a"
+  name: "Toxic Knife"
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 20
+  max_damage: 25
+  penetration: 10
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "ToxicKnifeMeleeAttack_Ability"
+    ability_bp: "4beafc8373064b51b6095e37811ed36c"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_actions: "9a1420c3825a414885e6ede8a49273a6"
+    on_hit_action_name: "ViralToxin_withoutCheck_AdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+}
+weapon {
+  guid: "35f9ce854b2f44e3aa9237281ef36108"
+  blueprint_name: "GenestealerDagger_Item"
+  name_key: "e3977cf2-6168-41fe-a639-7733f0911ea9"
+  name: "Bio-Dagger"
+  description_key: "4e0ac948-b2f0-4357-8c22-8d13a2d4bb67"
+  description: "Each attack with this dagger increases its damage by +1 until the end of the combat. Stacks."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 15
+  max_damage: 20
+  penetration: 10
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "ToxicKnifeMeleeAttack_Ability"
+    ability_bp: "4beafc8373064b51b6095e37811ed36c"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_actions: "9a1420c3825a414885e6ede8a49273a6"
+    on_hit_action_name: "ViralToxin_withoutCheck_AdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact: "c87ac777ca244023b78e2587692cab28"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  extra_fact_name: "GenestealerDagger_Feature"
+  sources: "Chest - VoidshipCryptArena: Iloot_loot_object_Good (2)"
+}
+weapon {
+  guid: "de3c1dc8c47a4d37897a05939dcad47a"
+  blueprint_name: "HeinrixDaggerPlaceholder_Item"
+  name_shared_key: "41abad77-dc63-461c-b7b8-af743345d493"
+  name: "Interrogator\'s Dagger"
+  description_shared_key: "1fa29900-3bf6-4f9a-b11e-9e8aac1af23f"
+  description: "On a successful {g|Encyclopedia:HitSequenceGlossary}hit{/g} with this weapon, the target must pass a {g|Encyclopedia:WarhammerWillpower}Willpower{/g} {g|Encyclopedia:ResistanceTest}resistance test{/g} with a \342\210\222{uip|Test|b04f00d9faf0433eb413f55d0ccaa680} {g|Encyclopedia:Penalty}penalty{/g} or immediately be moved 4 cells away, provoking {g|Encyclopedia:AttackOfOpportunityFullGlossary}attacks of opportunity{/g}."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 16
+  max_damage: 20
+  penetration: 10
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "HeinrixDaggerPlaceholder_Ability"
+    ability_bp: "969b3a8a7b3b44528d046eadd61b9d12"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "affa5fdded7e404b910b990f5d344a8c"
+    bp_name: ""
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "b04f00d9faf0433eb413f55d0ccaa680"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "HeinrixDaggerPlaceholder_Feature"
+}
+weapon {
+  guid: "1e772bf9f51f4539a787d868565b49ff"
+  blueprint_name: "HekatariiBladeT2CH02_Item"
+  name_key: "13bd1702-1b22-4273-88dc-362afcfaea0c"
+  name: "[Retobi-Pattern] Hekatarii Blade"
+  category: Melee
+  family: Exotic
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 16
+  max_damage: 24
+  penetration: 20
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Hekatarii_MeleeAttack_ability"
+    ability_bp: "c7aabbc6d5784fa8a938359b66b2e952"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "33bf9dffa6fd42c2af0edd0e045ea5c6"
+    on_hit_action_name: "Axe_BleedAbilityAdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "232ae3bb3ca04d27bdc5ea57156d629e"
+  extra_fact_name: "Bleeding_Power6_ForWeapon_Feature"
+}
+weapon {
+  guid: "fcc48a02a6014321a74c6a412d67fae2"
+  blueprint_name: "HekatariiBladeT2CH04_Item"
+  name_key: "5b7ff2da-b125-4b2a-a23f-e3f15e61b705"
+  name: "Sharpened Hekatarii Blade"
+  category: Melee
+  family: Exotic
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 27
+  max_damage: 37
+  penetration: 20
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Hekatarii_MeleeAttack_ability"
+    ability_bp: "c7aabbc6d5784fa8a938359b66b2e952"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "33bf9dffa6fd42c2af0edd0e045ea5c6"
+    on_hit_action_name: "Axe_BleedAbilityAdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "9962dd8fa12e4c8f8b6fe4832ae356c7"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "Bleeding_Power10_ForWeapon_Feature"
+  sources: "Unit - Ch04_HaemonculusLab: DrukhariWrack_MeleeRanged_Lab01"
+  sources: "Unit - Ch04_HaemonculusLab: DrukhariWrack_MeleeRanged_Lab01_TiP"
+  sources: "Unit - Ch04_HaemonculusLab: DrukhariWrack_MeleeRanged_Lab02"
+  sources: "Unit - Ch04_HaemonculusLab: DrukhariWrack_MeleeRanged_Lab02_TiP"
+  sources: "Unit - ExportedPregens: MarazhaiCompanion_Level39_SolarParty_ExportedPregen"
+}
+weapon {
+  guid: "f770ef8cf5b94afc88e336d46f156d36"
+  blueprint_name: "HekatariiBladeT2_Item"
+  name_key: "9c063e2c-020a-43e2-83d1-7a8d36a9319f"
+  name: "Fine-Edged Hekatarii Blade"
+  category: Melee
+  family: Exotic
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 15
+  max_damage: 25
+  penetration: 20
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Hekatarii_MeleeAttack_ability"
+    ability_bp: "c7aabbc6d5784fa8a938359b66b2e952"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "33bf9dffa6fd42c2af0edd0e045ea5c6"
+    on_hit_action_name: "Axe_BleedAbilityAdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "2dd9bfa29e1140a8a98f7d4140f74074"
+  extra_fact_name: "Bleeding_Power8_ForWeapon_Feature"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariBeastmaster_MeleeRanged_ArenaFiend"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariProselyte_Melee_Portals"
+  sources: "Unit - Ch03_Prison: DrukhariWarrior_Melee_Prison"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariWych_ReavingTempestSpire_unit"
+}
+weapon {
+  guid: "d5391ba5f7bf4a96b3bfdca6027d081c"
+  blueprint_name: "HekatariiBlade_Item"
+  name_key: "d34cfdf5-eb0c-48db-b218-90e6e2863b49"
+  name: "Hekatarii Blade"
+  category: Melee
+  family: Exotic
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 15
+  max_damage: 17
+  penetration: 30
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Hekatarii_MeleeAttack_ability"
+    ability_bp: "c7aabbc6d5784fa8a938359b66b2e952"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "33bf9dffa6fd42c2af0edd0e045ea5c6"
+    on_hit_action_name: "Axe_BleedAbilityAdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "232ae3bb3ca04d27bdc5ea57156d629e"
+  extra_fact_name: "Bleeding_Power6_ForWeapon_Feature"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariWych"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariEliteGladiator"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariEliteGladiatorFem"
+  sources: "Unit - Ch03_Prison: ArenaElite"
+  sources: "Unit - Ch03_Prison: DrukhariBandit"
+  sources: "Unit - Ch03_Prison: OperaServant"
+}
+weapon {
+  guid: "f97dcdeac2ef45e7b5e0b5587b33c098"
+  blueprint_name: "KnifeT1_Item"
+  name_shared_key: "a6b64823-d09f-49ca-b962-25e773f2160d"
+  name: "Knife"
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 10
+  max_damage: 12
+  penetration: 15
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  sources: "Unit - Ch04_FootfallSewersCh04: FootfallSewers_Bandit_Melee"
+  sources: "Unit - DLC1_LowerTunnels: LT_Fighter"
+  sources: "Unit - DLC1_LowerTunnels: LT_Fighter_Chaos"
+}
+weapon {
+  guid: "383d03680e6642038cfa3fd94c89fbd1"
+  blueprint_name: "Knife_Item"
+  name_shared_key: "a6b64823-d09f-49ca-b962-25e773f2160d"
+  name: "Knife"
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 6
+  max_damage: 8
+  penetration: 10
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  sources: "Chest - CR0: ImperiumMilitary_PrologueAP_Patent_Chest02"
+  sources: "Chest - CR0: ImperiumMilitary_PrologueAP_Patent_Chest04"
+  sources: "Chest - EE_DestroyedBlackShip: Loot_Quest - PariahDiary (Ok)"
+  sources: "Chest - EE_DestroyedBlackShip: Loot_Trash_CorpseFrozenV1"
+  sources: "Chest - JailPlanetoid: Loot_Poor_Hidden_Stim"
+  sources: "Chest - Quetza-al_Khet: Loot_Quest_Totem_Artefact"
+  sources: "Chest - CR0: ForgeWorld_TestLoot1"
+  sources: "Unit - Ch01_JailPlanetoid: JailPlanetoidPirates"
+  sources: "Unit - Ch01_JailPlanetoid: JailPlanetoidPrisonerSwarm"
+  sources: "Unit - Ch01_Starport: StarportRebelMeleeKnife"
+  sources: "Unit - Ch01_Starport: StarportRebelMeleeSwarm"
+  sources: "Unit - Ch01_TaintedStreets: TaintedStreetsCultistMelee"
+  sources: "Unit - Ch02_AdministratumPalace: AdministratumMenas"
+  sources: "Unit - Ch02_AdministratumPalace: AdministratumQueueMemberM1"
+  sources: "Unit - Ch02_AdministratumPalace: AdministratumQueueMemberM2"
+  sources: "Unit - Ch02_AdministratumPalace: AdministratumQueueMemberM3"
+  sources: "Unit - Ch02_AgriWorldTown: MutatedNobleMelee"
+  sources: "Unit - Ch02_FootFallAtrium: Footfall_AngryCommonerMelee"
+  sources: "Unit - Ch02_FootFallAtrium: Footfall_Hobo"
+  sources: "Unit - Ch02_FootFallAtrium: Footfall_HoboDiogen"
+  sources: "Unit - Ch02_FootFallAtrium: Footfall_HoboFemale"
+  sources: "Unit - Ch02_FootfallDock: Footfall_Refugee"
+  sources: "Unit - Ch02_FootfallDock: Footfall_RefugeeForgeWorld"
+  sources: "Unit - Ch02_FootfallDock: Footfall_RefugeeForgeWorld_Dialog"
+  sources: "Unit - Ch02_FootfallDock: Mumbling madmen (3)"
+  sources: "Unit - Ch02_Lair2: UnderhiveMelee"
+  sources: "Unit - Ch02_LowerDecks: RabbleMelee"
+  sources: "Unit - Ch02_LowerDecks: WorkerCorridor"
+  sources: "Unit - Ch02_LowerDecks: WorkerSector"
+  sources: "Unit - Ch02_RandomEncounters: PossessedRabbleMelee02RandomEncounter"
+  sources: "Unit - Ch02_RandomEncounters: PossessedRabbleMeleeRandomEncounter"
+  sources: "Unit - Ch02_RogueTraderPalace: NobleInPalace_Knife"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: Survivor"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: SurvivorScout"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: ThrallMeleeSwarm"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: WildCannibalMeleeSwarm"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: WildCannibalRangeTwitching"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: WildCannibalTrapper"
+  sources: "Unit - Ch02_SpaceScavengers: Scavenger"
+  sources: "Unit - Ch02_VoidshipBridge: WorkerHope_KTC"
+  sources: "Unit - Ch03_CommorraghArena: ArenaGladiator2"
+  sources: "Unit - Ch03_CommorraghStreets: CommorraghStreets_Victim"
+  sources: "Unit - Ch03_Prison: RoaringMale_GladiatorMelee"
+  sources: "Unit - Ch03_Prison: RoaringMale_GladiatorMelee2"
+  sources: "Unit - Ch03_Prison: Tramp"
+  sources: "Unit - Ch03_Prison: TrampMain"
+  sources: "Unit - Ch04_SalisPrine_ItsTime: JailPlanetoidPrisonerSwarm1"
+  sources: "Unit - DLC1_Ch02_AstropathicChapel: ChapelAcolyteMelee_AstropathicChapelCH2"
+  sources: "Unit - DLC1_LowerTunnels: LT_DeathCultist"
+  sources: "Unit - DLC1_LowerTunnels: LT_DeathCultist_Accident_End"
+  sources: "Unit - DLC1_LowerTunnels: LT_DeathCultist_Female"
+  sources: "Unit - DLC1_LowerTunnels: RebelMutantMeleeCH02_Swarm"
+  sources: "Unit - DLC1_LowerTunnels: ThiefBrute_Melee_LowerTunnels"
+  sources: "Unit - DLC1_LowerTunnels: ThiefBrute_Melee_LowerTunnels"
+  sources: "Unit - DLC2_AdministratumPalace: VP_Marshal"
+  sources: "Unit - DLC2_AdministratumPalace: VP_Marshal_noHelmet"
+  sources: "Unit - DLC2_AdministratumPalace: VP_Prefect"
+  sources: "Unit - Ch02_DaringHeirGuttedShip: ShipServicemanMutantAcid_Ranged_Common"
+  sources: "Unit - Ch02_ForgeWorldSpaceHulk: ShipServicemanMutant"
+  sources: "Unit - Ch02_ForgeWorldSpaceHulk: ShipServicemanMutant_ForCoronation"
+  sources: "Unit - Ch02_RandomEncounters: NurgleAmbushZombie_RandomEncounter"
+  sources: "Unit - Ch02_RandomEncounters: RE_DemonTransform_Grunt"
+  sources: "Unit - Ch02_RandomEncounters: RE_DemonTransform_Gunner"
+  sources: "Unit - Ch02_RandomEncounters: RE_DemonTransform_NurgleBuboe"
+  sources: "Unit - Ch02_AgriWorldTown: AgriWorldGovernorCompanion"
+  sources: "Unit - Ch02_AgriWorldTown: AgriWorldGovernorCompanion_Carapace"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: Meduse"
+  sources: "Unit - Ch03_CommorraghArena: CommorraghCommissar"
+  sources: "Unit - DLC1_DeathCultTemple: Captive1"
+  sources: "Unit - Ch04: Footfall_Resistance"
+  sources: "Unit - Units: BoardedShip_Pirate_Melee_Swarm_Unit"
+  sources: "Unit - AbelardCompanion: AbelardCompanion_Gamescom"
+}
+weapon {
+  guid: "9969350145504f1e87c2f0263f1c0889"
+  blueprint_name: "PoisonedHekatariiBladeT2CH04_Item"
+  name_key: "4cb9f7f5-4d07-4117-ba1f-c65739a6e53d"
+  name: "Sharpened Poisoned Hekatarii Blade"
+  category: Melee
+  family: Exotic
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 27
+  max_damage: 35
+  penetration: 20
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9a1420c3825a414885e6ede8a49273a6"
+    on_hit_action_name: "ViralToxin_withoutCheck_AdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "efa8ed36350e4f838ae9ba4c04f1d44e"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "ViralToxin_Power12_ForWeapon_Feature"
+}
+weapon {
+  guid: "df43ea76428f47e4bafb11c104b2bd3a"
+  blueprint_name: "PoisonedHekatariiBladeT2_Item"
+  name_key: "2ffd8038-3753-4293-b4d1-b88c258bb2a5"
+  name: "Fine-Edged Poisoned Hekatarii Blade"
+  category: Melee
+  family: Exotic
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 15
+  max_damage: 26
+  penetration: 20
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9a1420c3825a414885e6ede8a49273a6"
+    on_hit_action_name: "ViralToxin_withoutCheck_AdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariWych_MeleeRanged_ArenaFiend"
+}
+weapon {
+  guid: "8e659d5eaca040a7974842d91d3e7232"
+  blueprint_name: "PoisonedHekatariiBlade_Item"
+  name_key: "e6a4cf81-032d-44e2-9749-d5d2f6776307"
+  name: "Poisoned Hekatarii Blade"
+  category: Melee
+  family: Exotic
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 15
+  max_damage: 17
+  penetration: 30
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9a1420c3825a414885e6ede8a49273a6"
+    on_hit_action_name: "ViralToxin_withoutCheck_AdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariEliteAbess"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariWrack_MeleeRanged_PainDisciple"
+  sources: "Unit - Ch02_DargonusGazebo: DrukhariWych_Dargonus_Hekatrix"
+  sources: "Unit - Ch02_DargonusGazebo: DrukhariWych_Dargonus_Melee"
+  sources: "Unit - Ch02_DargonusGazebo: DrukhariWych_Dargonus_Range"
+  sources: "Unit - Ch02_DargonusGazebo: DrukhariWych_Dargonus_Range_Cutscene"
+  sources: "Unit - Ch03_CommorraghArena: CommoraghArenaMarazhai"
+  sources: "Unit - Ch03_CommorraghArena: CommoraghArenaMarazhai1stFight"
+  sources: "Unit - Ch03_Prison: Abess"
+}
+weapon {
+  guid: "baee09db5e54485eb8e18569c96e1779"
+  blueprint_name: "SerratedKnife_Item"
+  name_shared_key: "bd458773-ba09-4288-b78e-2662addf7409"
+  name: "Serrated Mono-Knife"
+  description_key: "3205eb1b-05f7-421e-a24b-6c2b0cdfdd79"
+  description: "This knife has a chance to inflict {g|Encyclopedia:BleedingEffect}bleeding{/g}."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 15
+  penetration: 10
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "MeleeAttack_ability"
+    ability_bp: "be721a48e3614ddbb86bf18503511c2c"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_actions: "a06b2ed42b8147368bb0b8cabd89e952"
+    on_hit_action_name: "Bleeding_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  extra_fact: "8f2969f253c844ee8ee2f5f447cd98ec"
+  extra_fact_name: "Bleeding_Power4_ForWeapon_Feature"
+  sources: "Unit - Ch03_CommorraghArena: ArenaGladiator1"
+  sources: "Unit - Ch03_CommorraghArena: HumanGladiator_Melee_Arena_01"
+  sources: "Unit - DLC1_CH02_OfficersDeck_Kelemorph: Enforcer_Melee_Common"
+  sources: "Unit - DLC1_CH02_OfficersDeck_Kelemorph: Lowlifer_MeleeGrenade_Swarm"
+  sources: "Unit - Ch02_FootfallSlums: InfectedMutantInfector_Ranged"
+  sources: "Unit - Ch02_FootfallSlums: InfectedMutantPsyker_Ranged"
+  sources: "Unit - Ch02_FootfallSlums: InfectedMutant_Melee"
+  sources: "Unit - Ch02_Macrocannon_Psyker_Q1: MacrocannonMutantMeleeGrenade_Common"
+  sources: "Unit - Ch02_Macrocannon_Psyker_Q1: MacrocannonMutantMelee_Common"
+  sources: "Unit - Ch02_RandomEncounters: NurgleZombieSwarm02_RandomEncounter"
+  sources: "Unit - Ch03_GrandSpecticle: GrandSpecticle_Farseer"
+  sources: "Unit - Ch03_ReavingTempestSpire: YrlietQ1_Farseer01"
+  sources: "Unit - Ch04_FootfallAtrium: FootfallCh04_Frosche"
+  sources: "Unit - Ch05_Epitaph: Tanakia"
+  sources: "Unit - DLC1_LowerTunnels_StreetFight: LT_SF_Enforcer_MeleeRanged_Common"
+  sources: "Unit - DLC1_LowerTunnels_StreetFight: LT_SF_Enforcer_MeleeRanged_CutSc"
+}
+weapon {
+  guid: "b3ad458bc2ba4d60b0ee6bde2672325f"
+  blueprint_name: "ToxicKnife_Item"
+  name_shared_key: "d6a1b764-4cc7-42ac-8e98-14c711544a9a"
+  name: "Toxic Knife"
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 12
+  max_damage: 19
+  penetration: 10
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "ToxicKnifeMeleeAttack_Ability"
+    ability_bp: "4beafc8373064b51b6095e37811ed36c"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_actions: "9a1420c3825a414885e6ede8a49273a6"
+    on_hit_action_name: "ViralToxin_withoutCheck_AdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Chest - CR19: AdeptusMechanicus_LootContainer_Hidden"
+  sources: "Unit - Ch02_RandomEncounters: HumanSlaveMeleeRandomEncounter"
+  sources: "Unit - HeinrixCompanion: FighterPsykerQA_AllDoTs"
+}
+weapon {
+  guid: "4cff3bad2ad0437ba1674676a67f4946"
+  blueprint_name: "ArenaGlimmersteelBladeItem"
+  name_key: "07c04325-94bf-437d-8898-1c37e2e812aa"
+  name: "Serrated Glimmersteel Blade"
+  description_key: "8718bf61-214d-48c0-87a4-8ec658328687"
+  description: "Each successful attack with this weapon increases the {g|Encyclopedia:DamageGlossary}damage{/g} of the {g|Encyclopedia:BleedingEffect}bleeding{/g} effect suffered by a target by +3."
+  category: Melee
+  family: Primitive
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 17
+  max_damage: 28
+  penetration: 15
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "9f331fb11e084cd3913c7777a90e5117"
+    on_hit_action_name: "ArenaGlimmersteelBlade_AdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "730b5f34333f452a842f18c8a5254a02"
+  extra_fact: "2dd9bfa29e1140a8a98f7d4140f74074"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "ArenaGlimmersteelBladeFeature"
+  extra_fact_name: "Bleeding_Power8_ForWeapon_Feature"
+  sources: "Chest - Prison: Drukhari_PrisonPitOwnChest01"
+  sources: "Unit - HeinrixCompanion: FighterPsykerQA_AllDoTs"
+  sources: "Vendor - PitBossChapter3_VendorTable_Base 0PF"
+}
+weapon {
+  guid: "0f32a16a02e547a6b282eb96a2064676"
+  blueprint_name: "GlimmersteelBladeItem"
+  name_key: "ea20a9f3-5c2b-4ca9-8a9c-b913b8c6bdc6"
+  name: "Glimmersteel Blade"
+  description_key: "e9bc62c4-4692-40bd-868d-5eff1345e44b"
+  description: "Attacks with the glimmersteel blade inflict {g|Encyclopedia:BleedingEffect}bleeding{/g} (4) if the target fails a {g|Encyclopedia:WarhammerToughness}Toughness{/g} {g|Encyclopedia:ResistanceTest}resistance test{/g}."
+  category: Melee
+  family: Primitive
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 16
+  max_damage: 26
+  penetration: 25
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "48f8b837dca84d2992082efbc4251a3b"
+  extra_fact: "2dd9bfa29e1140a8a98f7d4140f74074"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "GlimmersteelBladeFeature"
+  extra_fact_name: "Bleeding_Power8_ForWeapon_Feature"
+  sources: "Unit - Ch03_ReavingTempestSpire: Mandrake"
+  sources: "Vendor - HaemunculiChapter3_VendorTable_Base 0PF"
+}
+weapon {
+  guid: "1ca7c664e50c4ba39b55b294d5765d84"
+  blueprint_name: "AeldariEyeGouger_Knife_Item"
+  name_shared_key: "cdb6a7da-afad-44d3-af9e-ec1f35153404"
+  description_key: "d705c1f5-2819-4a3b-8e73-f9e99c82aa0d"
+  description: "When the wielder deals {g|Encyclopedia:DamageGlossary}damage{/g} to the target with Lilaethan\'s Fury, the target becomes {g|Encyclopedia:BlindedEffect}blinded{/g} until the end of combat. The first attack with Lilaethan\'s Fury in a {g|Encyclopedia:Round}round{/g} against the blinded target does not set the attack on {g|Encyclopedia:Cooldown}cooldown{/g}."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 26
+  max_damage: 44
+  penetration: 10
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp_name: "AeldariWeaponProficiencyFeature"
+  }
+  extra_fact: "93837572ddb94e4f84039c40fb5e1eae"
+  extra_fact_name: "AeldariEyeGouger_Knife_Feature"
+}
+weapon {
+  guid: "298bd4183b9048b296ae1367870be2bd"
+  blueprint_name: "DeathCultKnifeUnique_Item"
+  name_key: "7d43b2f6-3dde-4d95-a5a9-bf719c04ad63"
+  name: "Bloody Pact"
+  description_key: "1e791420-5d1b-40df-841e-17d949d31792"
+  description: "This knife grants its wielder a special ability called {g|f:2f680a6d85ef4ed9b48aa71532d3c9f8}Crimson Rage{/g}."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 9
+  max_damage: 10
+  penetration: 10
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Custom
+    ability_bp_name: "DeathCultKnifeUnique_Ability"
+    ability_bp: "2f680a6d85ef4ed9b48aa71532d3c9f8"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 0
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  extra_fact: "98c5ffd92dbe49f4bf7a6a172d609750"
+  extra_fact_name: "DeathCultKnifeUnique_CooldownFeature"
+  sources: "Chest - DeathCultTemple: AdeptusMechanicus_GoodLoot1"
+  sources: "Unit - ExportedPregens: 4y6_Kibellah_22lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: 4y6_Kibellah_27lvl_ExportedPregen_ExportedPregen"
+}
+weapon {
+  guid: "cbeeeb5c912e435597aec358ab528594"
+  blueprint_name: "HekatariiBloodthirstBlade_Item"
+  name_shared_key: "881b0474-eed9-4f4d-be97-b69fa0f64fc2"
+  name: "Hekatarii Blade of Bloodthirst"
+  description_shared_key: "f6267156-3cfd-4db0-bef6-62abcafd6a2a"
+  description: "This blade deals an additional +{uip|Damage|0e45284b27f74feb9993195c1ab8933a} {g|Encyclopedia:DamageGlossary}damage{/g} to targets for each common {g|Encyclopedia:NegativeEffectTypesGlossary}negative effect{/g} on them."
+  category: Melee
+  family: Exotic
+  classification: Knife
+  heavy: false
+  two_handed: false
+  min_damage: 17
+  max_damage: 26
+  penetration: 20
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Hekatarii_MeleeAttack_ability"
+    ability_bp: "c7aabbc6d5784fa8a938359b66b2e952"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "33bf9dffa6fd42c2af0edd0e045ea5c6"
+    on_hit_action_name: "Axe_BleedAbilityAdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "0e45284b27f74feb9993195c1ab8933a"
+  extra_fact: "2dd9bfa29e1140a8a98f7d4140f74074"
+  extra_fact_name: "HekatariiBloodthirstBlade_Feature"
+  extra_fact_name: "Bleeding_Power8_ForWeapon_Feature"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariProselyte_Ranged_Portals_Elite"
+  sources: "Unit - ExportedPregens: Kibellah32lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah35lvl_ExportedPregen"
+}
+weapon {
+  guid: "3aac51bc8c9e45a4b80a839ecf7a1ac3"
+  blueprint_name: "PrisonersKnife_Item"
+  name_key: "6acf781c-862d-4e6f-979f-112544f60e51"
+  name: "Prisoner\'s Shank"
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 4
+  max_damage: 18
+  penetration: 10
+  dodge_reduction: 60
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  sources: "Chest - JailPlanetoid: Loot_Uniq_Hidden - LootInWall"
+}
+weapon {
+  guid: "599f598dfc814af1af7dbc639fe2523c"
+  blueprint_name: "RitualKnife_Item"
+  name_shared_key: "d22461ae-bddd-4984-88af-5aef24dea175"
+  name: "Ritual Knife"
+  description_key: "c71eff31-43a5-4391-8969-06e8caeb121e"
+  description: "This knife has a 100% critical {g|Encyclopedia:HitSequenceGlossary}hit chance{/g} against {g|Encyclopedia:ProneEffect}prone{/g} or {g|Encyclopedia:Stun}stunned{/g} targets.\\nWhen the wielder scores a {g|Encyclopedia:CritChancesAndCritDamageGlossary}critical hit{/g} with this knife, the target and everyone in a 4-cell radius around it must pass a {g|Encyclopedia:WarhammerWillpower}Willpower{/g} {g|Encyclopedia:ResistanceTest}resistance test{/g} or make a single attack against the nearest target."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 30
+  max_damage: 45
+  penetration: 10
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  extra_fact: "3508c98c2c1643179c3f7db5fc24855a"
+  extra_fact_name: "RitualKnife_Feature"
+  sources: "Unit - Ch02_ForgeWorldAndHeart: Kunrad_FH"
+  sources: "Unit - Ch04_Eufrates: Eufrates_Kunrad_unit"
+}
+weapon {
+  guid: "17adebed9048437b8d8ce4e5a549b73d"
+  blueprint_name: "Chapter4_Unique_GoldenOpportunityKnife_Item"
+  name_shared_key: "06cff724-a31c-4dcd-9ce3-32d59ed0ddb4"
+  name: "Death Hymn"
+  description_shared_key: "e11d3cae-7855-43f2-866c-9d24fccee28a"
+  description: "Whenever the wielder kills an enemy with this knife for the first time in a {g|Encyclopedia:Turn}turn{/g}, they immediately use {g|f:c647c1c4a1a14c9cb31217ee439164ff}War Hymn{/g}, which does not provoke {g|Encyclopedia:AttackOfOpportunityFullGlossary}attacks of opportunity{/g}."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 25
+  max_damage: 40
+  penetration: 15
+  dodge_reduction: 60
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Knife_AbilityFXSettings"
+    fx_bp: "2463c1f2beb347fb8b31d0234ca3c2f1"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "AeldariArmourProficiencyFeature"
+    bp_name: "DrukhariArmourProficiencyFeature"
+  }
+  extra_fact: "db48ee1f0e67446a9c71e8390e1a0cc7"
+  extra_fact_name: "Chapter4_Unique_GoldenOpportunityKnife_Feature"
+  sources: "Chest - TreasureWorld: Loot_Quest_FeralGuard_Peaks_Loot"
+}
+

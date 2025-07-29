@@ -1,0 +1,2668 @@
+# proto-file: proto/weapon/Weapon.proto
+# proto-message: weapon.WeaponList
+
+weapon {
+  guid: "ab7e45fd95c249ccbd92c8908a64e3ec"
+  blueprint_name: "DeathCultBladeT1CH2_Item"
+  name_shared_key: "f3ac5748-a259-4dc2-b955-165aadfbeded"
+  name: "Death Cult Blade"
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 15
+  max_damage: 25
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeTwoHanded_AoEAbility"
+    ability_bp: "5a97b35812644067bb93767ff095e9f7"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact_name: "Blade_Feature"
+  sources: "Unit - ExportedPregens: 4y6_Kibellah_27lvl_ExportedPregen_ExportedPregen"
+}
+weapon {
+  guid: "341b742105c5448f93b10acb4120452e"
+  blueprint_name: "DeathCultBladeUnique1_Item"
+  name_key: "b79e42fa-ad50-4b6d-a0bb-6b68cec52800"
+  name: "Partner in Death"
+  description_key: "187f1a77-cd9c-433e-be4a-cdbd197f3471"
+  description: "Whenever an ally adjacent to the wielder attacks an enemy, the wielder makes an attack of opportunity against that enemy if possible."
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 35
+  max_damage: 42
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeTwoHanded_AoEAbility"
+    ability_bp: "5a97b35812644067bb93767ff095e9f7"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact: "4b30c24acb83441bb1c95a83ba8820e8"
+  extra_fact_name: "Blade_Feature"
+  extra_fact_name: "DeathCultBladeUnique1_Feature"
+  sources: "Vendor - DrusianChapter4_VendorTable_Base 95PF"
+}
+weapon {
+  guid: "39ba93f8f6764e18a7aa7bac105f449f"
+  blueprint_name: "DeathCultBlade_Item"
+  name_shared_key: "d6a887b9-7997-4d40-bef5-c15a45d989b7"
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 17
+  max_damage: 20
+  penetration: 5
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeTwoHanded_AoEAbility"
+    ability_bp: "5a97b35812644067bb93767ff095e9f7"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: AOE
+    ability_bp_name: "MeleeLinearTwoHandedSword_ability"
+    ability_bp: "487f5299158c4dbcb55fd5df6c9a7b76"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact_name: "Blade_Feature"
+  sources: "Unit - Ch_00_VoidshipOfficerDeck_AfterPorlogue: DeathCultist_Guard"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultistBrutal_Peacefull"
+  sources: "Unit - ExportedPregens: 4y6_Kibellah_22lvl_ExportedPregen"
+}
+weapon {
+  guid: "fcd102a4ae6b47c49e73b8738f09f2f9"
+  blueprint_name: "DeathCultPowerBladeT1CH4_Item"
+  name_shared_key: "142040ab-80a3-4dd7-a227-f1a2ee3d256c"
+  name: "Power Blade"
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 36
+  max_damage: 49
+  penetration: 45
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "PowerSword_AbilityFXSettings"
+    fx_bp: "1bc92b9832fe402caa887d8c5d990cb4"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeTwoHanded_AoEAbility"
+    ability_bp: "5a97b35812644067bb93767ff095e9f7"
+    fx_bp_name: "PowerSword_AbilityFXSettings"
+    fx_bp: "1bc92b9832fe402caa887d8c5d990cb4"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact_name: "Blade_Feature"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultAdept_Melee_CultFinalDuel"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultProphet_Peacefull"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultReaper_Melee_CultFinalDuel"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultReaper_Melee_CultFinalDuel_02"
+}
+weapon {
+  guid: "d99bea90acb444dca40d7f20ed88dcb0"
+  blueprint_name: "DeathCultPowerBlade_Item"
+  name_shared_key: "c9c971d0-cde3-45c1-a3cd-32e77ecf278a"
+  name: "Death Cult Power Blade"
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 16
+  max_damage: 18
+  penetration: 35
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "PowerSword_AbilityFXSettings"
+    fx_bp: "1bc92b9832fe402caa887d8c5d990cb4"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeTwoHanded_AoEAbility"
+    ability_bp: "5a97b35812644067bb93767ff095e9f7"
+    fx_bp_name: "PowerSword_AbilityFXSettings"
+    fx_bp: "1bc92b9832fe402caa887d8c5d990cb4"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact_name: "Blade_Feature"
+}
+weapon {
+  guid: "eaa742e43d8e48a3a450c4d59431b03e"
+  blueprint_name: "DeathCultSwordCH2Unique_Item"
+  name_key: "23dd5f3b-d664-411f-88c5-86532f1e23d9"
+  name: "Blade of Sorrow"
+  description_key: "91ead88e-6f0a-4334-a50c-15fee65c94f7"
+  description: "This blade can only perform area attacks. Attacks of opportunity performed with it are also area attacks."
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 14
+  max_damage: 18
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: AOE
+    ability_bp_name: "BladeOneHanded_AoEAbility"
+    ability_bp: "e7cc54b40b744c0384dd3a4f9d11565c"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact_name: "Blade_Feature"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullWeaver3"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullWeaver4"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullWeaver5"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullWeaver6"
+}
+weapon {
+  guid: "956ef24150df470b9724ab9334f65be0"
+  blueprint_name: "DeathCultSwordCH4Unique1_Item"
+  name_shared_key: "c8215d4c-73ce-44d9-90e3-3417eff1b01a"
+  name: "Singing Retribution"
+  description_shared_key: "0bddc26c-cb82-4349-88b9-1b8066194445"
+  description: "This blade deals an additional +{uip|Damage|483093afe6d34109a1eba3000eec4d9a}% damage to enemies with more than 50% wounds."
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 30
+  max_damage: 35
+  penetration: 25
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeOneHanded_AoEAbility"
+    ability_bp: "e7cc54b40b744c0384dd3a4f9d11565c"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact: "483093afe6d34109a1eba3000eec4d9a"
+  extra_fact_name: "Blade_Feature"
+  extra_fact_name: "DeathCultSwordCH4Unique1_Feature"
+  sources: "Unit - DLC1_DeathCultTemple: TheMaster_Melee_CultFinalDuel"
+}
+weapon {
+  guid: "78be3462bd7e4e78a75d5085d7d4aeef"
+  blueprint_name: "DeathCultSwordCH4Unique2_Item"
+  name_shared_key: "660a4dbd-4697-45ae-a78d-ac2cac88f04e"
+  name: "Whispering Mercy"
+  description_shared_key: "a7eb3b04-211a-49f9-bd73-39daf6b34c69"
+  description: "This blade deals an additional +{uip|Damage|c4ae9d253c654ac5804f7a9bdd49bb61}% damage to enemies with less than 50% wounds."
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 30
+  max_damage: 50
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeOneHanded_AoEAbility"
+    ability_bp: "e7cc54b40b744c0384dd3a4f9d11565c"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact: "c4ae9d253c654ac5804f7a9bdd49bb61"
+  extra_fact_name: "Blade_Feature"
+  extra_fact_name: "DeathCultSwordCH4Unique2_Feature"
+  sources: "Unit - DLC1_DeathCultTemple: TheMaster_Melee_CultFinalDuel"
+}
+weapon {
+  guid: "5c69e3bdb3864fa68bb08234e7df7536"
+  blueprint_name: "DeathCultSwordT1CH4_Item"
+  name_shared_key: "edd25c97-f74a-4dd1-a69b-6dfefbdc4a05"
+  name: "Bloody Blade"
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 35
+  max_damage: 42
+  penetration: 30
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeOneHanded_AoEAbility"
+    ability_bp: "e7cc54b40b744c0384dd3a4f9d11565c"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact_name: "Blade_Feature"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultExecutioner_Melee_CultFinalDuel"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultExecutioner_Melee_CultFinalDuel"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultExecutioner_Melee_CultFinalDuel_02"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultExecutioner_Melee_CultFinalDuel_02"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultExecutioner_Melee_CultFinalDuel_03"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultExecutioner_Melee_CultFinalDuel_03"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultExecutioner_Melee_CultFinalDuel_04"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultExecutioner_Melee_CultFinalDuel_04"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullWeaver3"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullWeaver4"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullWeaver5"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullWeaver6"
+  sources: "Unit - ExportedPregens: KibellahCompanion_Level42_OlegParty_ExportedPregen"
+}
+weapon {
+  guid: "4dfe082b46394fc998ebf9b24419adc4"
+  blueprint_name: "DeathCultSword_Item"
+  name_shared_key: "56b67bb6-4328-401f-a244-75a0eaf761cd"
+  name: "Spinner\'s Blade"
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 10
+  penetration: 5
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeOneHanded_AoEAbility"
+    ability_bp: "e7cc54b40b744c0384dd3a4f9d11565c"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact_name: "Blade_Feature"
+  sources: "Chest - DeathCultTemple: AdeptusMechanicus_GoodLoot1"
+  sources: "Unit - DLC1_DeathCultTemple: BloodTrainingEnforcer"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultistOneWeapon_Peacefull"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PariahFromLowerTonnels"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PariahFromLowerTonnels"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_Peacefull"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_Peacefull"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullDistortion"
+  sources: "Unit - DLC1_DeathCultTemple: DeathCultist_PeacefullDistortion"
+  sources: "Unit - ExportedPregens: 4y6_Kibellah_22lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: 4y6_Kibellah_27lvl_ExportedPregen_ExportedPregen"
+  sources: "Unit - ExportedPregens: CassiaCompanion_Level25_MikandraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah6_ExportedPregen"
+  sources: "Unit - ExportedPregens: KibellahCompanion_Level25_MikandraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: PlayerRT_Level25_MikandraParty_ExportedPregen"
+  sources: "Unit - KibellahCompanion: KibellahCompanion"
+}
+weapon {
+  guid: "82cc00f581134f55ac15935d56634e8d"
+  blueprint_name: "DjinBlade_Item"
+  name_key: "1b536c4f-54b0-4da4-b13e-c22617c24e33"
+  description_key: "11c69ce5-bc9a-4e0c-9ef3-ff60c5d80671"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 14
+  max_damage: 16
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "610c4dade02d4fd8839ff90124715ef1"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "DjinBlade_Feature"
+}
+weapon {
+  guid: "b74693bbf52a4f138f65201c471adce5"
+  blueprint_name: "DrukhariIncubusKlaive_Item"
+  name_key: "1477b196-5aa1-464f-89e5-64d1a7fe49ac"
+  name: "Incubus Klaive"
+  category: Melee
+  family: Exotic
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 21
+  max_damage: 32
+  penetration: 35
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "DrukhariKlaive_AbilityFXSettings"
+    fx_bp: "050e3a7b1c1d461d979f563ad444ce09"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "DrukhariKlaive_AoE_AbilityFXSettings"
+    fx_bp: "7b11fd9404e54304a208bfb209807f95"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - CR33: Drukhari_PrisonStreets01"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariIncubus"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariYremeriss_Incubus_unit"
+  sources: "Unit - Ch03_VectTh: DrukhariIncubsWatchman"
+  sources: "Unit - MarazhaiCompanion: MarazhaiCompanion"
+}
+weapon {
+  guid: "604cd5213440464791f5a834dbaf65be"
+  blueprint_name: "DrukhariKlaive_Item"
+  name_key: "ea429984-8a79-4896-b78b-372b56a6d697"
+  name: "Drukhari Klaive"
+  category: Melee
+  family: Exotic
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 16
+  max_damage: 24
+  penetration: 35
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "DrukhariKlaive_AbilityFXSettings"
+    fx_bp: "050e3a7b1c1d461d979f563ad444ce09"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "DrukhariKlaive_AoE_AbilityFXSettings"
+    fx_bp: "7b11fd9404e54304a208bfb209807f95"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - Ch02_DeadlyGardens: DrukhariIncubusDeadlyGardens"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariIncubus_Melee_ArenaFiend"
+  sources: "Unit - Ch02_Lair3: Lair3RebelLeader2"
+  sources: "Vendor - LiegeChapter2_VendorTable_Base 60PF"
+}
+weapon {
+  guid: "49d53db2e8eb41ee9e985926fb30c8d6"
+  blueprint_name: "FractalBlade_Item"
+  name_key: "ee5a93a5-f70d-433b-937e-e9ad621a0342"
+  name: "Fractal Blade"
+  description_shared_key: "a9e3181a-fce2-4d15-8654-c3cb1b9ec293"
+  description: "The wielder of this sword gains a +25% {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:Parry}parry{/g}."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 10
+  max_damage: 20
+  penetration: 40
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "FractalBlade_AbilityFXSettings"
+    fx_bp: "4f9f1f3881fe4beca8fcb6201dd94d14"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "FractalBlade_AbilityFXSettings"
+    fx_bp: "4f9f1f3881fe4beca8fcb6201dd94d14"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp_name: "AeldariWeaponProficiencyFeature"
+  }
+  extra_fact: "da338f7caf3e44ddac7da84ee6f2ddc9"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry25_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - CR22: ImperiumMilitary_ScavengersSafe"
+  sources: "Unit - ExportedPregens: JaeCompanion_lvl38_treasureworld_ExportedPregen"
+  sources: "Unit - ExportedPregens: jae_lv38_chordafight_ExportedPregen"
+  sources: "Unit - ExportedPregens: Sayonara_Jae_23lvl_ExportedPregen"
+}
+weapon {
+  guid: "46064eabb37d49fd9e416f24e5873a12"
+  blueprint_name: "GreatSwordT1_Item"
+  name_key: "93c1e98d-ec50-4b87-a313-f6e3be9a9254"
+  name: "[Retobi-Pattern] Greatsword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 14
+  max_damage: 18
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "SerratedGreatSword_AbilityFXSettings"
+    fx_bp: "3f9a775831e04861afbfe9eaf8fe692b"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "GreatSword_AOE_AbilityFXSettings"
+    fx_bp: "7c573c13e98b492982288e35264f64bb"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - ExportedPregens: Kibellah12lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: VasiliyAbelar_15LvL_ExportedPregen"
+  sources: "Vendor - PirateChapter1_VendorTable_Base 17PF"
+}
+weapon {
+  guid: "164967ed6b7642c4baec4d000fd03851"
+  blueprint_name: "GreatswordT2CH4_Item"
+  name_key: "2e6809c5-d096-4c6f-85f9-34369f698c64"
+  name: "[Mezoa-Pattern] Greatsword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 30
+  max_damage: 45
+  penetration: 25
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "SerratedGreatSword_AbilityFXSettings"
+    fx_bp: "3f9a775831e04861afbfe9eaf8fe692b"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "GreatSword_AOE_AbilityFXSettings"
+    fx_bp: "7c573c13e98b492982288e35264f64bb"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - Ch04_VoidshipBridgeBoarding: InquisitorSoldier_Melee_Boarding"
+  sources: "Unit - Ch04_Canteena: Ch04Vladaym_MeleeSwarm_unit"
+}
+weapon {
+  guid: "c232ad93a02a447cbe5054bcac334b6b"
+  blueprint_name: "GreatSwordT2_Item"
+  name_key: "f2968b70-aa32-43ea-99ae-05bef969c374"
+  name: "Heavy Greatsword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 22
+  max_damage: 33
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "SerratedGreatSword_AbilityFXSettings"
+    fx_bp: "3f9a775831e04861afbfe9eaf8fe692b"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "GreatSword_AOE_AbilityFXSettings"
+    fx_bp: "7c573c13e98b492982288e35264f64bb"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - Ch03_CommorraghArena: HumanGladiator_Melee_Arena_02"
+  sources: "Unit - Ch03_Prison: ArenaMadman_Melee_Prison"
+  sources: "Unit - Ch03_Prison: ImperialMale_GladiatorMelee"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariYremeriss_Slave_unit"
+  sources: "Unit - Ch03_Prison: Marked"
+  sources: "Unit - ExportedPregens: AbelardCompanion_Lvl40_Bakula_ExportedPregen"
+  sources: "Unit - ExportedPregens: PascalCompanion_Level37_TesseraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: PascalCompanion_Level37_ValladinParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: RT_Lvl40_Bakula_ExportedPregen"
+  sources: "Unit - ExportedPregens: Sayonara_39lvl_Abelard_ExportedPregen"
+}
+weapon {
+  guid: "88863b6b0c61404b96b01c2bc648ba5e"
+  blueprint_name: "GreatSword_Item"
+  name_shared_key: "26248aeb-385a-4771-b15a-f6975f1f6eae"
+  name: "Greatsword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 14
+  max_damage: 20
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "SerratedGreatSword_AbilityFXSettings"
+    fx_bp: "3f9a775831e04861afbfe9eaf8fe692b"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "GreatSword_AOE_AbilityFXSettings"
+    fx_bp: "7c573c13e98b492982288e35264f64bb"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - CR33: ImperiumMilitary_PrisonPitTrashWeapon"
+  sources: "Chest - FootfallAtrium: AdeptusMechanicus_GoodLoot02"
+  sources: "Unit - DLC2_FeudalWorld: FW_Executioner_ Melee_Hard"
+  sources: "Unit - DLC2_VigilCastle_SecondEncaunter: VC2_Arbitres_Melee_golem"
+  sources: "Unit - ExportedPregens: Yanus19Abel_ExportedPregen"
+}
+weapon {
+  guid: "7d720232cf9c4a709a0616d4c3bec4a2"
+  blueprint_name: "HekatariiBladeT2CH05_Item"
+  name_key: "6cb7fa75-50d5-4e49-a3c9-9c80b267ce8e"
+  name: "Master-Crafted Hekatarii Blade"
+  category: Melee
+  family: Exotic
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 36
+  max_damage: 57
+  penetration: 25
+  dodge_reduction: 50
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Hekatarii_MeleeAttack_ability"
+    ability_bp: "c7aabbc6d5784fa8a938359b66b2e952"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "33bf9dffa6fd42c2af0edd0e045ea5c6"
+    on_hit_action_name: "Axe_BleedAbilityAdditionalEffect"
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "717d2df9726144debabacc4d027bb5c1"
+  extra_fact_name: "Bleeding_Power12_ForWeapon_Feature"
+}
+weapon {
+  guid: "ba8e81feb57c4e9ab310a45188eb0e63"
+  blueprint_name: "ModifiedVenomBlade_Item"
+  name_key: "099af83c-5d44-4ca2-86a1-994939e6b7fd"
+  name: "Exotic Venom Blade"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 14
+  max_damage: 21
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "VenomBlade_AoEAbility"
+    ability_bp: "80e6345949784370b20b24d75bcd4c30"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  extra_fact_name: "Parry10_Feature"
+}
+weapon {
+  guid: "be494784cef340d8b8db9f11d3d30d31"
+  blueprint_name: "SwordT1CH01_Item"
+  name_shared_key: "c1dcb4dd-9409-4930-bcbe-663562e8c7d1"
+  name: "Sword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 12
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+}
+weapon {
+  guid: "d2f9c04633b04007ac89d1d49754bd75"
+  blueprint_name: "SwordT1Prologue_Item"
+  name_shared_key: "c1dcb4dd-9409-4930-bcbe-663562e8c7d1"
+  name: "Sword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 10
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+}
+weapon {
+  guid: "d4aea232298c48e891aba05a4f4eea74"
+  blueprint_name: "SwordT2CH01_Item"
+  name_shared_key: "c1dcb4dd-9409-4930-bcbe-663562e8c7d1"
+  name: "Sword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 13
+  penetration: 15
+  dodge_reduction: 5
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - CR0: Forest_CorpseLoot"
+  sources: "Unit - ExportedPregens: AbelardCompanion_Level7_EtelParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: PlayerRT_Level15_BladeDancer_ExportedPregen"
+}
+weapon {
+  guid: "844682664a39452a87545e89bbb900c5"
+  blueprint_name: "SwordT2CH02_Item"
+  name_key: "63d7ae3d-9f2b-4557-afbb-21f910bdbe67"
+  name: "Manufactured Sword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 12
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - Ch02_AgriWorldJungle: JungleWorldRebelMeleeToughArmoured"
+  sources: "Unit - Ch03_Prison: ImperialMisfit_MeleeRanged_Prison"
+}
+weapon {
+  guid: "3a05accddaee438ebbdd7db129252b9a"
+  blueprint_name: "SwordT2CH03_Item"
+  name_key: "fc37f05a-be8d-4ec8-aa23-9866c34aec14"
+  name: "Crafted Sword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 17
+  max_damage: 26
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - ExportedPregens: abelard_lv38_chordafight_ExportedPregen"
+  sources: "Unit - ExportedPregens: PlayerRT_Level38_OperativeOverseer_ExportedPregen"
+}
+weapon {
+  guid: "47325bfd0c614671a00c3eaed0f29002"
+  blueprint_name: "SwordT2Prologue_Item"
+  name_shared_key: "c1dcb4dd-9409-4930-bcbe-663562e8c7d1"
+  name: "Sword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 11
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - VoidshipOfficersDeck: ImperiumMilitary_PrologueOD_CorridorChestFighter"
+  sources: "Chest - VoidshipOfficersDeck: ImperiumMilitary_PrologueOD_CorridorChestReaper"
+  sources: "Unit - ExportedPregens: KibellahCompanion_Level25_MikandraParty_ExportedPregen"
+}
+weapon {
+  guid: "ef4d82495e9645e3bbefeabc23a3dfe3"
+  blueprint_name: "Sword_Item"
+  name_shared_key: "c1dcb4dd-9409-4930-bcbe-663562e8c7d1"
+  name: "Sword"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 6
+  max_damage: 9
+  penetration: 5
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - CR0: ImperiumMilitary_PrologueAP_Patent_Chest01"
+  sources: "Chest - CR33: ImperiumMilitary_PrisonPitTrashWeapon"
+  sources: "Unit - Ch00_OfficersDeck: CultistPirate_Melee_ArgentaFight"
+  sources: "Unit - Ch00_OfficersDeck: OfficersDeckCultistPirate_MeleeSwarm"
+  sources: "Unit - Ch01_ArcheotechReactor: Cultist_ArcheotechReactor_Melee"
+  sources: "Unit - Ch01_ArcheotechReactor: Cultist_ArcheotechReactor_Melee1"
+  sources: "Unit - Ch01_ArcheotechReactor: IronCultist_ArcheotechReactor_Melee"
+  sources: "Unit - Ch01_NavisNobiliteStation: NavisNobilite_Commander"
+  sources: "Unit - Ch01_NavisNobiliteStation: NavisNobilite_MeleeRanged_MutantCommander"
+  sources: "Unit - Ch01_Starport: StarportRebelRangeSpecialist"
+  sources: "Unit - Ch02_FootFallAtrium: FootfallPirateMelee"
+  sources: "Unit - Ch02_FootfallDock: FootfallAnverFrenzy_Melee_Swarm"
+  sources: "Unit - Ch02_FootFallSlums: FootfallBanditInfected"
+  sources: "Unit - Ch02_FootFallSlums: Footfall_Generic_BanditThugHeavy"
+  sources: "Unit - Ch02_RandomEncounters: CultistTzeentchRangeRandomEncounter"
+  sources: "Unit - Ch05_QuarryWorld: QuarryWorld_Miner2"
+  sources: "Unit - DLC2_FeudalWorld: FW_KnightRider"
+  sources: "Unit - Ch02_DaringHeirGuttedShip: ShipServicemanMutantFast_Melee_Common"
+  sources: "Unit - Ch02_RandomEncounters: RE_PossessedOfficer_Captain"
+  sources: "Unit - Ch00_OfficersDeck: Abelard"
+  sources: "Unit - Ch00_OfficersDeck: FakeAbelard"
+  sources: "Unit - SideQuest: CultistFighter_SororitasQuest_Melee"
+  sources: "Unit - SideQuest: MutantSororitasQuest"
+  sources: "Unit - DLC1_LowerTunnels_BlessedbyNurgle: LT_HumanNurgleFollowerExplosive_Melee_Common"
+  sources: "Unit - FootfallAtrium: FootfallDebtor"
+  sources: "Unit - ExportedPregens: ArgentaCompanion_Level7_EtelParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: Reaper_ForMarketing_Preset_ExportedPregen"
+}
+weapon {
+  guid: "1cfe81f1c76b4d96bba476e3584d1507"
+  blueprint_name: "VenomBladeKabalite_Item"
+  name_key: "760b473b-12bc-4c93-9887-7295e5032254"
+  name: "Kabalite Venom Blade"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 18
+  max_damage: 25
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "VenomBlade_AoEAbility"
+    ability_bp: "80e6345949784370b20b24d75bcd4c30"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - Drukhari: DrukhariHekatrixPrototype"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariHekatrix"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariKabaliteBlademaster_Melee_Santiel"
+  sources: "Unit - Ch03_Prison: DrukhariRanger_Ranged_Prison"
+  sources: "Unit - Ch03_Prison: DrukhariWych_MeleeRanged_Anger"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariDeviceFighter_Melee_ReavingTempestSpire"
+  sources: "Unit - Ch03_ReavingTempestSpire: DrukhariHekatrix_ReavingTempestSpire_unit"
+  sources: "Unit - Ch03_CommorraghArena: AeldariMadman_Melee_Portals"
+  sources: "Unit - Ch03_GrandSpectacle: DrukhariWychMelee_GrandSpectacle_unit"
+  sources: "Unit - CH05_MarazhaiBloodright: Drukhari_Karael_Melee_MarazhaiQ2"
+  sources: "Unit - CH05_MarazhaiBloodright: Drukhari_Nazrakey_MeleeRanged_Boss_MarazhaiQ2"
+  sources: "Unit - CH05_MarazhaiBloodright: Karael"
+  sources: "Unit - MarazhaiCompanion: MarazhaiCompanion"
+  sources: "Unit - MarazhaiCompanion: MarazhaiCompanionNPC_Ch02"
+}
+weapon {
+  guid: "0c0843d64b3843c3bb6e1ddee8524455"
+  blueprint_name: "VenomBladeT1CH04_Item"
+  name_key: "c33875eb-043d-485f-9f78-63204f1c4c26"
+  name: "Venomous Slicer"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 21
+  max_damage: 31
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "VenomBlade_AoEAbility"
+    ability_bp: "80e6345949784370b20b24d75bcd4c30"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "b5511030d52c4b0eae0e6c385ce4189d"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "ViralToxin_Power10_ForWeapon_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - CR-20: ImperiumPoor_TrashLoot (2)#1"
+}
+weapon {
+  guid: "b518da4376ac42b68f226ae05212441a"
+  blueprint_name: "VenomBladeT2CH04_Item"
+  name_key: "b0a3255f-06a3-4c93-bd99-b93837af9e26"
+  name: "Sharpened Venom Blade"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 31
+  max_damage: 41
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "VenomBlade_AoEAbility"
+    ability_bp: "80e6345949784370b20b24d75bcd4c30"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "b5511030d52c4b0eae0e6c385ce4189d"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "ViralToxin_Power10_ForWeapon_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - Ch02_SantielsPrideUnderhive: DrukhariKabaliteBlademaster"
+  sources: "Unit - Ch04_QuarryWorld: DrukhariMandrake_MeleeRanged_QuarryWorld"
+  sources: "Unit - CH05_MarazhaiBloodright: Nazrakey"
+  sources: "Unit - ExportedPregens: HeinrixCompanion_Level37_TesseraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: HeinrixCompanion_Level37_ValladinParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah35lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah40lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah45lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah50lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah_level47_Gamescom2024_ExportedPregen"
+  sources: "Unit - ExportedPregens: MarazhaiCompanion_Level39_SolarParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: RT35Yremerissss_ExportedPregen"
+}
+weapon {
+  guid: "eb11ae0496664fff82f6a61d92a99fe8"
+  blueprint_name: "VenomBladeT2CH05_Item"
+  name_key: "cbf7e4d1-c332-49af-923d-b4b708b72948"
+  name: "Virulent Slicer"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 35
+  max_damage: 53
+  penetration: 20
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "VenomBlade_AoEAbility"
+    ability_bp: "80e6345949784370b20b24d75bcd4c30"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "efa8ed36350e4f838ae9ba4c04f1d44e"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "ViralToxin_Power12_ForWeapon_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - Marazhai_Bloodright: Drukhari_Corpse"
+}
+weapon {
+  guid: "1c89025a08624dabbfe29d9f9bc98859"
+  blueprint_name: "VenomBlade_Hallucinogen_Item"
+  name_key: "149969c2-c862-468f-8180-0b30697b0807"
+  name: "Hallucinogen Blade"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 12
+  max_damage: 19
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "MeleeAttack_Hallucinogen_ability"
+    ability_bp: "f61269a9b45044b58f852b7f36769489"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "VenomBlade_AoEAbility"
+    ability_bp: "80e6345949784370b20b24d75bcd4c30"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+}
+weapon {
+  guid: "9fe311eafb3e444bb00c69b9fe6675c4"
+  blueprint_name: "VenomBlade_Item"
+  name_key: "c97b6eb0-377d-4537-8c80-ee5e27eb341e"
+  name: "Venom Blade"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 12
+  max_damage: 18
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "VenomBlade_AoEAbility"
+    ability_bp: "80e6345949784370b20b24d75bcd4c30"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - Ch02_DeadlyGardens: DrukhariKabaliteBlademasterDeadlyGardens"
+  sources: "Unit - CH05_MarazhaiBloodright: DrukhariKabalite_Melee_SwarmCh05"
+}
+weapon {
+  guid: "224dccafe9504fba87679098b7eeb8cf"
+  blueprint_name: "BlackhazeVenomBladeItem"
+  name_shared_key: "188bd3f1-7f62-4b8c-b4f0-6e940cc664b6"
+  name: "Blackhaze Venom Blade"
+  description_shared_key: "2fab2eb9-2bcd-449c-9632-4ac9aacc240c"
+  description: "Attacks against targets suffering from {g|Encyclopedia:ToxinEffect}toxin{/g} apply the toxin effect with the same power to all enemies within a 2-cell radius of the target."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 20
+  max_damage: 25
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "VenomBlade_AoEAbility"
+    ability_bp: "80e6345949784370b20b24d75bcd4c30"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "41a8705f61a74e09938ce2705654c8e0"
+  extra_fact: "0f511a70cfdc4282ae3dc14113b4da0c"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "BlackhazeVenombladeFeature"
+  extra_fact_name: "ViralToxin_Power8_ForWeapon_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - ExportedPregens: RT35Yremerissss_ExportedPregen"
+  sources: "Vendor - HaemunculiChapter3_VendorTable_Base 0PF"
+}
+weapon {
+  guid: "68cefdd1a5004db3b3996bfe99185693"
+  blueprint_name: "BloodseekerKlaiveItem"
+  name_shared_key: "3fff279e-0d21-4a0b-8a5e-2a540eabfc42"
+  name: "Bloodseeker Klaive"
+  description_shared_key: "2748c9c5-8b19-44e7-93fd-ce93b1cb8f56"
+  description: "When this sword {g|Encyclopedia:HitSequenceGlossary}hits{/g} a {g|Encyclopedia:BleedingEffect}bleeding{/g} enemy, it removes bleeding and inflicts {g|Encyclopedia:ToxinEffect}toxin{/g} of the same power. The wielder gains +{uip|Dodge|9b5b0c3fdcb5447898d3d8360099f50d}% {g|Encyclopedia:DodgeGlossary}dodge{/g} until their next {g|Encyclopedia:Turn}turn{/g}."
+  category: Melee
+  family: Exotic
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 24
+  max_damage: 36
+  penetration: 25
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "DrukhariKlaive_AbilityFXSettings"
+    fx_bp: "050e3a7b1c1d461d979f563ad444ce09"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "DrukhariKlaive_AoE_AbilityFXSettings"
+    fx_bp: "7b11fd9404e54304a208bfb209807f95"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "9b5b0c3fdcb5447898d3d8360099f50d"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "BloodseekerKlaiveFeature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - Ch03_CommorraghArena: DrukhariProselyte_Melee_Portals_Abess"
+  sources: "Unit - ExportedPregens: Kibellah32lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah35lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah40lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah45lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah50lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: KibellahCompanion_Level42_OlegParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah_level47_Gamescom2024_ExportedPregen"
+  sources: "Unit - ExportedPregens: RT35Yremerissss_ExportedPregen"
+}
+weapon {
+  guid: "53dcca7b3cb74b02881f0c6a9ff7edc4"
+  blueprint_name: "DuelingSwordItem"
+  name_key: "6391c706-fc46-4cd7-9493-190739c1d97a"
+  name: "Duelling Sword"
+  description_key: "8cc0147f-5445-427a-bff1-2e5ad51cd335"
+  description: "After scoring a critical {g|Encyclopedia:HitSequenceGlossary}hit{/g} with the duelling sword, if the wielder has a weapon in the other hand, they immediately attack the closest enemy with it, using whichever attack costs the least {g|Encyclopedia:ActionPoints}AP{/g}."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 17
+  max_damage: 30
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "51e7b641f2ac4553986c066541c2c9a8"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "DuelingSwordFeature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - Prison: Drukhari_PrisonPitOwnChest02"
+  sources: "Unit - ExportedPregens: Sayonara_39lvl_Abelard_ExportedPregen"
+  sources: "Vendor - PitBossChapter3_VendorTable_Advanced 0PF"
+}
+weapon {
+  guid: "8ca60374722b4eeea27d99c3b17fb09e"
+  blueprint_name: "BladeOfMalice_Item"
+  name_shared_key: "ce09eb4d-459c-400a-9ae7-430121a7a204"
+  name: "Excruciating Shriek"
+  description_shared_key: "8ae0f115-58de-4756-92e0-8f113fdc6fc1"
+  description: "Deals an additional +{uip|Damage|c30fadf556f44a19999880964ae9482d} {g|Encyclopedia:DamageGlossary}damage{/g}, and gains +{uip|Pen|c30fadf556f44a19999880964ae9482d}% {g|Encyclopedia:ArmourPenetration}armour penetration{/g}.\\nTargets have +30% {g|Encyclopedia:DodgeGlossary}dodge{/g} against attacks made with this weapon."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 21
+  max_damage: 31
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  stat_restriction {
+    stat: "WarhammerStrength"
+    requirement: 60
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "c30fadf556f44a19999880964ae9482d"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "BladeOfMalice_Feature"
+  extra_fact_name: "Parry10_Feature"
+}
+weapon {
+  guid: "146fd85ba51b494090661a08e412ca23"
+  blueprint_name: "DaringCutlass_Sword_Item"
+  name_key: "32c3caf2-7582-46a0-9f3f-e746ae3eaa47"
+  name: "Daring Cutlass"
+  description_key: "feadf994-812a-41d7-a6f7-1892d4a463fa"
+  description: "When the wielder has {g|Encyclopedia:MeleeSuperiority}melee superiority{/g}, attacks with this sword always score critical {g|Encyclopedia:HitSequenceGlossary}hits{/g} with a +100% {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:CritChancesAndCritDamageGlossary}critical damage{/g}."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 26
+  max_damage: 40
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "2ea7262810f4488f8ec6c6541e281059"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "DaringCutlass_Sword_Feature"
+  sources: "Unit - Ch04_Canteena: Footfall_Vladaym_Ch04"
+}
+weapon {
+  guid: "49184c2e4aac48afb8546b65d080b053"
+  blueprint_name: "DeathCultPowerBladeUnique1_Item"
+  name_shared_key: "6bdb327f-a48d-4871-bd34-da88b1b94a4d"
+  name: "Cold Blooded"
+  description_shared_key: "043ea0d0-acf4-449e-9203-a9bd10ef257d"
+  description: "This blade has an additional attack called {g|f:ca399340605f44899dadca4efa5422d4}Double-Edged Strike{/g}."
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 20
+  max_damage: 40
+  penetration: 50
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "PowerSword_AbilityFXSettings"
+    fx_bp: "1bc92b9832fe402caa887d8c5d990cb4"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeTwoHanded_AoEAbility"
+    ability_bp: "5a97b35812644067bb93767ff095e9f7"
+    fx_bp_name: "PowerSword_AbilityFXSettings"
+    fx_bp: "1bc92b9832fe402caa887d8c5d990cb4"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: Custom
+    ability_bp_name: "DeathCultPowerBladeUnique1DoubleEdge_Ability"
+    ability_bp: "ca399340605f44899dadca4efa5422d4"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact: "d0e6d319f28b404184aff1c16616cf1e"
+  extra_fact_name: "Blade_Feature"
+  extra_fact_name: "DeathCultPowerBladeUnique1_Feature"
+  sources: "Vendor - DrusianChapter4_VendorTable_Base 97PF"
+}
+weapon {
+  guid: "b2fbd9709af54726876e4f386e91848a"
+  blueprint_name: "DeathCultPowerBladeUnique_Item"
+  name_key: "40778b85-ca3f-4837-8dce-20cddf3144c2"
+  name: "Ceremonial Blade"
+  description_key: "5b2e8e11-c876-4dab-8539-96fce197baf3"
+  description: "This blade has a special attack called {g|f:8ee5002b220a42249cd6e0ecd416d451}Ritual Cut{/g}."
+  category: Melee
+  family: Blade
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 25
+  max_damage: 40
+  penetration: 45
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "BladeMeleeAttack_Ability"
+    ability_bp: "43e79aa0e9ce4b6f8bce2334b34cb128"
+    fx_bp_name: "PowerSword_AbilityFXSettings"
+    fx_bp: "1bc92b9832fe402caa887d8c5d990cb4"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "BladeTwoHanded_AoEAbility"
+    ability_bp: "5a97b35812644067bb93767ff095e9f7"
+    fx_bp_name: "PowerSword_AbilityFXSettings"
+    fx_bp: "1bc92b9832fe402caa887d8c5d990cb4"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: SingleShot
+    ability_bp_name: "DeathCultPowerBladeUniqueAttack_Ability"
+    ability_bp: "8ee5002b220a42249cd6e0ecd416d451"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 1
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "ed0e0de8990b41f7b4fdc6683a55f6f2"
+  extra_fact_name: "Blade_Feature"
+}
+weapon {
+  guid: "e98ff34a616e4ce79d1f330f588c6d0c"
+  blueprint_name: "DjinBladeIremeriss_Item"
+  name_key: "3c23c39e-cb9c-4433-8623-d192fe408764"
+  name: "Djin Blade of Yremeryss"
+  description_shared_key: "7508078b-922c-4f50-8db1-8eadcf0bcfad"
+  description: "If the wielder deals {g|Encyclopedia:DamageGlossary}damage{/g} to the target with this sword, the wielder gets a +3 {g|Encyclopedia:Bonus}bonus{/g} to their {g|Encyclopedia:WarhammerWeaponSkill}Weapon Skill{/g}, {g|Encyclopedia:WarhammerBallisticSkill}Ballistic Skill{/g}, {g|Encyclopedia:WarhammerToughness}Toughness{/g}, and {g|Encyclopedia:WarhammerStrength}Strength{/g}, while the target suffers a \342\210\2223 {g|Encyclopedia:Penalty}penalty{/g} to the same {g|Encyclopedia:Characteristic}characteristics{/g} until the end of combat."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 28
+  max_damage: 38
+  penetration: 25
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "d1192a15fbc84b2a88bf87a5e6e11788"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "DjinBladeIremeriss_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - Ch02_PenalWorld: Iremeris"
+  sources: "Unit - Ch03_ReavingTempestSpire: Yremeriss_unit"
+  sources: "Unit - Ch03_VectThroneRoom: VectThrone_Court_Real_Iremerris"
+  sources: "Unit - Ch05_Epitaph: Ch05Inquisitor_Heinrix_unit"
+  sources: "Unit - ExportedPregens: HeinrixCompanion_Level37_TesseraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: HeinrixCompanion_Level37_ValladinParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: KibellahCompanion_Level42_OlegParty_ExportedPregen"
+  sources: "Unit - MarazhaiCompanion: MarazhaiCompanionNPC"
+}
+weapon {
+  guid: "c350a52a8bd64ff59eb2ba0a1e679758"
+  blueprint_name: "DrukhariKlaiveUniqueCH04_Item"
+  name_shared_key: "26ef3d72-f573-47bb-802f-fba254726971"
+  description_shared_key: "04ef1e67-d201-46f7-b30d-548b84da1baa"
+  description: "This weapon has an additional attack that pushes enemies away. If an enemy cannot be {g|Encyclopedia:PushGlossary}pushed{/g}, the wielder is pushed away instead. This attack deals an additional +{unit_stat|WarhammerAgility|bonus} {g|Encyclopedia:DamageGlossary}damage{/g}."
+  category: Melee
+  family: Exotic
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 27
+  max_damage: 43
+  penetration: 35
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 15
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "DrukhariKlaive_AbilityFXSettings"
+    fx_bp: "050e3a7b1c1d461d979f563ad444ce09"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "DrukhariKlaive_AoE_AbilityFXSettings"
+    fx_bp: "7b11fd9404e54304a208bfb209807f95"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  ability3 {
+    type: SingleShot
+    ability_bp_name: "DrukhariKlaiveUniqueCH04_Ability"
+    ability_bp: "c30ff6354de0496da58450c8d299ad52"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "de497c81f27c4f19a25d0f34be92a245"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "DrukhariKlaiveUniqueCH04_Feature"
+}
+weapon {
+  guid: "44570efd38534b0eb3227fad6598e236"
+  blueprint_name: "LifeDrainingSword_Item"
+  name_key: "9bfdbdcb-271f-4fdb-ad1f-550e022c35f4"
+  name: "Life-Draining Sword"
+  description_key: "190b8530-15b0-4788-b784-d2eebd8569d3"
+  description: "On a successful {g|Encyclopedia:HitSequenceGlossary}hit{/g} with this sword, the target must pass a {g|Encyclopedia:WarhammerToughness}Toughness{/g} {g|Encyclopedia:ResistanceTest}resistance test{/g} with a \342\210\2225 penalty. On failure, the target suffers the {g|Encyclopedia:BleedingEffect}bleeding{/g} effect, and {g|Encyclopedia:VeilThickness}veil degradation{/g} is increased by +1.\\n<i>{g|Encyclopedia:SoulmarkTypesGlossary}Conviction{/g} \342\200\224 {g|Encyclopedia:SoulMarkCorruption}Heretical{/g}</i>: the wielder restores {g|Encyclopedia:HitPoints}wounds{/g} equal to 25% of the {g|Encyclopedia:DamageGlossary}damage{/g} dealt to the bleeding target."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 8
+  max_damage: 12
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "8a8fb155267042848f0bf3d5b14581db"
+    on_hit_action_name: "LifeDrainingSword_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "8a8fb155267042848f0bf3d5b14581db"
+    on_hit_action_name: "LifeDrainingSword_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "fb7efcba2dcc427da2324d4066daf2d5"
+    bp_name: "CorruptionSoulMark_1"
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "a90074bb3659444ea37a10a8649b6f63"
+  extra_fact: "8f2969f253c844ee8ee2f5f447cd98ec"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "LifeDrainingSword_Feature"
+  extra_fact_name: "Bleeding_Power4_ForWeapon_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Chest - CR0: AdeptusMechanicus_TestLootObj_loot_object"
+  sources: "Unit - Ch05_Epitaph: RTChaos"
+  sources: "Unit - Ch05_Epitaph: RTChaosFemale"
+  sources: "Unit - Ch01_Starport: ChaosSpacemarineStarportBoss_unit"
+  sources: "Unit - HeinrixCompanion: HeinrixCompanion_Ch02_TrueStart"
+}
+weapon {
+  guid: "dfd8efd6797f4ec591559a1da7019f9d"
+  blueprint_name: "NobleSword_Item"
+  name_shared_key: "b7b116b2-cc6f-4299-8307-9256ef08a266"
+  name: "Noble Sword"
+  description_shared_key: "45f3aca1-8f81-4a07-8f40-7c15d7d1b32e"
+  description: "On a {g|Encyclopedia:HitSequenceGlossary}hit{/g}, this sword\'s attack inflicts the {g|Encyclopedia:DisturbedEffect}disturbed{/g} effect on the target for 2 {g|Encyclopedia:Round}rounds{/g}. If the target of the attack is already suffering from the disturbed effect, the attack deals an additional +{uip|Damage|75df60d2377a4e8db4848f661885dc98} {g|Encyclopedia:DamageGlossary}damage{/g} to this target."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 7
+  max_damage: 12
+  penetration: 10
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "f24593fdd337491f8595b26bb6ae57fd"
+    on_hit_action_name: "NobleSword_AbilityAdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_actions: "f24593fdd337491f8595b26bb6ae57fd"
+    on_hit_action_name: "NobleSword_AbilityAdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "75df60d2377a4e8db4848f661885dc98"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "NobleSword_Feature"
+  sources: "Unit - Ch01_JailPlanetoid: JailPlanetoidOverseer"
+  sources: "Unit - ExportedPregens: CassiaCompanion_Level25_MikandraParty_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah12lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Kibellah20lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: PlayerRT_Level15_BladeDancer_ExportedPregen"
+  sources: "Unit - ExportedPregens: PlayerRT_Level25_MikandraParty_ExportedPregen"
+}
+weapon {
+  guid: "ae6b3ebc7e214c638aabd324d1edc409"
+  blueprint_name: "ProtectorsSword_Item"
+  name_shared_key: "d5fdf772-147c-4a66-90a9-27d501b28d2d"
+  description_shared_key: "e11263ec-1151-4c49-a353-b01963327ca4"
+  description: "The wielder of this sword gains a +25% {g|Encyclopedia:Bonus}bonus{/g} to {g|Encyclopedia:DodgeGlossary}dodge{/g} and a +25% bonus to {g|Encyclopedia:Parry}parry{/g}.\\nEnemies {g|Encyclopedia:HitSequenceGlossary}hit{/g} by this sword suffer a \342\210\22225 {g|Encyclopedia:Penalty}penalty{/g} to their {g|Encyclopedia:WarhammerWeaponSkill}Weapon Skill{/g} until the wielder\'s next {g|Encyclopedia:Turn}turn{/g}."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 20
+  max_damage: 30
+  penetration: 30
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedSword_AoEAbility"
+    ability_bp: "bac8a9c632934bec87c72fece5831673"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "96e84143a45d4150b0233b5b58087fd1"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "ProtectorsSword_Feature"
+}
+weapon {
+  guid: "9997ea9a123d48ee9b69c882e310ad70"
+  blueprint_name: "ScorpionSting_VenomBlade_Item"
+  name_key: "e374c6b8-e845-4c29-95ed-d4a396056909"
+  name: "Scorpion Sting"
+  description_shared_key: "9ffa3cdb-8975-47be-8465-0dbc8da9229d"
+  description: "Most warriors prefer swords for they provide more flexibility on the battlefield against close combat enemies.\\n+10% {g|Encyclopedia:Parry}parry{/g}\\n\342\210\22210 to enemy {g|Encyclopedia:WarhammerWeaponSkill}Weapon Skill{/g} when {g|Encyclopedia:HitSequenceGlossary}hit{/g}"
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: false
+  min_damage: 17
+  max_damage: 20
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 10
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "Venom_MeleeAttack_ability"
+    ability_bp: "0d12543ea570415a9e320d8a5627d097"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "VenomBlade_AoEAbility"
+    ability_bp: "80e6345949784370b20b24d75bcd4c30"
+    fx_bp_name: "VenomBlade_AbilityFXSettings"
+    fx_bp: "08a08c9e3975493fa5b81aa78822b8be"
+    on_hit_actions: "9c7d83b9dee54096b763309cf88179b0"
+    on_hit_action_name: "ViralToxin_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "53f2c6910b124dc3889608e3eb0cd2ee"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "ViralToxin_Power6_ForWeapon_Feature"
+  sources: "Chest - CR21: Drukhari_PenalChest"
+  sources: "Unit - Ch04_FootfallSewersCh04: Falco"
+}
+weapon {
+  guid: "b3c1e3fd6b6642c18f2140ec47be104f"
+  blueprint_name: "SerratedGreatSword_Item"
+  name_shared_key: "766bd6ff-f3f7-47f8-b681-718fca6e365c"
+  name: "Serrated Great Sword"
+  description_shared_key: "ef532d9e-6199-4d70-a81a-59758b2a7766"
+  description: "On a critical {g|Encyclopedia:HitSequenceGlossary}hit{/g}, this sword inflicts +1 stack of the laceration effect. For each stack of laceration, all attacks of this sword against the same target deal +10% {g|Encyclopedia:DamageGlossary}damage{/g}."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 14
+  max_damage: 20
+  penetration: 15
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "SerratedGreatSword_AbilityFXSettings"
+    fx_bp: "3f9a775831e04861afbfe9eaf8fe692b"
+    on_hit_actions: "a06b2ed42b8147368bb0b8cabd89e952"
+    on_hit_action_name: "Bleeding_withCheck0_AdditionalEffect"
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "SerratedGreatSword_AbilityFXSettings"
+    fx_bp: "3f9a775831e04861afbfe9eaf8fe692b"
+    on_hit_actions: "a06b2ed42b8147368bb0b8cabd89e952"
+    on_hit_action_name: "Bleeding_withCheck0_AdditionalEffect"
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "93c1076f68c74ee5922a8e73687a4641"
+  extra_fact: "232ae3bb3ca04d27bdc5ea57156d629e"
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact_name: "SerratedGreatSword_Feature"
+  extra_fact_name: "Bleeding_Power6_ForWeapon_Feature"
+  extra_fact_name: "Parry10_Feature"
+  sources: "Unit - ExportedPregens: Kibellah28lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: Sayonara_23_Abelard_ExportedPregen"
+  sources: "Unit - ExportedPregens: Sayonara_Abelar_23lvl_ExportedPregen"
+  sources: "Unit - ExportedPregens: zin_22_KibellahCompanion_ExportedPregen"
+  sources: "Vendor - PirateChapter2_VendorTable_Base 10PF"
+}
+weapon {
+  guid: "d4ec63f97e8d43329bf432ba76b9e9e3"
+  blueprint_name: "Chapter2_Unique_DoombringerSword_Item"
+  name_shared_key: "67511a70-0178-456a-a854-ab5cdc217590"
+  description_shared_key: "3c7b3354-20bb-4778-8103-11f73364c26d"
+  description: "The wielder\'s attacks with this sword ignore the target\'s {g|Encyclopedia:WarhammerArmourGlossary}armour{/g}."
+  category: Melee
+  family: Primitive
+  classification: Sword
+  heavy: false
+  two_handed: true
+  min_damage: 15
+  max_damage: 17
+  penetration: 100
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SwordsMeleeAttack_Ability"
+    ability_bp: "9dec1bdade284190b0977f5f70d26d3e"
+    fx_bp_name: "Sword_AbilityFXSettings"
+    fx_bp: "a29d9b4bce7449d78fc33c1e5797d028"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "MeleeAoESTwoHandedSword_ability"
+    ability_bp: "163013a18e9c46419b2311454ad2b2c8"
+    fx_bp_name: "GreatSword_AOE_AbilityFXSettings"
+    fx_bp: "7c573c13e98b492982288e35264f64bb"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "53c19a9468d24539863989b3be9ed1f5"
+  extra_fact: "d1a76d2a304241ff926a15b3d34ec360"
+  extra_fact_name: "Parry10_Feature"
+  extra_fact_name: "Chapter2_Unique_DoombringerSword_Feature"
+}
+

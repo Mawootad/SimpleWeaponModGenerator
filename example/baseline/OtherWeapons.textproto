@@ -1,0 +1,149 @@
+# proto-file: proto/weapon/Weapon.proto
+# proto-message: weapon.WeaponList
+
+weapon {
+  guid: "f378cd24229e4fd5a575b9690ca09888"
+  blueprint_name: "HeatLance_Item"
+  name_key: "0721e941-9149-4ba9-88ea-447b30b7d921"
+  name: "Heat Lance"
+  description_shared_key: "694f2b9a-ff8e-4e5f-b944-6f7a3d166a81"
+  description: "<i>Laser weapons are effective against targets in {g|Encyclopedia:DetailsOfTheCoverGlossary}cover{/g} and targets with high {g|Encyclopedia:DodgeGlossary}dodge{/g}.</i>"
+  category: Basic
+  family: Laser
+  heavy: false
+  two_handed: true
+  min_damage: 15
+  max_damage: 21
+  penetration: 30
+  dodge_reduction: 10
+  additional_hit_chance: 5
+  recoil: 0
+  max_range: 32
+  ammo: 2
+  rate_of_fire: 1
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "SingleShot_Ability"
+    ability_bp: "a489b6d823ef4b86b431aa1d42e385c7"
+    fx_bp_name: "Hellgun_Shot_AbilityFXSettings"
+    fx_bp: "c3960cf4b54a4caab4a5ee628ad740e4"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: Reload
+    ability_bp_name: "ReloadAbility"
+    ability_bp: "98f4a31b68e446ad9c63411c7b349146"
+    fx_bp_name: ""
+    on_hit_action_name: ""
+    ap: 4
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "b5fe044e47604f47bf99ebd14440b579"
+    bp_name: "DrukhariWeaponProficiencyFeature"
+  }
+  extra_fact: "df91db4a78a342d59a909f538e98fd6a"
+  extra_fact_name: "LaserCoverReduce_Feature"
+}
+weapon {
+  guid: "753c8033b7f441698630394531b16679"
+  blueprint_name: "ImperialInfantrymansEntrenchingTool_Item"
+  name_shared_key: "8ede778d-db7a-4acf-af4e-ec7d25dfd0c6"
+  description_shared_key: "72e9c211-e2b7-483c-9fc1-940c21985f54"
+  description: "This weapon deals +2 additional {g|Encyclopedia:DamageGlossary}damage{/g} for each enemy adjacent to the wielder. Enemies {g|Encyclopedia:HitSequenceGlossary}hit{/g} by this weapon cannot make {g|Encyclopedia:AttackOfOpportunityFullGlossary}attacks of opportunity{/g} for 1 {g|Encyclopedia:Round}round{/g}."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: false
+  min_damage: 9
+  max_damage: 12
+  penetration: 25
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "MeleeAttack_ability"
+    ability_bp: "be721a48e3614ddbb86bf18503511c2c"
+    fx_bp_name: "Showel_AbilityFXSettings"
+    fx_bp: "81e12e76c20b42ac855a069bf502a5b7"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "OneHandedAxe_AoEAbility"
+    ability_bp: "a4e6fe4661514cddb05ec43db1b7c296"
+    fx_bp_name: "Showel_AbilityFXSettings"
+    fx_bp: "81e12e76c20b42ac855a069bf502a5b7"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: true
+    bp: "950565a69d144391897cdc0024747755"
+    bp: "c7a53b43ac5f4f11a1aef612dd3f4f71"
+    bp: "590cb5c394ee4b5eb213121c96063dec"
+    bp_name: "SpaceMarineEquipment_Proficiency"
+    bp_name: "DrukhariArmourProficiencyFeature"
+    bp_name: "AeldariArmourProficiencyFeature"
+  }
+  extra_fact: "81a08bffb1134f03b848d06bfb204b48"
+  extra_fact_name: "ImperialInfantrymansEntrenchingTool_Feature"
+  sources: "Chest - TaintedStreets: ImperiumMilitary_DarkTideShovel"
+}
+weapon {
+  guid: "29f8b14a7389492299f520115f489f79"
+  blueprint_name: "WitchStaff_Item"
+  name_key: "9dcb6f55-2d7d-4ed2-b5f6-cae4b5689938"
+  name: "Witch Staff"
+  description_shared_key: "0dcc787f-580d-4410-a9f8-087fc9f2d7a4"
+  description: "This staff gains +10% {g|Encyclopedia:ArmourPenetration}armour penetration{/g} for every level of the wielder\'s {g|Encyclopedia:PsyRating}psy rating{/g}."
+  category: Melee
+  family: Primitive
+  heavy: false
+  two_handed: true
+  min_damage: 10
+  max_damage: 13
+  penetration: 25
+  dodge_reduction: 0
+  additional_hit_chance: 0
+  recoil: 0
+  max_range: 1
+  ammo: -1
+  rate_of_fire: 0
+  ability1 {
+    type: SingleShot
+    ability_bp_name: "MacesMeleeAttack_Ability"
+    ability_bp: "638cd0973175462b9faaeb1242761d32"
+    fx_bp_name: "WitchStaff_AbilityFXSettings"
+    fx_bp: "0ebd832aea364e23a9aa6abc76228e2d"
+    on_hit_action_name: ""
+    ap: 1
+  }
+  ability2 {
+    type: AOE
+    ability_bp_name: "ThunderHammer_AoE_Ability"
+    ability_bp: "e986d8ac76f74d96852bfd34d71c211d"
+    fx_bp_name: "ThunderHammer_AoE_AbilityFXSettings"
+    fx_bp: "850188dd808741928ba92e6e3b3c5285"
+    on_hit_action_name: ""
+    ap: 2
+  }
+  fact_requirement {
+    all: false
+    negate: false
+    bp: "365ad1a4ef1b4a47be74509c33b2be3b"
+    bp_name: "AeldariWeaponProficiencyFeature"
+  }
+  extra_fact: "86311f67596f47f9ac2d24f167f29aab"
+  extra_fact_name: "WitchStaff_Feature"
+  sources: "Unit - Ch04_Quetza-al_khet: Quetza_EldarFarseer_Leader"
+}
+

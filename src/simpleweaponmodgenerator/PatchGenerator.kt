@@ -4,7 +4,6 @@ import proto.weapon.Weapon
 import proto.weapon.Weapon.WeaponAbility
 import proto.weapon.Weapon.WeaponAbility.AbilityType
 import proto.weapon.weapon
-import simpleweaponmodgenerator.Main.NONE_TEXT
 import kotlin.text.isNotEmpty
 import kotlinx.serialization.json.*
 import proto.weapon.copy

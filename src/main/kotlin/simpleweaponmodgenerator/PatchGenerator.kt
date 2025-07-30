@@ -162,32 +162,12 @@ object PatchGenerator {
 
         if (writtenPatches.isNotEmpty()) {
             File("$outputDir/generatedPatchesConfig.asset").writer().use {
-                it.appendLine(
-                    """
-                    %YAML 1.1
-                    %TAG !u! tag:unity3d.com,2011:
-                    --- !u!114 &11400000
-                    MonoBehaviour:
-                      m_ObjectHideFlags: 0
-                      m_CorrespondingSourceObject: {fileID: 0}
-                      m_PrefabInstance: {fileID: 0}
-                      m_PrefabAsset: {fileID: 0}
-                      m_GameObject: {fileID: 0}
-                      m_Enabled: 1
-                      m_EditorHideFlags: 0
-                      m_Script: {fileID: 11500000, guid: 80fe07f61edc4914ac44891e22e1fdf7, type: 3}
-                      m_Name: PatchesConfig
-                      m_EditorClassIdentifier: 
-                      Entries:""".trimIndent()
-                )
-                for ((guid, name) in writtenPatches) {
-                    it.appendLine(
-                        """
-                        |  - Guid: $guid
-                        |    Filename: $name
-                        |    PatchType: 2""".trimMargin()
+                it.append(
+                    patchConfigYaml(
+                        writtenPatches.map { PatchEntry(guid = it.first, filename = it.second) },
+                        "generatedPatchesConfig"
                     )
-                }
+                )
             }
         }
     }

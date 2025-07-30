@@ -18,6 +18,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("com.google.protobuf:protobuf-java:4.31.1")
     implementation("com.google.protobuf:protobuf-kotlin:4.31.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.9.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json-jvm:1.9.0")
     implementation("com.charleskorn.kaml:kaml-jvm:0.85.0")

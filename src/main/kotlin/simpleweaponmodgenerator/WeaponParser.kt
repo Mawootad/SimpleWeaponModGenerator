@@ -5,7 +5,6 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull
-import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.boolean
 import kotlinx.serialization.json.int
@@ -13,9 +12,21 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import proto.weapon.Weapon
-import proto.weapon.Weapon.WeaponAbility
 import proto.weapon.WeaponKt
 import proto.weapon.copy
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.modules.SerializersModule
+import kotlinx.serialization.modules.SerializersModuleBuilder
+import kotlinx.serialization.modules.polymorphic
+import kotlinx.serialization.modules.subclass
+import proto.weapon.Weapon.WeaponAbility.AbilityType
+import proto.weapon.Weapon.WeaponCategory
+import proto.weapon.Weapon.WeaponClassification
+import proto.weapon.Weapon.WeaponFamily
+import proto.weapon.WeaponKt.factRequirement
+import proto.weapon.WeaponKt.statRestriction
+import proto.weapon.WeaponKt.weaponAbility
 import proto.weapon.weapon
 import java.io.File
 import java.util.Collections
@@ -24,11 +35,11 @@ private val JsonElement.stringValue: String get() = jsonPrimitive.toString().tri
 private val JsonElement.stringValueOrNull: String?
     get() = if (this is JsonNull) null else jsonPrimitive.toString().trim('"')
 private val String.fromBp: String get() = removePrefix("!bp_")
-
-private fun <T> JsonElement.parseEnum(valueOf: (String) -> T): T? {
-    val value = stringValue
-    return if (value == "None") null else valueOf(value)
+private fun String.notNone(ifNotNone: (String) -> Unit) {
+    if (this != NONE_TEXT) ifNotNone(this)
 }
+
+private const val TYPE = "\$type"
 
 class WeaponParser(private val template: String) {
     val weapons by lazy {
@@ -57,7 +68,7 @@ class WeaponParser(private val template: String) {
             parseFiles("$template/Blueprints/$subpath") {
                 println("Getting guid for $it")
                 val namePair = parseBpName(it)
-                if (namePair != null) map += namePair
+                if (namePair != null) map += namePair.guid to it.nameWithoutExtension
             }
         }
         map
@@ -178,104 +189,211 @@ class WeaponParser(private val template: String) {
         }
     }
 
-    private fun parseBpName(file: File): Pair<String, String>? =
+    @Serializable
+    data class SimpleJBP(@SerialName("AssetId") val guid: String, @SerialName("Data") val data: BPData) {
+        @Serializable
+        sealed class BPData
+
+        @Serializable
+        private class UnknownBP(@SerialName(TYPE) val type: String) : BPData()
+
+        companion object {
+
+            val JSON_PARSER = Json {
+                serializersModule = SerializersModule {
+                    polymorphic(BPData::class) {
+                        subclass(BlueprintItemWeapon::class)
+                        defaultDeserializer { UnknownBP.serializer() }
+                    }
+                    BlueprintComponent.POLYMORPHISM(this)
+                }
+                classDiscriminator = "\$type"
+                ignoreUnknownKeys = true
+            }
+
+            fun decode(file: File) = JSON_PARSER.decodeFromString<SimpleJBP>(file.readText())
+        }
+
+    }
+
+    private fun parseBpName(file: File): SimpleJBP? =
         try {
-            val json = Json.Default.parseToJsonElement(file.readText()).jsonObject
-            json["AssetId"]!!.stringValue to file.nameWithoutExtension
+            SimpleJBP.decode(file)
         } catch (e: Exception) {
             println("Couldn't get BP name for ${file.name}: ${e.stackTraceToString()}")
             null
         }
 
+    @Serializable
+    @SerialName("c00f723cccf2d314198c42a572c631fd, BlueprintItemWeapon")
+    private data class BlueprintItemWeapon(
+        @SerialName("CanBeUsedInGame") val inGame: Boolean,
+        @SerialName("m_IsNatural") val natural: Boolean,
+        @SerialName("IsUnlootable") val unlootable: Boolean,
+        @SerialName("IsNonRemovable") val nonRemovable: Boolean,
+
+        @SerialName("m_DisplayName") val displayName: LocalizedString,
+        @SerialName("m_Description") val description: LocalizedString,
+
+        @SerialName("AbilityContainer") val abilityContainer: AbilityContainer,
+
+        @SerialName("Category") val category: String,
+        @SerialName("Family") val family: String,
+        @SerialName("Classification") val classification: String,
+        @SerialName("m_Heaviness") val heaviness: String,
+        @SerialName("m_HoldingType") val holdingType: String,
+        @SerialName("WarhammerDamage") val damage: Int,
+        @SerialName("WarhammerMaxDamage") val maxDamage: Int,
+        @SerialName("WarhammerPenetration") val penetration: Int,
+        @SerialName("DodgePenetration") val dodgePenetration: Int,
+        @SerialName("AdditionalHitChance") val additionalHitChance: Int,
+        @SerialName("WarhammerRecoil") val recoil: Int,
+        @SerialName("WarhammerMaxDistance") val maxDistance: Int,
+        @SerialName("WarhammerMaxAmmo") val maxAmmo: Int,
+        @SerialName("RateOfFire") val rateOfFire: Int,
+
+        @SerialName("Components") val components: List<BlueprintComponent>,
+
+        ) : SimpleJBP.BPData() {
+        @Serializable
+        data class AbilityContainer(
+            @SerialName("Ability1")
+            val ability1: Ability,
+            @SerialName("Ability2")
+            val ability2: Ability,
+            @SerialName("Ability3")
+            val ability3: Ability,
+            @SerialName("Ability4")
+            val ability4: Ability,
+            @SerialName("Ability5")
+            val ability5: Ability,
+        ) {
+            @Serializable
+            data class Ability(
+                @SerialName("Type")
+                val type: String,
+                @SerialName("m_Ability")
+                val bp: String?,
+                @SerialName("m_FXSettings")
+                val fx: String?,
+                @SerialName("m_OnHitActions")
+                val onHit: String?,
+                @SerialName("AP")
+                val ap: Int,
+            ) {
+                fun toProto() = weaponAbility {
+                    val ability = this@Ability
+                    ability.type.notNone { this.type = AbilityType.valueOf(it) }
+                    ability.bp?.let { abilityBp = it.fromBp }
+                    ability.fx?.let { fxBp = it.fromBp }
+                    ability.onHit?.let { onHitActions = it.fromBp }
+                    ap = ability.ap
+                }.takeIf { it.type != AbilityType.ABILITY_NONE }
+            }
+        }
+    }
+
+    @Serializable
+    sealed class BlueprintComponent {
+        @Serializable
+        data class UnknownComponent(@SerialName(TYPE) val type: String) : BlueprintComponent()
+
+        @Serializable
+        @SerialName("6dfdda28c94860241a112b404538e2a7, EquipmentRestrictionStat")
+        data class EquipmentRestrictionStat(
+            @SerialName("Stat") val stat: String,
+            @SerialName("MinValue") val minValue: Int,
+        ) : BlueprintComponent()
+
+        @Serializable
+        @SerialName("d7b23547716f4a949471625ff6c66fb2, EquipmentRestrictionHasFacts")
+        data class EquipmentRestrictionHasFacts(
+            @SerialName("All") val all: Boolean,
+            @SerialName("m_Inverted") val inverted: Boolean,
+            @SerialName("m_Facts") val facts: List<String>,
+        ) : BlueprintComponent()
+
+        @Serializable
+        @SerialName("65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder")
+        data class AddFactToEquipmentWielder(@SerialName("m_Fact") val fact: String) : BlueprintComponent()
+
+        companion object {
+            val POLYMORPHISM: SerializersModuleBuilder.() -> Unit = {
+                polymorphic(BlueprintComponent::class) {
+                    subclass(EquipmentRestrictionStat::class)
+                    subclass(EquipmentRestrictionHasFacts::class)
+                    subclass(AddFactToEquipmentWielder::class)
+                    defaultDeserializer { UnknownComponent.serializer() }
+                }
+            }
+        }
+    }
+
+    @Serializable
+    data class LocalizedString(@SerialName("m_Key") val key: String, @SerialName("Shared") val shared: Shared? = null) {
+        @Serializable
+        data class Shared(@SerialName("stringkey") val key: String)
+    }
+
     private fun parseWeapon(file: File): Weapon? =
         try {
             weapon {
-                val json = Json.Default.parseToJsonElement(file.readText()).jsonObject
-                guid = json["AssetId"]!!.stringValue
-                val data = json["Data"]!!.jsonObject
-                if (!(data["\$type"]?.stringValue!!.endsWith("BlueprintItemWeapon"))) return null
-                if (data["CanBeUsedInGame"]?.jsonPrimitive?.boolean != true) return null
-                if (data["m_IsNatural"]?.jsonPrimitive?.boolean == true) return null
-                if (data["IsUnlootable"]?.jsonPrimitive?.boolean == true) return null
-                if (data["IsNonRemovable"]?.jsonPrimitive?.boolean == true) return null
+                val blueprintItemWeapon = SimpleJBP.decode(file)
+                guid = blueprintItemWeapon.guid
+                val data = blueprintItemWeapon.data as? BlueprintItemWeapon ?: return null
 
-                nameKey = data["m_DisplayName"]?.jsonObject?.get("m_Key")?.stringValue ?: ""
-                nameSharedKey =
-                    (data["m_DisplayName"]?.jsonObject?.get("Shared") as? JsonObject)?.get("stringkey")?.stringValue
-                        ?: ""
+                if (!data.inGame) return null
+                if (data.natural) return null
+                if (data.unlootable) return null
+                if (data.nonRemovable) return null
 
-                descriptionKey = data["m_Description"]?.jsonObject?.get("m_Key")?.stringValue ?: ""
-                descriptionSharedKey =
-                    (data["m_Description"]?.jsonObject?.get("Shared") as? JsonObject)?.get("stringkey")?.stringValue
-                        ?: ""
+                nameKey = data.displayName.key
+                nameSharedKey = data.displayName.shared?.key ?: ""
 
-                val abilityContainer = data["AbilityContainer"]?.jsonObject?.let {
-                    List(5) { n -> it["Ability${n + 1}"]?.jsonObject?.takeIf { ability -> ability["Type"]!!.stringValue != "None" } }
-                } ?: List(5) { null }
+                descriptionKey = data.description.key
+                descriptionSharedKey = data.description.shared?.key ?: ""
 
-                val abilities = abilityContainer
-                    .map { ability ->
-                        if (ability == null) return@map null
+                data.abilityContainer.ability1.toProto()?.let { ability1 = it }
+                data.abilityContainer.ability2.toProto()?.let { ability2 = it }
+                data.abilityContainer.ability3.toProto()?.let { ability3 = it }
+                data.abilityContainer.ability4.toProto()?.let { ability4 = it }
+                data.abilityContainer.ability5.toProto()?.let { ability5 = it }
 
-                        WeaponKt.weaponAbility {
-                            ability["Type"]!!.parseEnum(Weapon.WeaponAbility.AbilityType::valueOf)?.let { type = it }
-                            abilityBp = ability["m_Ability"]!!.stringValue.fromBp
-                            ability["m_OnHitActions"]?.stringValueOrNull?.fromBp?.let { onHitActions = it }
-                            ability["m_FXSettings"]?.stringValueOrNull?.fromBp?.let { fxBp = it }
-//                            ability["OnHitOverrideType"]?.parseEnum(Weapon.WeaponAbility.OverrideType::valueOf)?.let {
-//                                onHitOverrideType = it
-//                            }
-                            ap = ability["AP"]!!.jsonPrimitive.int
+                val statRestrictions = data.components.mapNotNull { it as? BlueprintComponent.EquipmentRestrictionStat }
+                if (statRestrictions.size > 1) println("Found multiple stat restrctions on $file")
+                statRestrictions.firstOrNull()?.let {
+                    statRestriction = statRestriction {
+                        stat = it.stat
+                        requirement = it.minValue
+                    }
+                }
+
+                factRequirement += data.components.mapNotNull { it as? BlueprintComponent.EquipmentRestrictionHasFacts }
+                    .map {
+                        factRequirement {
+                            all = it.all
+                            negate = it.inverted
+                            bp += it.facts.map { fact -> fact.fromBp }
                         }
                     }
 
-                abilities[0]?.let { ability1 = it }
-                abilities[1]?.let { ability2 = it }
-                abilities[2]?.let { ability3 = it }
-                abilities[3]?.let { ability4 = it }
-                abilities[4]?.let { ability5 = it }
-
-                val components = data["Components"]?.jsonArray?.map { it.jsonObject }
-
-                components?.firstOrNull { it["\$type"]!!.stringValue.endsWith("EquipmentRestrictionStat") }
-                    ?.let {
-                        this.statRestriction =
-                            WeaponKt.statRestriction {
-                                stat = it["Stat"]!!.stringValue
-                                requirement = it["MinValue"]!!.jsonPrimitive.int
-                            }
-                    }
-
-
-                factRequirement += components?.filter { it["\$type"]!!.stringValue.endsWith("EquipmentRestrictionHasFacts") }
-                    ?.map {
-                        WeaponKt.factRequirement {
-                            all = it["All"]!!.jsonPrimitive.boolean
-                            negate = it["m_Inverted"]!!.jsonPrimitive.boolean
-                            bp += it["m_Facts"]!!.jsonArray.map { fact -> fact.stringValue.fromBp }
-                        }
-                    }.orEmpty()
-
-                extraFact += components?.filter { it["\$type"]!!.stringValue.endsWith("AddFactToEquipmentWielder") }
-                    ?.map {
-                        it["m_Fact"]!!.stringValue.fromBp
-                    }.orEmpty()
+                extraFact += data.components.mapNotNull { (it as? BlueprintComponent.AddFactToEquipmentWielder)?.fact?.fromBp }
 
                 blueprintName = file.nameWithoutExtension
-                data["Category"]?.parseEnum(Weapon.WeaponCategory::valueOf)?.let { category = it }
-                data["Family"]?.parseEnum(Weapon.WeaponFamily::valueOf)?.let { family = it }
-                data["Classification"]?.parseEnum(Weapon.WeaponClassification::valueOf)?.let { classification = it }
-                heavy = data["m_Heaviness"]?.stringValue == "Heavy"
-                twoHanded = data["m_HoldingType"]?.stringValue == "TwoHanded"
-                data["WarhammerDamage"]?.jsonPrimitive?.int?.let { minDamage = it }
-                data["WarhammerMaxDamage"]?.jsonPrimitive?.int?.let { maxDamage = it }
-                data["WarhammerPenetration"]?.jsonPrimitive?.int?.let { penetration = it }
-                data["DodgePenetration"]?.jsonPrimitive?.int?.let { dodgeReduction = it }
-                data["AdditionalHitChance"]?.jsonPrimitive?.int?.let { additionalHitChance = it }
-                data["WarhammerRecoil"]?.jsonPrimitive?.int?.let { recoil = it }
-                data["WarhammerMaxDistance"]?.jsonPrimitive?.int?.let { maxRange = it }
-                data["WarhammerMaxAmmo"]?.jsonPrimitive?.int?.let { ammo = it }
-                data["RateOfFire"]?.jsonPrimitive?.int?.let { rateOfFire = it }
+                data.category.notNone { category = WeaponCategory.valueOf(it) }
+                data.family.notNone { family = WeaponFamily.valueOf(it) }
+                data.classification.notNone { classification = WeaponClassification.valueOf(it) }
+                heavy = data.heaviness == "Heavy"
+                twoHanded = data.holdingType == "TwoHanded"
+                minDamage = data.damage
+                maxDamage = data.maxDamage
+                penetration = data.penetration
+                dodgeReduction = data.dodgePenetration
+                additionalHitChance = data.additionalHitChance
+                recoil = data.recoil
+                maxRange = data.maxDistance
+                ammo = data.maxAmmo
+                rateOfFire = data.rateOfFire
             }
         } catch (e: Exception) {
             println("Failed parsing weapon $file: ${e.stackTraceToString()}")

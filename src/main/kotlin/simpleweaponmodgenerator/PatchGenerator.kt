@@ -88,41 +88,41 @@ object PatchGenerator {
             }
 
             val patchEntries = buildJsonObject {
-                handleDiff(Weapon::hasCategory, Weapon::category) { put("Category", it.name.enumNoneToNone()) }
-                handleDiff(Weapon::hasFamily, Weapon::family) { put("Family", it.name.enumNoneToNone()) }
-                handleDiff(Weapon::hasClassification, Weapon::classification) {
+                handleDiff({ it.hasCategory() }, { it.category }) { put("Category", it.name.enumNoneToNone()) }
+                handleDiff({ it.hasFamily() }, { it.family }) { put("Family", it.name.enumNoneToNone()) }
+                handleDiff({ it.hasClassification() }, { it.classification }) {
                     put("Classification", it.name.enumNoneToNone())
                 }
-                handleDiff(Weapon::hasHeavy, Weapon::heavy) { put("m_Heaviness", if (it) "Heavy" else "NotHeavy") }
-                handleDiff(Weapon::hasTwoHanded, Weapon::twoHanded) {
+                handleDiff({ it.hasHeavy() }, { it.heavy }) { put("m_Heaviness", if (it) "Heavy" else "NotHeavy") }
+                handleDiff({ it.hasTwoHanded() }, { it.twoHanded }) {
                     put("m_HoldingType", if (it) "TwoHanded" else "OneHanded")
                     put("IsTwoHanded", it)
                 }
-                handleDiff(Weapon::hasMinDamage, Weapon::minDamage) { put("WarhammerDamage", it) }
-                handleDiff(Weapon::hasMaxDamage, Weapon::maxDamage) { put("WarhammerMaxDamage", it) }
-                handleDiff(Weapon::hasPenetration, Weapon::penetration) { put("WarhammerPenetration", it) }
-                handleDiff(Weapon::hasDodgeReduction, Weapon::dodgeReduction) { put("DodgePenetration", it) }
-                handleDiff(Weapon::hasAdditionalHitChance, Weapon::additionalHitChance) {
+                handleDiff({ it.hasMinDamage() }, { it.minDamage }) { put("WarhammerDamage", it) }
+                handleDiff({ it.hasMaxDamage() }, { it.maxDamage }) { put("WarhammerMaxDamage", it) }
+                handleDiff({ it.hasPenetration() }, { it.penetration }) { put("WarhammerPenetration", it) }
+                handleDiff({ it.hasDodgeReduction() }, { it.dodgeReduction }) { put("DodgePenetration", it) }
+                handleDiff({ it.hasAdditionalHitChance() }, { it.additionalHitChance }) {
                     put("AdditionalHitChance", it)
                 }
-                handleDiff(Weapon::hasRecoil, Weapon::recoil) { put("WarhammerRecoil", it) }
-                handleDiff(Weapon::hasMaxRange, Weapon::maxRange) { put("WarhammerMaxDistance", it) }
-                handleDiff(Weapon::hasAmmo, Weapon::ammo) { put("WarhammerMaxAmmo", it) }
-                handleDiff(Weapon::hasRateOfFire, Weapon::rateOfFire) { put("RateOfFire", it) }
+                handleDiff({ it.hasRecoil() }, { it.recoil }) { put("WarhammerRecoil", it) }
+                handleDiff({ it.hasMaxRange() }, { it.maxRange }) { put("WarhammerMaxDistance", it) }
+                handleDiff({ it.hasAmmo() }, { it.ammo }) { put("WarhammerMaxAmmo", it) }
+                handleDiff({ it.hasRateOfFire() }, { it.rateOfFire }) { put("RateOfFire", it) }
                 val abilities = buildJsonObject {
-                    handleDiff(Weapon::hasAbility1, Weapon::ability1) {
+                    handleDiff({ it.hasAbility1() }, { it.ability1 }) {
                         abilityDiffObject(it, baseline.ability1)?.let { abilityPatch -> put("Ability1", abilityPatch) }
                     }
-                    handleDiff(Weapon::hasAbility1, Weapon::ability2) {
+                    handleDiff({ it.hasAbility2() }, { it.ability2 }) {
                         abilityDiffObject(it, baseline.ability2)?.let { abilityPatch -> put("Ability2", abilityPatch) }
                     }
-                    handleDiff(Weapon::hasAbility1, Weapon::ability3) {
+                    handleDiff({ it.hasAbility3() }, { it.ability3 }) {
                         abilityDiffObject(it, baseline.ability3)?.let { abilityPatch -> put("Ability3", abilityPatch) }
                     }
-                    handleDiff(Weapon::hasAbility1, Weapon::ability4) {
+                    handleDiff({ it.hasAbility4() }, { it.ability4 }) {
                         abilityDiffObject(it, baseline.ability4)?.let { abilityPatch -> put("Ability4", abilityPatch) }
                     }
-                    handleDiff(Weapon::hasAbility1, Weapon::ability5) {
+                    handleDiff({ it.hasAbility5() }, { it.ability5 }) {
                         abilityDiffObject(it, baseline.ability5)?.let { abilityPatch -> put("Ability5", abilityPatch) }
                     }
                 }
@@ -190,10 +190,6 @@ object PatchGenerator {
                     "m_FXSettings",
                     patch.fxBp.takeIf { it.isNotEmpty() }
                 )
-//                if (patch.hasOnHitOverrideType() && patch.onHitOverrideType != baseline.onHitOverrideType) put(
-//                    "OnHitOverrideType",
-//                    patch.onHitOverrideType.name.enumNoneToNone()
-//                )
                 if (patch.hasOnHitActions() && patch.onHitActions != baseline.onHitActions) {
                     put(
                         "m_OnHitActions",

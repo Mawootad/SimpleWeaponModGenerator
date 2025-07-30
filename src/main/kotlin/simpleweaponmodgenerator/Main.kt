@@ -41,9 +41,25 @@ object Main {
 
     private val ALL_COMMANDS = setOf(REGENERATE_BASELINE, MAKE_TSV, MAKE_PATCH_DATA, REMOVE_DUPLICATE_INFO, MAKE_FULL)
 
+    private val ALL_OPTIONS = ALL_COMMANDS + setOf(
+        TEMPLATE_PATH,
+        BASELINE_PATH,
+        SPLIT_BASELINE,
+        OBTAINABLE,
+        TSV_OUT,
+        PATCH_PATH,
+        MOD_PATH,
+        MANIFEST
+    )
+
     @JvmStatic
     fun main(args: Array<String>) {
         val argValues = args.associate { it.split("=", limit = 2).let { pair -> pair[0] to pair.getOrNull(1) } }
+
+        val unrecognized = argValues.keys.filter { it !in ALL_OPTIONS && it.isNotBlank() }
+        if (unrecognized.isNotEmpty()) {
+            println("Unrecognized arguments $unrecognized")
+        }
 
         if (args.isEmpty() || "--help" in argValues || "-h" in argValues || "help" in argValues || (argValues.keys intersect ALL_COMMANDS).isEmpty()) {
             println(
@@ -101,16 +117,14 @@ object Main {
 
         if (REGENERATE_BASELINE in argValues) {
             Files.createDirectories(Path(baselinePath))
-            val toWrite =
-                if (OBTAINABLE in argValues) baselineData!!.filter { it.sourcesList.isNotEmpty() } else baselineData!!
             if (SPLIT_BASELINE in argValues) {
-                for ((type, weapons) in toWrite.groupBy { Classifier.getWeaponType(it) }) {
+                for ((type, weapons) in baselineData!!.groupBy { Classifier.getWeaponType(it) }) {
                     File("$baselinePath/${type}Weapons.textproto").writer().use {
                         it.append(textprotoString(weapons))
                     }
                 }
             } else {
-                File("$baselinePath/Weapons.textproto").writer().use { it.append(textprotoString(toWrite)) }
+                File("$baselinePath/Weapons.textproto").writer().use { it.append(textprotoString(baselineData!!)) }
             }
 
             File("$baselinePath/Guids.txt").writer().use { writer ->
@@ -126,8 +140,11 @@ object Main {
                 return
             }
 
+            val toWrite =
+                if (OBTAINABLE in argValues) baselineData.filter { it.sourcesList.isNotEmpty() } else baselineData
+
             Files.createDirectories(Path(File(tsvPath).parent))
-            File(tsvPath).writeText(tsvString(baselineData))
+            File(tsvPath).writeText(tsvString(toWrite))
         }
 
         val patchesPath = argValues[PATCH_PATH] ?: "$modPath/modifications"

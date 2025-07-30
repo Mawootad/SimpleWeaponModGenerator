@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SimpleWeaponModGenerator.iml" filepath="$PROJECT_DIR$/SimpleWeaponModGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SimpleWeaponModGenerator.main.iml" filepath="$PROJECT_DIR$/.idea/modules/SimpleWeaponModGenerator.main.iml" />
     </modules>
   </component>
 </project>

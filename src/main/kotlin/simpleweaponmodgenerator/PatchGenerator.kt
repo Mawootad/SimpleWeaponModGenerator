@@ -7,11 +7,17 @@ import proto.weapon.weapon
 import kotlin.text.isNotEmpty
 import kotlinx.serialization.json.*
 import proto.weapon.copy
+import simpleweaponmodgenerator.schema.BlueprintComponent
+import simpleweaponmodgenerator.schema.BlueprintItemWeaponPatch
+import simpleweaponmodgenerator.schema.PatchEntry
+import simpleweaponmodgenerator.schema.patchConfigYaml
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.security.MessageDigest
 import kotlin.collections.contains
+
+private val String.toBp: String get() = "!bp_$this"
 
 object PatchGenerator {
     fun getBpsFromNames(weapon: Weapon, nameToGuidMap: () -> Map<String, String>) = weapon.copy {
@@ -81,86 +87,102 @@ object PatchGenerator {
                 continue
             }
 
-            fun <T> handleDiff(present: (Weapon) -> Boolean, value: (Weapon) -> T, action: (T) -> Unit) {
-                if (!present(patch)) return
-                if (value(patch) == value(baseline)) return
-                action(value(patch))
-            }
-
-            val patchEntries = buildJsonObject {
-                handleDiff({ it.hasCategory() }, { it.category }) { put("Category", it.name.enumNoneToNone()) }
-                handleDiff({ it.hasFamily() }, { it.family }) { put("Family", it.name.enumNoneToNone()) }
-                handleDiff({ it.hasClassification() }, { it.classification }) {
-                    put("Classification", it.name.enumNoneToNone())
-                }
-                handleDiff({ it.hasHeavy() }, { it.heavy }) { put("m_Heaviness", if (it) "Heavy" else "NotHeavy") }
-                handleDiff({ it.hasTwoHanded() }, { it.twoHanded }) {
-                    put("m_HoldingType", if (it) "TwoHanded" else "OneHanded")
-                    put("IsTwoHanded", it)
-                }
-                handleDiff({ it.hasMinDamage() }, { it.minDamage }) { put("WarhammerDamage", it) }
-                handleDiff({ it.hasMaxDamage() }, { it.maxDamage }) { put("WarhammerMaxDamage", it) }
-                handleDiff({ it.hasPenetration() }, { it.penetration }) { put("WarhammerPenetration", it) }
-                handleDiff({ it.hasDodgeReduction() }, { it.dodgeReduction }) { put("DodgePenetration", it) }
-                handleDiff({ it.hasAdditionalHitChance() }, { it.additionalHitChance }) {
-                    put("AdditionalHitChance", it)
-                }
-                handleDiff({ it.hasRecoil() }, { it.recoil }) { put("WarhammerRecoil", it) }
-                handleDiff({ it.hasMaxRange() }, { it.maxRange }) { put("WarhammerMaxDistance", it) }
-                handleDiff({ it.hasAmmo() }, { it.ammo }) { put("WarhammerMaxAmmo", it) }
-                handleDiff({ it.hasRateOfFire() }, { it.rateOfFire }) { put("RateOfFire", it) }
-                val abilities = buildJsonObject {
-                    handleDiff({ it.hasAbility1() }, { it.ability1 }) {
-                        abilityDiffObject(it, baseline.ability1)?.let { abilityPatch -> put("Ability1", abilityPatch) }
-                    }
-                    handleDiff({ it.hasAbility2() }, { it.ability2 }) {
-                        abilityDiffObject(it, baseline.ability2)?.let { abilityPatch -> put("Ability2", abilityPatch) }
-                    }
-                    handleDiff({ it.hasAbility3() }, { it.ability3 }) {
-                        abilityDiffObject(it, baseline.ability3)?.let { abilityPatch -> put("Ability3", abilityPatch) }
-                    }
-                    handleDiff({ it.hasAbility4() }, { it.ability4 }) {
-                        abilityDiffObject(it, baseline.ability4)?.let { abilityPatch -> put("Ability4", abilityPatch) }
-                    }
-                    handleDiff({ it.hasAbility5() }, { it.ability5 }) {
-                        abilityDiffObject(it, baseline.ability5)?.let { abilityPatch -> put("Ability5", abilityPatch) }
-                    }
-                }
-                if (abilities.isNotEmpty()) {
-                    put("AbilityContainer", abilities)
+            fun <T> diffOrNull(present: Boolean, value: Weapon.() -> T): T? =
+                when {
+                    !present -> null
+                    value(patch) == value(baseline) -> null
+                    else -> value(patch)
                 }
 
-                val newFacts = (patch.extraFactList subtract baseline.extraFactList) - ""
-                if (newFacts.isNotEmpty()) {
-                    putJsonArray("Components") {
-                        addAll(newFacts.map {
-                            buildJsonObject {
-                                put("PatchType", "Prepend")
-                                putJsonObject("NewElement") {
-                                    put("\$type", "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder")
-                                    put("name", "\$AddFactToEquipmentWielder\$${stableUidWithDashes(patch.name, it)}")
-                                    put("m_Flags", 0)
-                                    putJsonObject("PrototypeLink") {
-                                        put("guid", "")
-                                        put("name", "")
-                                    }
-                                    putJsonArray("m_Overrides") {}
-                                    put("m_Fact", "!bp_$it")
-                                }
-                            }
-                        })
-                    }
+            fun <T> abilityDiffOrNull(
+                present: Boolean,
+                selector: Weapon.() -> WeaponAbility,
+                value: WeaponAbility.() -> T
+            ): T? =
+                when {
+                    !present -> null
+                    value(selector(patch)) == value(selector(baseline)) -> null
+                    else -> value(selector(patch))
+                }
+
+            fun abilityBpDiff(
+                present: Boolean,
+                selector: Weapon.() -> WeaponAbility,
+                value: WeaponAbility.() -> String
+            ): String? =
+                when {
+                    !present -> ""
+                    value(selector(patch)) == value(selector(baseline)) -> ""
+                    else -> value(selector(patch)).toBp.takeIf { it != "".toBp }
+                }
+
+            fun abilityDiff(
+                present: Boolean,
+                selector: Weapon.() -> WeaponAbility
+            ): BlueprintItemWeaponPatch.AbilityContainer.Ability = with(selector(patch)) {
+                if (present) {
+                    BlueprintItemWeaponPatch.AbilityContainer.Ability()
+                } else {
+                    BlueprintItemWeaponPatch.AbilityContainer.Ability(
+                        type = abilityDiffOrNull(hasType(), selector) { type.name.enumNoneToNone() },
+                        bp = abilityBpDiff(hasAbilityBp(), selector) { abilityBp },
+                        fx = abilityBpDiff(hasFxBp(), selector) { fxBp },
+                        onHitOverrideType = abilityDiffOrNull(
+                            hasOnHitActions(),
+                            selector
+                        ) { if (onHitActions.isEmpty()) "None" else "Add" },
+                        onHit = abilityBpDiff(hasOnHitActions(), selector) { onHitActions },
+                        ap = abilityDiffOrNull(hasAp(), selector) { ap },
+                    )
                 }
             }
 
-            if (patchEntries.isNotEmpty()) {
-                File("$outputDir/Blueprints/${patch.blueprintName}.patch").writer()
-                    .use { it.append(JSON_FORMAT.encodeToString(patchEntries)) }
+            val jsonPatch = with(patch) {
+                BlueprintItemWeaponPatch(
+                    category = diffOrNull(hasCategory()) { category.name.enumNoneToNone() },
+                    family = diffOrNull(hasFamily()) { family.name.enumNoneToNone() },
+                    classification = diffOrNull(hasClassification()) { classification.name.enumNoneToNone() },
+                    heaviness = diffOrNull(hasHeavy()) { if (heavy) "Heavy" else "NotHeavy" },
+                    holdingType = diffOrNull(hasTwoHanded()) { if (twoHanded) "TwoHanded" else "OneHanded" },
+                    isTwoHanded = diffOrNull(hasTwoHanded()) { twoHanded },
+                    damage = diffOrNull(hasMinDamage()) { minDamage },
+                    maxDamage = diffOrNull(hasMaxDamage()) { maxDamage },
+                    penetration = diffOrNull(hasPenetration()) { penetration },
+                    dodgePenetration = diffOrNull(hasDodgeReduction()) { dodgeReduction },
+                    additionalHitChance = diffOrNull(hasAdditionalHitChance()) { additionalHitChance },
+                    recoil = diffOrNull(hasRecoil()) { recoil },
+                    maxDistance = diffOrNull(hasMaxRange()) { maxRange },
+                    maxAmmo = diffOrNull(hasAmmo()) { ammo },
+                    rateOfFire = diffOrNull(hasRateOfFire()) { rateOfFire },
+                    abilityContainer = BlueprintItemWeaponPatch.AbilityContainer(
+                        ability1 = abilityDiff(hasAbility1()) { ability1 },
+                        ability2 = abilityDiff(hasAbility2()) { ability2 },
+                        ability3 = abilityDiff(hasAbility3()) { ability3 },
+                        ability4 = abilityDiff(hasAbility4()) { ability4 },
+                        ability5 = abilityDiff(hasAbility5()) { ability5 },
+                    ),
+                    components = (extraFactList subtract baseline.extraFactList.toSet()).map {
+                        BlueprintItemWeaponPatch.ComponentPatch.Prepend(
+                            component = BlueprintComponent.AddFactToEquipmentWielder(
+                                fact = it.toBp,
+                                name = "\$AddFactToEquipmentWielder\$${stableUidWithDashes(name, it)}",
+                            )
+                        )
+                    }
+                )
+            }
+
+            if (jsonPatch != BlueprintItemWeaponPatch()) {
+                println("Writing patch ${patch.blueprintName}")
+                File("$outputDir/Blueprints/${patch.blueprintName}.patch").writer().use {
+                    it.write(jsonPatch.encode())
+                }
                 writtenPatches += patch.guid to patch.blueprintName
             }
         }
 
         if (writtenPatches.isNotEmpty()) {
+            println("Writing patches")
             File("$outputDir/generatedPatchesConfig.asset").writer().use {
                 it.append(
                     patchConfigYaml(
@@ -170,36 +192,5 @@ object PatchGenerator {
                 )
             }
         }
-    }
-
-    private fun abilityDiffObject(patch: WeaponAbility, baseline: WeaponAbility): JsonObject? {
-        val abilityPatch = buildJsonObject {
-            if (patch.hasType() && patch.type == AbilityType.ABILITY_NONE) {
-                put("Type", JsonPrimitive(NONE_TEXT))
-            } else {
-                if (patch.hasAp() && patch.ap != baseline.ap) put("AP", patch.ap)
-                if (patch.hasAbilityBp() && patch.abilityBp != baseline.abilityBp) put(
-                    "m_Ability",
-                    patch.abilityBp
-                )
-                if (patch.hasType() && patch.type != baseline.type) put(
-                    "Type",
-                    patch.type.name.enumNoneToNone()
-                )
-                if (patch.hasFxBp() && patch.fxBp != baseline.fxBp) put(
-                    "m_FXSettings",
-                    patch.fxBp.takeIf { it.isNotEmpty() }
-                )
-                if (patch.hasOnHitActions() && patch.onHitActions != baseline.onHitActions) {
-                    put(
-                        "m_OnHitActions",
-                        patch.onHitActions.takeIf { it.isNotEmpty() }
-                    )
-                    if (patch.onHitActions.isEmpty()) put("OnHitOverrideType", "None")
-                    else if (baseline.onHitActions.isEmpty()) put("OnHitOverrideType", "Add")
-                }
-            }
-        }
-        return abilityPatch.takeIf { it.isNotEmpty() }
     }
 }

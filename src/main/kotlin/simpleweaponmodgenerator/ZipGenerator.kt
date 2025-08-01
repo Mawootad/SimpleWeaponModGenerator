@@ -81,6 +81,15 @@ object ZipGenerator {
                 stream.closeEntry()
             }
 
+            stream.putNextEntry(ZipEntry("Assemblies/"))
+            stream.closeEntry()
+            stream.putNextEntry(ZipEntry("Blueprints/"))
+            stream.closeEntry()
+            stream.putNextEntry(ZipEntry("Bundles/"))
+            stream.closeEntry()
+            stream.putNextEntry(ZipEntry("Localization/"))
+            stream.closeEntry()
+
             stream.putNextEntry(ZipEntry("OwlcatModificationManifest.json"))
             writer.write(manifest.encodeToJson())
             flushAndClose()

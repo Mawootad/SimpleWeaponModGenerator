@@ -2,41 +2,31 @@ package simpleweaponmodgenerator
 
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonElement
-import kotlinx.serialization.json.JsonNull
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.int
-import kotlinx.serialization.json.jsonArray
-import kotlinx.serialization.json.jsonObject
-import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.*
 import proto.weapon.Weapon
-import proto.weapon.WeaponKt
-import proto.weapon.copy
+import proto.weapon.Weapon.*
 import proto.weapon.Weapon.WeaponAbility.AbilityType
-import proto.weapon.Weapon.WeaponCategory
-import proto.weapon.Weapon.WeaponClassification
-import proto.weapon.Weapon.WeaponFamily
+import proto.weapon.WeaponKt
 import proto.weapon.WeaponKt.factRequirement
 import proto.weapon.WeaponKt.statRestriction
 import proto.weapon.WeaponKt.weaponAbility
+import proto.weapon.copy
 import proto.weapon.weapon
+import simpleweaponmodgenerator.schema.Blueprint
 import simpleweaponmodgenerator.schema.BlueprintComponent
 import simpleweaponmodgenerator.schema.BlueprintItemWeapon
 import simpleweaponmodgenerator.schema.BlueprintItemWeapon.AbilityContainer.Ability
-import simpleweaponmodgenerator.schema.Blueprint
 import java.io.File
-import java.util.Collections
+import java.util.*
 
 private val JsonElement.stringValue: String get() = jsonPrimitive.toString().trim('"')
-private val JsonElement.stringValueOrNull: String?
-    get() = if (this is JsonNull) null else jsonPrimitive.toString().trim('"')
 private val String.fromBp: String get() = removePrefix("!bp_")
 private fun String.notNone(ifNotNone: (String) -> Unit) {
     if (this != NONE_TEXT) ifNotNone(this)
 }
 
-class WeaponParser(private val template: String) {
+class WeaponParser(private val template: String, private val modpath: String) {
     val weapons by lazy {
         val weapons = Collections.synchronizedList<Weapon>(mutableListOf())
         parseFiles("$template/Blueprints/Weapons") {
@@ -64,6 +54,14 @@ class WeaponParser(private val template: String) {
                 println("Getting guid for $it")
                 val namePair = parseBpName(it)
                 if (namePair != null) map += namePair.guid to it.nameWithoutExtension
+            }
+
+            if (File("$modpath/Blueprints").exists()) {
+                parseFiles("$modpath/Blueprints") {
+                    println("Getting guid for $it")
+                    val namePair = parseBpName(it)
+                    if (namePair != null) map += namePair.guid to it.nameWithoutExtension
+                }
             }
         }
         map
@@ -326,10 +324,21 @@ class WeaponParser(private val template: String) {
         }
     }
 
+    @Serializable
+    private data class StringFile(val key: String, val languages: List<LanguageEntry>) {
+        @Serializable
+        data class LanguageEntry(val locale: String, val text: String)
+
+        companion object {
+            private val PARSER = Json { ignoreUnknownKeys = true }
+
+            fun decode(file: File) = PARSER.decodeFromString<StringFile>(file.readText())
+        }
+    }
+
     private fun parseStringFile(file: File): Pair<String, String>? = try {
-        val json = Json.Default.parseToJsonElement(file.readText()).jsonObject
-        val key = json["key"]!!.stringValue
-        key to json["languages"]!!.jsonArray.first { it.jsonObject["locale"]?.stringValue == "enGB" }.jsonObject["text"]!!.stringValue
+        val data = StringFile.decode(file)
+        data.key to data.languages.first { it.locale == "enGB" }.text
     } catch (e: Exception) {
         println("Failed getting string from $file: ${e.stackTraceToString()}")
         null

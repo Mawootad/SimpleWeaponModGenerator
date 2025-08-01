@@ -22,7 +22,6 @@ data class Blueprint(@SerialName("AssetId") val guid: String, @SerialName("Data"
     private class UnknownBP(@SerialName(TYPE) val type: String) : BPData()
 
     companion object {
-
         val JSON_PARSER = Json {
             serializersModule = SerializersModule {
                 polymorphic(BPData::class) {

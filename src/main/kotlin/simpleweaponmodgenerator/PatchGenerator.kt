@@ -2,11 +2,8 @@ package simpleweaponmodgenerator
 
 import proto.weapon.Weapon
 import proto.weapon.Weapon.WeaponAbility
-import proto.weapon.Weapon.WeaponAbility.AbilityType
-import proto.weapon.weapon
-import kotlin.text.isNotEmpty
-import kotlinx.serialization.json.*
 import proto.weapon.copy
+import proto.weapon.weapon
 import simpleweaponmodgenerator.schema.BlueprintComponent
 import simpleweaponmodgenerator.schema.BlueprintItemWeaponPatch
 import simpleweaponmodgenerator.schema.PatchEntry
@@ -15,7 +12,6 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.security.MessageDigest
-import kotlin.collections.contains
 
 private val String.toBp: String get() = "!bp_$this"
 
@@ -55,11 +51,6 @@ object PatchGenerator {
 
     private fun String.enumNoneToNone() = if (endsWith("_NONE")) NONE_TEXT else this
 
-    private val JSON_FORMAT = Json {
-        prettyPrint = true
-        prettyPrintIndent = "  "
-    }
-
     @OptIn(ExperimentalStdlibApi::class)
     private fun stableUid(vararg identifiers: String) =
         MessageDigest.getInstance("MD5").digest(identifiers.joinToString("|").toByteArray()).toHexString()
@@ -68,8 +59,10 @@ object PatchGenerator {
         stableUid(*identifiers).replace("""(\w{8})(\w{4})(\w{4})(\w{4})(\w{12})""".toRegex(), "$1-$2-$3-$4-$5")
 
     fun writePatches(patches: List<Weapon>, baseline: List<Weapon>, outputDir: String) {
-        if (!File("$outputDir/Blueprints").exists()) {
-            Files.createDirectories(Paths.get("$outputDir/Blueprints"))
+        var clearedFiles = false;
+
+        if (!File("$outputDir/generated/Blueprints").exists()) {
+            Files.createDirectories(Paths.get("$outputDir/generated/Blueprints"))
         }
         val baselineMap = baseline.associateBy { it.guid }
 
@@ -173,8 +166,15 @@ object PatchGenerator {
             }
 
             if (jsonPatch != BlueprintItemWeaponPatch()) {
+                if (!clearedFiles) {
+                    for (file in File("$outputDir/generated/Blueprints").listFiles().filter { it.endsWith(".patch") }) {
+                        file.delete()
+                    }
+                    clearedFiles = true
+                }
+
                 println("Writing patch ${patch.blueprintName}")
-                File("$outputDir/Blueprints/${patch.blueprintName}.patch").writer().use {
+                File("$outputDir/generated/Blueprints/${patch.blueprintName}.patch").writer().use {
                     it.write(jsonPatch.encode())
                 }
                 writtenPatches += patch.guid to patch.blueprintName
@@ -183,7 +183,7 @@ object PatchGenerator {
 
         if (writtenPatches.isNotEmpty()) {
             println("Writing patches")
-            File("$outputDir/generatedPatchesConfig.asset").writer().use {
+            File("$outputDir/generated/generatedPatchesConfig.asset").writer().use {
                 it.append(
                     patchConfigYaml(
                         writtenPatches.map { PatchEntry(guid = it.first, filename = it.second) },

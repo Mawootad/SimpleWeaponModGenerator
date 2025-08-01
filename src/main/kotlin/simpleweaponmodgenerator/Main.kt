@@ -36,10 +36,11 @@ object Main {
     private const val SHORT_MOD_PATH = "mod_path"
     private const val MOD_PATH = "--$SHORT_MOD_PATH"
 
-    private const val MAKE_FULL = "make_full"
+    private const val MAKE_ZIP = "make_zip"
     private const val MANIFEST = "--manifest"
+    private const val ZIP_PATH = "--zip_path"
 
-    private val ALL_COMMANDS = setOf(REGENERATE_BASELINE, MAKE_TSV, MAKE_PATCH_DATA, REMOVE_DUPLICATE_INFO, MAKE_FULL)
+    private val ALL_COMMANDS = setOf(REGENERATE_BASELINE, MAKE_TSV, MAKE_PATCH_DATA, REMOVE_DUPLICATE_INFO, MAKE_ZIP)
 
     private val ALL_OPTIONS = ALL_COMMANDS + setOf(
         TEMPLATE_PATH,
@@ -49,22 +50,24 @@ object Main {
         TSV_OUT,
         PATCH_PATH,
         MOD_PATH,
-        MANIFEST
+        MANIFEST,
+        ZIP_PATH,
     )
 
     @JvmStatic
     fun main(args: Array<String>) {
         val argValues = args.associate { it.split("=", limit = 2).let { pair -> pair[0] to pair.getOrNull(1) } }
 
-        val unrecognized = argValues.keys.filter { it !in ALL_OPTIONS && it.isNotBlank() }
-        if (unrecognized.isNotEmpty()) {
-            println("Unrecognized arguments $unrecognized")
+        try {
+            run(argValues)
+        } catch (e: Exception) {
+            println(e.stackTraceToString())
         }
 
         if (args.isEmpty() || "--help" in argValues || "-h" in argValues || "help" in argValues || (argValues.keys intersect ALL_COMMANDS).isEmpty()) {
             println(
                 """
-                |Usage java -jar SimpleWeaponModGenerator.jar [$REGENERATE_BASELINE] [$MAKE_TSV] [$REMOVE_DUPLICATE_INFO] [$MAKE_PATCH_DATA] [$MAKE_FULL] [Options]
+                |Usage java -jar SimpleWeaponModGenerator.jar [$REGENERATE_BASELINE] [$MAKE_TSV] [$REMOVE_DUPLICATE_INFO] [$MAKE_PATCH_DATA] [$MAKE_ZIP] [Options]
                 |
                 |Utilities for creating Rogue Trader mods that alter weapon stats without needing to use the terrible Unity editor
                 |Default parameters assume the utility is placed in a mod folder of the template
@@ -81,24 +84,32 @@ object Main {
                 |  $TSV_OUT=[($SHORT_MOD_PATH)/weapons.tsv]: Output file to write TSV data to
                 |  
                 |  $REMOVE_DUPLICATE_INFO: Removes fields already specified in the baseline from change files
-                |  $PATCH_PATH=[($SHORT_MOD_PATH)/modifications/]: Path containing modified weapon data
+                |  $PATCH_PATH=[($SHORT_MOD_PATH)/modifications/]: Path containing modified tsv or textproto weapon data
                 |  
                 |  $MAKE_PATCH_DATA: Creates patch files and a patch changes configuration based on textproto or tsv
                 |                    files with modified data
                 |  
-                |  $MAKE_FULL: Creates a full modification zip from a set of patch files, a change manifest, and a mod manifest
-                |  $MANIFEST=[($SHORT_MOD_PATH)/manifest.asset]: Path to a .asset or .json manifest file
+                |  $MAKE_ZIP: Creates a full modification zip from a set of patch files, a change manifest, and a mod manifest
+                |  $ZIP_PATH=[($SHORT_MOD_PATH)]: Path to write the mod zip file to
                 |  
                 |  --help: Displays this message
                 |""".trimMargin()
             )
         }
 
+        val unrecognized = argValues.keys.filter { it !in ALL_OPTIONS && it.isNotBlank() }
+        if (unrecognized.isNotEmpty()) {
+            println("Unrecognized arguments $unrecognized")
+        }
+    }
+
+    private fun run(argValues: Map<String, String?>) {
+
 
         val modPath = argValues[MOD_PATH] ?: "./"
         val baselinePath = argValues[BASELINE_PATH] ?: "$modPath/baseline/"
         val templateRoot = argValues[TEMPLATE_PATH] ?: "../../../"
-        val parser = WeaponParser(templateRoot)
+        val parser = WeaponParser(templateRoot, modPath)
 
         val baselineData = when {
             REGENERATE_BASELINE in argValues -> parser.weaponsWithStrings
@@ -198,6 +209,10 @@ object Main {
             }.flatten().map { PatchGenerator.getBpsFromNames(it) { nameToGuidMap } }
 
             PatchGenerator.writePatches(weapons, baselineData, modPath)
+        }
+
+        if (MAKE_ZIP in argValues) {
+            ZipGenerator.generateZip(modPath, argValues[ZIP_PATH] ?: modPath)
         }
     }
 }

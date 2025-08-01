@@ -5,7 +5,6 @@ plugins {
     kotlin("jvm") version "2.2.0"
     id("com.google.protobuf") version "0.9.4"
     kotlin("plugin.serialization") version "2.2.0"
-    application
 }
 
 group = "simpleweaponmodgenerator"
@@ -43,9 +42,4 @@ protobuf {
             }
         }
     }
-}
-
-application {
-    mainClass = "simpleweaponmodgenerator.Main"
-    executableDir = "out/"
 }

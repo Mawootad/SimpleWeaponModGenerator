@@ -124,3 +124,4 @@ submit an issue or add an implementation and make a pull request.
   battlefield against close combat enemies.")
 - Changing names/descriptions for weapons
 - Merging OMM patches and generated patches on the same weapon
+- Automatic change summary

@@ -5,20 +5,6 @@
       "PatchType": "Prepend",
       "NewElement": {
         "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
-        "name": "$AddFactToEquipmentWielder$7218ddac-5d6f-cc52-faa3-93d95bda3b87",
-        "m_Flags": 0,
-        "PrototypeLink": {
-          "guid": "",
-          "name": ""
-        },
-        "m_Overrides": [],
-        "m_Fact": "!bp_7712185d9ea049609fda2784a6ca75ce"
-      }
-    },
-    {
-      "PatchType": "Prepend",
-      "NewElement": {
-        "$type": "65221a9a6133bd0408b019b86642d97e, AddFactToEquipmentWielder",
         "name": "$AddFactToEquipmentWielder$fd4b5e59-dcb9-b93d-b903-ca926d7d7703",
         "m_Flags": 0,
         "PrototypeLink": {

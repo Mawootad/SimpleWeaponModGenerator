@@ -6,8 +6,8 @@
     "m_Overrides": [],
     "Components": [
       {
-        "$type": "cf4a4d014c2610548a3f9213c3de882e, WarhammerDamageModifierInitiator",
-        "name": "$WarhammerDamageModifierInitiator$f26c024c-c6d1-404c-8603-3224fe7593b9",
+        "$type": "efafb8ff343e4071a216fe8fcb17e023, WarhammerCriticalDamageModifierInitiator",
+        "name": "$WarhammerCriticalDamageModifierInitiator$81572614-2c61-4d66-9d40-ee6a0e2dfdc6",
         "m_Flags": 0,
         "PrototypeLink": {
           "guid": "",
@@ -20,67 +20,12 @@
             "TargetType": "CurrentEntity",
             "TargetEvaluator": null,
             "FailSilentlyIfNoTarget": false,
-            "Getters": [
-              {
-                "$type": "094b1e1bbfc048d9adf77c7b85e83358, CheckIsRighteousFuryGetter",
-                "name": "$CheckIsRighteousFuryGetter$5788d335ae364f5497ae2cfa3e874f8f",
-                "Settings": {
-                  "Progression": "AsIs",
-                  "m_CustomProgression": [],
-                  "m_StartLevel": 0,
-                  "m_StepLevel": 0,
-                  "Negate": false,
-                  "Limit": "None",
-                  "Min": 0,
-                  "Max": 0
-                }
-              }
-            ]
+            "Getters": []
           }
         },
-        "MinimumDamage": {
+        "PercentCriticalDamageModifier": {
           "ValueType": "Simple",
-          "Value": 0,
-          "ValueRank": "Default",
-          "ValueShared": "Damage",
-          "Property": "None",
-          "m_CustomProperty": null,
-          "PropertyName": "Value1",
-          "Enabled": false
-        },
-        "MaximumDamage": {
-          "ValueType": "Simple",
-          "Value": 0,
-          "ValueRank": "Default",
-          "ValueShared": "Damage",
-          "Property": "None",
-          "m_CustomProperty": null,
-          "PropertyName": "Value1",
-          "Enabled": false
-        },
-        "PenetrationMod": {
-          "ValueType": "Simple",
-          "Value": 0,
-          "ValueRank": "Default",
-          "ValueShared": "Damage",
-          "Property": "None",
-          "m_CustomProperty": null,
-          "PropertyName": "Value1",
-          "Enabled": false
-        },
-        "PercentDamageModifier": {
-          "ValueType": "Simple",
-          "Value": 0,
-          "ValueRank": "Default",
-          "ValueShared": "Damage",
-          "Property": "None",
-          "m_CustomProperty": null,
-          "PropertyName": "Value1",
-          "Enabled": false
-        },
-        "AbsorptionPenetration": {
-          "ValueType": "Simple",
-          "Value": -15,
+          "Value": 50,
           "ValueRank": "Default",
           "ValueShared": "Damage",
           "Property": "None",
@@ -88,7 +33,7 @@
           "PropertyName": "Value1",
           "Enabled": true
         },
-        "DeflectionPenetration": {
+        "BonusCriticalDamageModifier": {
           "ValueType": "Simple",
           "Value": 0,
           "ValueRank": "Default",
@@ -98,7 +43,17 @@
           "PropertyName": "Value1",
           "Enabled": false
         },
-        "UnmodifiableFlatDamageModifier": {
+        "BonusCriticalDamageMultipliers": {
+          "ValueType": "Simple",
+          "Value": 200,
+          "ValueRank": "Default",
+          "ValueShared": "Damage",
+          "Property": "None",
+          "m_CustomProperty": null,
+          "PropertyName": "Value1",
+          "Enabled": false
+        },
+        "purePercentCriticalDamageModifier": {
           "ValueType": "Simple",
           "Value": 0,
           "ValueRank": "Default",
@@ -108,19 +63,7 @@
           "PropertyName": "Value1",
           "Enabled": false
         },
-        "UnmodifiablePercentDamageModifier": {
-          "ValueType": "Simple",
-          "Value": 0,
-          "ValueRank": "Default",
-          "ValueShared": "Damage",
-          "Property": "None",
-          "m_CustomProperty": null,
-          "PropertyName": "Value1",
-          "Enabled": false
-        },
-        "ModifierDescriptor": "None",
-        "ModifyEvenDirectDamage": false,
-        "ModifyEvenDamageOverTime": false
+        "ModifierDescriptor": "None"
       }
     ],
     "Author": "Unknown",

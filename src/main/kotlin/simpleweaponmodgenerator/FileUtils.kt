@@ -21,19 +21,22 @@ fun textprotoString(weaponList: Collection<Weapon>) =
         |# proto-file: proto/weapon/Weapon.proto
         |# proto-message: weapon.WeaponList
         |
-        |${weaponList { weapon += weaponList }}
+        |${weaponList { weapon += weaponList.sortedBy { it.blueprintName } }}
         |""".trimMargin()
 
 fun tsvString(weaponList: Collection<Weapon>, noneText: String = NONE_TEXT) =
     """
         |${TsvField.entries.joinToString("\t") { it.header }}
-        |${weaponList.joinToString("\n") { weapon -> TsvField.entries.joinToString("\t") { weapon.(it.output)(noneText) } }}
+        |${
+        weaponList.sortedBy { it.blueprintName }
+            .joinToString("\n") { weapon -> TsvField.entries.joinToString("\t") { weapon.(it.output)(noneText) } }
+    }
         |""".trimMargin()
 
 private enum class TsvField(val header: String, val output: Weapon.(String) -> String) {
     BLUEPRINT("Blueprint", { blueprintName }),
-    NAME("Name", { name }),
-    DESCRIPTION("Description", { description }),
+    NAME("Name", { name.replace("\n", "\\n") }),
+    DESCRIPTION("Description", {  description.replace("\n", "\\n").replace("\t", "\\t") }),
     GROUPING("Grouping", { Classifier.getWeaponType(this).toString() }),
     CATEGORY("Category", { if (hasCategory()) category.toString() else it }),
     FAMILY("Family", { if (hasFamily()) family.toString() else it }),

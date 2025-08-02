@@ -140,7 +140,15 @@ object Main {
 
             File("$baselinePath/Guids.txt").writer().use { writer ->
                 writer.write(
-                    parser.nameToGuidMap.entries.joinToString("\n") { "${it.key}|${it.value}" })
+                    parser.nameToGuidMap.entries.sortedBy { it.key }.joinToString("\n") { "${it.key}|${it.value}" })
+            }
+
+            if (parser.errors.isNotEmpty()) {
+                println("There were some errors:")
+                parser.errors.forEach {
+                    println(it)
+                    println()
+                }
             }
 
             println("Parsing complete, found ${baselineData!!.size} weapons and ${parser.nameToGuidMap.size} blueprints")
@@ -158,6 +166,8 @@ object Main {
 
             Files.createDirectories(Path(File(tsvPath).parent))
             File(tsvPath).writeText(tsvString(toWrite))
+
+            println("Created $tsvPath")
         }
 
         val patchesPath = argValues[PATCH_PATH] ?: "$modPath/modifications"
@@ -178,6 +188,7 @@ object Main {
             }
 
             RemoveDuplicateInfo.removeaAllDuplicateInfo(patchesPath) { baselineLookupMap }
+            println("Removed duplicate info")
         }
 
         if (MAKE_PATCH_DATA in argValues) {

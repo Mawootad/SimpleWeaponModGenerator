@@ -47,7 +47,7 @@ object ZipGenerator {
             for (jsonFile in File(modPath).listFiles { it.extension == "json" }) {
                 try {
                     manifest = Manifest.decodeJson(jsonFile)
-                } catch (e: Exception) {
+                } catch (_: Exception) {
                 }
             }
 

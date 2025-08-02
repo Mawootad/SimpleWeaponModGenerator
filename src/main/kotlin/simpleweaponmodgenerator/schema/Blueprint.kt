@@ -221,7 +221,7 @@ sealed class BlueprintComponent {
 }
 
 @Serializable
-data class LocalizedString(@SerialName("m_Key") val key: String, @SerialName("Shared") val shared: Shared? = null) {
+data class LocalizedString(@SerialName("m_Key") val key: String? = null, @SerialName("Shared") val shared: Shared? = null) {
     @Serializable
     data class Shared(@SerialName("stringkey") val key: String)
 }
@@ -234,15 +234,14 @@ data class BlueprintUnit(
 ) : BPData() {
     @Serializable
     data class Body(
-        @SerialName("ItemEquipmentHandSettings") val itemEquipmentHandSettings: ItemEquipmentHandSettings,
-        @SerialName("Body") val body: Map<String, String>,
+        @SerialName("ItemEquipmentHandSettings") val itemEquipmentHandSettings: ItemEquipmentHandSettings
     ) {
         @Serializable
         data class ItemEquipmentHandSettings(
-            @SerialName("m_PrimaryHand") val primaryHand: String,
-            @SerialName("m_SecondaryHand") val secondaryHand: String,
-            @SerialName("m_PrimaryHandAlternative1") val primaryHandAlt: String,
-            @SerialName("m_SecondaryHandAlternative1") val secondaryHandAlt: String,
+            @SerialName("m_PrimaryHand") val primaryHand: String?,
+            @SerialName("m_SecondaryHand") val secondaryHand: String?,
+            @SerialName("m_PrimaryHandAlternative1") val primaryHandAlt: String?,
+            @SerialName("m_SecondaryHandAlternative1") val secondaryHandAlt: String?,
         )
     }
 }
@@ -251,7 +250,7 @@ data class BlueprintUnit(
 @SerialName("0449d0493fd70da4ba79ef76be174b92, BlueprintLoot")
 data class BlueprintLoot(@SerialName("Items") val items: List<Item>) : BPData() {
     @Serializable
-    data class Item(@SerialName("m_Item") val item: String)
+    data class Item(@SerialName("m_Item") val item: String?)
 }
 
 @Serializable

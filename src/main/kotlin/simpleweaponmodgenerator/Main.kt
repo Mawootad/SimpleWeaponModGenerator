@@ -142,6 +142,8 @@ object Main {
                 writer.write(
                     parser.nameToGuidMap.entries.joinToString("\n") { "${it.key}|${it.value}" })
             }
+
+            println("Parsing complete, found ${baselineData!!.size} weapons and ${parser.nameToGuidMap.size} blueprints")
         }
 
         if (MAKE_TSV in argValues) {

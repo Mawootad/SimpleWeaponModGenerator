@@ -30,7 +30,7 @@ which will then be transformed into the patch format used by Rogue Trader. For s
 utility zip from https://github.com/Mawootad/SimpleWeaponModGenerator/releases and unzip it into a folder of your
 choice, then follow the following steps.
 
-### 1) (Optional) Baseline generation
+### 1) Baseline generation (Optional)
 
 The full utility zip contains baseline data, however it may be out of date. If it seems to be out of date you may need
 to generate a new baseline. To do so, extract WhRtModificationTemplate.tar from the Modding folder of your Rogue Trader

@@ -44,7 +44,7 @@ Where `{PATH_TO_TEMPLATE}` is the location of the folder where you extracted the
 
 ### 2) Make edits
 
-Open the 'weapons.tsv' file in your mod folder in the spreadsheet editor of your choice, it will contain data on the
+Open the `weapons.tsv` file in your mod folder in the spreadsheet editor of your choice, it will contain data on the
 various weapons that are obtainable in Rogue Trader. To make edits you can either directly modify the spreadsheet or you
 can create a new spreadsheet and copy the spreadsheet header and any weapons you want to modify there. Changes you make
 here will be used by the utility to create a mod based on the changes you make.
